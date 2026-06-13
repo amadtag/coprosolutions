@@ -1,65 +1,152 @@
-import Image from "next/image";
+"use client";
+
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Home() {
+  const form = useRef<HTMLFormElement | null>(null);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!form.current) return;
+
+    emailjs
+      .sendForm(
+        "service_1mimw3j",
+        "template_s24a987",
+        form.current,
+        "ZHwB2YyGJMNzEnWDq"
+      )
+      .then(() => {
+        alert("Message envoyé !");
+        form.current?.reset();
+      })
+      .catch(() => {
+        alert("Erreur lors de l'envoi");
+      });
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen bg-white text-slate-800">
+
+      {/* HEADER */}
+      <header className="sticky top-0 bg-white shadow-sm border-b z-50">
+        <div className="max-w-6xl mx-auto p-4 flex justify-between items-center">
+          <h1 className="text-2xl font-extrabold">
+            <span className="text-blue-700">COPRO</span>
+            <span className="text-green-600">SOLUTIONS</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+
+          <nav className="hidden md:flex gap-6 text-sm font-medium">
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+          </nav>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </header>
+
+      {/* HERO */}
+      <section className="text-center py-24 bg-gradient-to-b from-slate-50 to-white">
+        <h2 className="text-5xl font-bold mb-6">
+          Entretien de copropriétés & bureaux
+        </h2>
+
+        <p className="text-gray-600 text-lg mb-8">
+          Nettoyage professionnel • Île-de-France • Devis gratuit rapide
+        </p>
+
+        <a
+          href="#contact"
+          className="bg-green-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-700"
+        >
+          Demander un devis
+        </a>
+      </section>
+
+      {/* SERVICES */}
+      <section id="services" className="max-w-6xl mx-auto py-20 px-6">
+        <h3 className="text-3xl font-bold text-center mb-10">
+          Nos services
+        </h3>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            "Entretien copropriété",
+            "Entretien bureaux",
+            "Sortie des poubelles",
+            "Remplacement gardien",
+            "Travaux exceptionnels",
+            "Shampoing moquette",
+          ].map((s, i) => (
+            <div
+              key={i}
+              className="p-6 border rounded-2xl shadow-sm hover:shadow-md transition"
+            >
+              <h4 className="font-bold text-blue-700">{s}</h4>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="bg-blue-950 text-white py-20">
+        <div className="max-w-2xl mx-auto px-6">
+          <h3 className="text-3xl font-bold text-center mb-10">
+            Contactez-nous
+          </h3>
+
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="bg-white text-black p-6 rounded-2xl space-y-4"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+            <input
+              type="text"
+              name="name"
+              placeholder="Nom"
+              className="w-full border p-3 rounded"
+              required
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              className="w-full border p-3 rounded"
+              required
+            />
+
+            <textarea
+              name="message"
+              placeholder="Message"
+              rows={5}
+              className="w-full border p-3 rounded"
+              required
+            />
+
+            <button
+              type="submit"
+              className="w-full bg-green-600 text-white py-3 rounded font-bold"
+            >
+              Envoyer
+            </button>
+          </form>
         </div>
-      </main>
+      </section>
+
+      {/* WHATSAPP */}
+      <a
+        href="https://wa.me/33658876579"
+        target="_blank"
+        className="fixed bottom-5 right-5 bg-green-500 text-white px-5 py-3 rounded-full shadow-lg"
+      >
+        WhatsApp
+      </a>
+
+      {/* FOOTER */}
+      <footer className="text-center py-6 text-sm text-gray-500">
+        © 2026 CoproSolutions — Tous droits réservés
+      </footer>
     </div>
   );
 }
