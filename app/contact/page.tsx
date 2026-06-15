@@ -3,50 +3,45 @@
 import { useState } from "react";
 
 export default function ContactPage() {
-  const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    setLoading(true);
 
-    const form = e.currentTarget;
-
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
-    };
-
-    const res = await fetch("/api/contact", {
+    await fetch("/api/contact", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify(form)
     });
 
-    setLoading(false);
-
-    alert(res.ok ? "Message envoyé 👍" : "Erreur ❌");
-    form.reset();
-  }
+    alert("Demande envoyée !");
+  };
 
   return (
-    <div style={{ padding: 40 }}>
-      <h1>Contact</h1>
+    <main style={{ padding: 20 }}>
+      <h1>Demande de devis</h1>
 
-      <form onSubmit={handleSubmit}>
-        <input name="name" placeholder="Nom" required />
-        <br /><br />
+      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+        <input
+          placeholder="Nom"
+          onChange={(e) => setForm({ ...form, name: e.target.value })}
+        />
 
-        <input name="email" placeholder="Email" required />
-        <br /><br />
+        <input
+          placeholder="Email"
+          onChange={(e) => setForm({ ...form, email: e.target.value })}
+        />
 
-        <textarea name="message" placeholder="Message" required />
-        <br /><br />
+        <textarea
+          placeholder="Message"
+          onChange={(e) => setForm({ ...form, message: e.target.value })}
+        />
 
-        <button type="submit">
-          {loading ? "Envoi..." : "Envoyer"}
-        </button>
+        <button type="submit">Envoyer</button>
       </form>
-    </div>
+    </main>
   );
 }
