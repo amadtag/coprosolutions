@@ -57,6 +57,14 @@ export default function RootLayout({
           {children}
         </main>
 
+        {/* CTA FIXE (IMPORTANT) */}
+        <a
+          href="tel:+33658876579"
+          className="fixed bottom-4 right-4 bg-green-600 text-white px-4 py-3 rounded-full shadow-lg z-50"
+        >
+          📞 Appeler maintenant
+        </a>
+
         {/* FOOTER */}
         <footer
           style={{

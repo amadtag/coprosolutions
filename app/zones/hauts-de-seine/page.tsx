@@ -4,7 +4,7 @@ export default function Page() {
       <h1>Entretien de copropriété à Boulogne-Billancourt</h1>
 
       <p>
-        Copro Solutions intervient à Boulogne-Billancourt pour l’entretien
+        Coprosolutions intervient à Boulogne-Billancourt pour l’entretien
         complet de copropriétés, immeubles et résidences.
       </p>
 

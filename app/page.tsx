@@ -55,9 +55,17 @@ export default function Home() {
           Nettoyage professionnel • Île-de-France • Devis gratuit rapide
         </p>
 
+        {/* CTA APPEL DIRECT */}
+        <a
+          href="tel:+33658876579"
+          className="bg-black text-white px-6 py-3 rounded-xl font-bold mr-3"
+        >
+          📞 Appeler maintenant
+        </a>
+
         <a
           href="#contact"
-          className="bg-green-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-700"
+          className="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700"
         >
           Demander un devis
         </a>
@@ -134,14 +142,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHATSAPP */}
-      <a
-        href="https://wa.me/33658876579"
-        target="_blank"
-        className="fixed bottom-5 right-5 bg-green-500 text-white px-5 py-3 rounded-full shadow-lg"
-      >
-        WhatsApp
-      </a>
+      {/* FIXED BUTTONS (APPEL + WHATSAPP) */}
+      <div className="fixed bottom-5 right-5 flex flex-col gap-3 z-50">
+
+        {/* APPEL */}
+        <a
+          href="tel:+33658876579"
+          className="bg-black text-white px-5 py-3 rounded-full shadow-lg font-bold text-center"
+        >
+          📞 Appeler
+        </a>
+
+        {/* WHATSAPP */}
+        <a
+          href="https://wa.me/33658876579"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-500 text-white px-5 py-3 rounded-full shadow-lg font-bold text-center"
+        >
+          WhatsApp
+        </a>
+
+      </div>
 
       {/* FOOTER */}
       <footer className="text-center py-6 text-sm text-gray-500">
