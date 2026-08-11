@@ -1,70 +1,141 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Entretien de copropriété à Paris-15 | Coprosolutions",
+  title:
+    "Nettoyage et entretien de copropriété à Paris 15e | CoproSolutions",
   description:
-    "Service d’entretien de copropriété à Paris-15 : nettoyage d’immeubles, gestion des poubelles, remplacement de gardien et petits travaux en Île-de-France.",
+    "CoproSolutions assure le nettoyage et l'entretien de copropriétés à Paris 15e : parties communes, poubelles, vitres, interventions ponctuelles et remplacement de gardiens.",
+  alternates: {
+    canonical: "/zones/paris-15",
+  },
 };
 
 export default function Page() {
   return (
-    <main style={{ maxWidth: "900px", margin: "0 auto", padding: "20px" }}>
-
-      <h1>Entretien de copropriété à Paris-15</h1>
+    <main
+      style={{
+        maxWidth: "1000px",
+        margin: "0 auto",
+        padding: "50px 20px",
+        lineHeight: 1.7,
+      }}
+    >
+      <h1>
+        Nettoyage et entretien de copropriété à Paris 15e
+      </h1>
 
       <p>
-        Coprosolutions intervient à <strong>Paris-15</strong> pour l’entretien de copropriétés,
-        le nettoyage d’immeubles et la gestion complète des parties communes.
-        Nous accompagnons les syndics et gestionnaires immobiliers pour assurer un service fiable et rapide.
+        <strong>CoproSolutions</strong> accompagne les syndics, conseils
+        syndicaux et gestionnaires immobiliers pour l'entretien des
+        copropriétés dans le <strong>15e arrondissement de Paris (75015)</strong>.
       </p>
 
-      <h2>🧹 Nos services à Paris-15</h2>
+      <p>
+        Nous assurons le nettoyage et l'entretien régulier des parties
+        communes des immeubles : halls d'entrée, escaliers, paliers,
+        ascenseurs, locaux poubelles et espaces communs.
+      </p>
+
+      <h2>Nos services à Paris 15e</h2>
 
       <ul>
-        <li>Entretien copropriété</li>
-        <li>Nettoyage immeubles</li>
-        <li>Gestion des poubelles</li>
-        <li>Remplacement de gardien</li>
-        <li>Petits travaux et interventions</li>
+        <li>Nettoyage des halls et parties communes</li>
+        <li>Entretien des escaliers et paliers</li>
+        <li>Nettoyage des locaux poubelles</li>
+        <li>Sortie et rentrée des containers</li>
+        <li>Nettoyage des vitres</li>
+        <li>Entretien des parkings et espaces communs</li>
+        <li>Interventions ponctuelles</li>
+        <li>Travaux exceptionnels d'entretien</li>
+        <li>Remplacement temporaire de gardiens d'immeuble</li>
       </ul>
 
-      <h2>👨‍✈️ Intervention rapide à Paris-15</h2>
+      <h2>Une solution adaptée aux copropriétés du 15e</h2>
 
       <p>
-        Nous intervenons rapidement dans toute la zone de <strong>Paris-15</strong>
-        et ses environs pour garantir la continuité de service dans les immeubles.
+        L'entretien régulier d'un immeuble contribue au confort des résidents
+        et à la bonne présentation de la copropriété. CoproSolutions adapte
+        ses prestations aux caractéristiques et aux besoins de chaque
+        résidence.
       </p>
-
-      <h2>🗑️ Gestion des poubelles et entretien</h2>
 
       <p>
-        Sortie et rentrée des poubelles, nettoyage des parties communes,
-        maintenance des espaces partagés et suivi régulier des immeubles.
+        La fréquence des interventions peut être définie selon la taille de
+        la copropriété, le nombre de halls, les équipements présents et les
+        besoins spécifiques de l'immeuble.
       </p>
 
-      <h2>🔧 Travaux et entretien</h2>
+      <h2>Remplacement de gardien à Paris 15e</h2>
 
       <p>
-        Nous réalisons également des petits travaux d’entretien :
-        réparations légères, nettoyage spécialisé et interventions ponctuelles.
+        En cas d'absence d'un gardien ou employé d'immeuble, CoproSolutions
+        peut accompagner la copropriété afin d'assurer la continuité du
+        service.
       </p>
-
-      <h2>📍 Zones proches de Paris-15</h2>
 
       <p>
-        Intervention également dans les arrondissements voisins : Paris-14, Paris-16, Issy-les-Moulineaux.
+        Nous pouvons répondre aux besoins de remplacement temporaire ou de
+        plus longue durée selon la situation de la résidence.
       </p>
-
-      <h2>📞 Contact rapide</h2>
-
-      <a href="tel:+33658876579">
-        📞 Appeler maintenant
-      </a>
 
       <p>
-        Service disponible en Île-de-France – devis gratuit et intervention rapide.
+        <a href="/remplacement-gardien">
+          En savoir plus sur le remplacement de gardien d'immeuble
+        </a>
       </p>
 
+      <h2>Nettoyage des parties communes à Paris 15e</h2>
+
+      <p>
+        Nos prestations peuvent comprendre le nettoyage des sols, halls,
+        escaliers, paliers, ascenseurs, locaux communs et espaces dédiés aux
+        déchets.
+      </p>
+
+      <p>
+        Nous pouvons également intervenir pour des besoins ponctuels :
+        nettoyage approfondi, vitres, parkings et autres interventions
+        nécessaires à la bonne tenue de l'immeuble.
+      </p>
+
+      <p>
+        <a href="/entretien-copropriété-idf">
+          Découvrir notre service d'entretien de copropriété en Île-de-France
+        </a>
+      </p>
+
+      <h2>Intervention dans Paris et en Île-de-France</h2>
+
+      <p>
+        CoproSolutions intervient dans le 15e arrondissement et dans plusieurs
+        secteurs de Paris et d'Île-de-France pour accompagner les
+        copropriétés, syndics et gestionnaires immobiliers.
+      </p>
+
+      <p>
+        <a href="/zones/paris-75">
+          Découvrir nos interventions à Paris
+        </a>
+      </p>
+
+      <h2>Demander un devis pour votre copropriété</h2>
+
+      <p>
+        Vous êtes syndic, gestionnaire immobilier ou membre d'un conseil
+        syndical dans le 15e arrondissement ? Contactez CoproSolutions pour
+        nous présenter votre résidence et obtenir une proposition adaptée à
+        vos besoins.
+      </p>
+
+      <p>
+        <a href="/contact">Demander un devis gratuit</a>
+      </p>
+
+      <p>
+        <a href="tel:+33658876579">
+          📞 Appeler CoproSolutions au 06 58 87 65 79
+        </a>
+      </p>
     </main>
   );
 }

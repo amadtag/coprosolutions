@@ -1,78 +1,152 @@
-export const metadata = {
-  title: "Entretien de copropriété dans les Yvelines | Coprosolutions",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "Entretien et nettoyage de copropriété dans les Yvelines (78) | CoproSolutions",
   description:
-    "Entretien de copropriétés, remplacement de gardien, sortie des poubelles et travaux exceptionnels dans les Yvelines. Devis rapide.",
+    "CoproSolutions accompagne les syndics et copropriétés dans les Yvelines : nettoyage des parties communes, entretien des immeubles, poubelles, remplacement de gardiens et travaux exceptionnels.",
+  alternates: {
+    canonical: "/zones/yvelines",
+  },
 };
 
 export default function YvelinesPage() {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-12">
+    <main
+      className="max-w-5xl mx-auto px-6 py-12"
+      style={{ lineHeight: 1.7 }}
+    >
       <h1 className="text-4xl font-bold mb-6">
-        Entretien de copropriété dans les Yvelines
+        Entretien et nettoyage de copropriété dans les Yvelines (78)
       </h1>
 
       <p className="mb-4">
-        Coprosolutions accompagne les syndics et copropriétés dans les
-        Yvelines pour l’entretien régulier des immeubles et résidences.
+        <strong>CoproSolutions</strong> accompagne les syndics, conseils
+        syndicaux et gestionnaires immobiliers pour l'entretien des
+        copropriétés dans les <strong>Yvelines (78)</strong>.
       </p>
 
       <p className="mb-4">
-        Nous intervenons dans tout le département des Yvelines pour garantir
-        la propreté, la sécurité et le bon fonctionnement des parties
-        communes.
+        Nous intervenons pour le nettoyage et l'entretien des immeubles,
+        résidences et parties communes afin de maintenir un environnement
+        propre et agréable pour les résidents.
       </p>
 
       <h2 className="text-2xl font-semibold mt-8 mb-4">
-        Nos prestations
+        Nos prestations dans les Yvelines
       </h2>
 
       <ul className="list-disc pl-6 space-y-2">
-        <li>Entretien des copropriétés</li>
-        <li>Entretien des bureaux</li>
-        <li>Remplacement de gardien d'immeuble</li>
-        <li>Sortie et rentrée des poubelles</li>
-        <li>Nettoyage des parties communes</li>
-        <li>Travaux exceptionnels</li>
-        <li>Shampoing moquette</li>
-        <li>Nettoyage parking</li>
-        <li>Jardinage simple</li>
-        <li>Petits travaux de maintenance</li>
+        <li>Entretien régulier des copropriétés</li>
+        <li>Nettoyage des halls, escaliers et parties communes</li>
+        <li>Nettoyage des ascenseurs et paliers</li>
+        <li>Entretien des locaux poubelles</li>
+        <li>Sortie et rentrée des containers</li>
+        <li>Nettoyage des vitres</li>
+        <li>Nettoyage des parkings</li>
+        <li>Shampoing des moquettes</li>
+        <li>Travaux exceptionnels d'entretien</li>
+        <li>Petits travaux et interventions ponctuelles</li>
+        <li>Entretien simple des espaces extérieurs</li>
+        <li>Remplacement temporaire de gardiens d'immeuble</li>
       </ul>
 
       <h2 className="text-2xl font-semibold mt-8 mb-4">
-        Villes desservies
+        Une solution pour les syndics et copropriétés
       </h2>
 
-      <p>
-        Nous intervenons notamment à Versailles, Saint-Germain-en-Laye,
-        Poissy, Sartrouville, Mantes-la-Jolie, Conflans-Sainte-Honorine,
-        Houilles, Chatou, Le Chesnay-Rocquencourt et dans l’ensemble des
-        Yvelines.
+      <p className="mb-4">
+        CoproSolutions adapte ses prestations à la configuration et aux
+        besoins de chaque résidence. La fréquence des interventions peut être
+        définie selon la taille de l'immeuble, le nombre de halls et les
+        équipements présents.
+      </p>
+
+      <p className="mb-4">
+        Nous accompagnons les syndics et gestionnaires immobiliers dans
+        l'organisation de l'entretien quotidien ou ponctuel des copropriétés.
       </p>
 
       <h2 className="text-2xl font-semibold mt-8 mb-4">
-        Contact
+        Remplacement de gardien dans les Yvelines
       </h2>
 
-      <p className="mb-2">
-        Téléphone :
+      <p className="mb-4">
+        En cas d'absence d'un gardien ou employé d'immeuble, CoproSolutions
+        peut accompagner la copropriété afin d'assurer la continuité du
+        service.
+      </p>
+
+      <p className="mb-4">
+        Nous proposons des solutions de remplacement adaptées aux besoins de
+        la résidence, pour des périodes temporaires ou plus longues.
+      </p>
+
+      <p>
         <a
-          href="tel:+33658876579"
-          className="text-blue-600 font-semibold ml-2"
+          href="/remplacement-gardien"
+          className="text-blue-600 font-semibold"
         >
-          06 58 87 65 79
+          Découvrir notre service de remplacement de gardien
         </a>
       </p>
 
-      <p>Email : coprosolutions@outlook.fr</p>
-
       <h2 className="text-2xl font-semibold mt-8 mb-4">
-        Demande de devis
+        Intervention à Versailles
       </h2>
 
+      <p className="mb-4">
+        CoproSolutions intervient notamment à{" "}
+        <strong>Versailles</strong> et dans les communes voisines pour
+        l'entretien et le nettoyage des copropriétés.
+      </p>
+
       <p>
-        Contactez-nous pour obtenir un devis gratuit pour l’entretien de votre
-        copropriété ou de vos bureaux dans les Yvelines.
+        <a
+          href="/zones/yvelines/versailles"
+          className="text-blue-600 font-semibold"
+        >
+          Entretien de copropriété à Versailles
+        </a>
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-8 mb-4">
+        Villes desservies dans les Yvelines
+      </h2>
+
+      <p className="mb-4">
+        Nous intervenons notamment à Versailles, Saint-Germain-en-Laye,
+        Poissy, Sartrouville, Mantes-la-Jolie, Conflans-Sainte-Honorine,
+        Houilles, Chatou, Le Chesnay-Rocquencourt et dans d'autres communes
+        des Yvelines.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-8 mb-4">
+        Demander un devis dans les Yvelines
+      </h2>
+
+      <p className="mb-4">
+        Vous êtes syndic, gestionnaire immobilier ou membre d'un conseil
+        syndical ? Contactez CoproSolutions pour présenter les besoins de
+        votre copropriété et obtenir une proposition adaptée.
+      </p>
+
+      <p className="mb-4">
+        <a
+          href="/contact"
+          className="text-blue-600 font-semibold"
+        >
+          Demander un devis gratuit
+        </a>
+      </p>
+
+      <p className="mb-2">
+        <a
+          href="tel:+33658876579"
+          className="text-blue-600 font-semibold"
+        >
+          📞 Appeler CoproSolutions au 06 58 87 65 79
+        </a>
       </p>
     </main>
   );
