@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https" + "://" + "www" + ".coprosolutions" + ".net/sitemap.xml",
+    sitemap: "https://coprosolutions.net/sitemap.xml",
   };
 }
