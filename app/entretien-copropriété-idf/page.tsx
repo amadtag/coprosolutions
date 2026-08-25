@@ -75,7 +75,9 @@ export default function EntretienCoproIdf() {
         </a>
       </p>
 
-      <p>Email : coprosolutions@outlook.fr</p>
+      <p>Email : coprosolutions@coprosolutions.net
+        
+      </p>
 
       <div className="mt-10 p-4 bg-gray-100 rounded-xl">
         <p className="font-semibold">

@@ -82,7 +82,7 @@ export default function RemplacementGardien() {
       </p>
 
       <h3>Contact</h3>
-      <p>Email : coprosolutions@outlook.fr</p>
+      <p>Email : coprosolutions@coprosolutions.net</p>
       <p>Téléphone : 0658876579</p>
 
     </main>
