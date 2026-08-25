@@ -53,34 +53,30 @@ export default function Home() {
       </header>
 
       {/* HERO */}
-      <section className="text-center py-24 px-6 bg-gradient-to-b from-slate-50 to-white">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">
-          Entretien de copropriétés et bureaux en Île-de-France
-        </h2>
+      <section
+  className="text-center py-24 px-6 text-white relative overflow-hidden"
+  style={{
+    backgroundImage:
+      "linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.72)), url('/images/immeuble-paris.jpg.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
+  <h2 className="text-4xl md:text-5xl font-bold mb-6">
+    Entretien de copropriétés et bureaux en Île-de-France
+  </h2>
 
-        <p className="max-w-3xl mx-auto text-gray-600 text-lg mb-8">
-          CoproSolutions accompagne les syndics, conseils syndicaux et
-          gestionnaires immobiliers pour l'entretien et le nettoyage des
-          copropriétés, le remplacement de gardiens et l'entretien des
-          immeubles de bureaux à Paris et en Île-de-France.
-        </p>
+  <p className="max-w-3xl mx-auto text-white text-lg mb-8">
+    CoproSolutions accompagne les syndics, conseils syndicaux et
+    gestionnaires immobiliers pour l'entretien et le nettoyage des
+    copropriétés, le remplacement de gardiens et l'entretien des
+    immeubles de bureaux à Paris et en Île-de-France.
+  </p>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-3">
-          <a
-            href="tel:+33658876579"
-            className="bg-black text-white px-6 py-3 rounded-xl font-bold"
-          >
-            📞 Appeler maintenant
-          </a>
-
-          <a
-            href="#contact"
-            className="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700"
-          >
-            Demander un devis gratuit
-          </a>
-        </div>
-      </section>
+  <div className="flex flex-col sm:flex-row justify-center gap-3">
+    ...
+  </div>
+</section>
 
       {/* SERVICES */}
       <section id="services" className="max-w-6xl mx-auto py-20 px-6">
