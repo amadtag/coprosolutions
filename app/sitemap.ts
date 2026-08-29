@@ -24,8 +24,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
-
-    // Services
     {
       url: `${baseUrl}/remplacement-gardien`,
       changeFrequency: "monthly",
@@ -59,14 +57,44 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Hauts-de-Seine
     {
+      url: `${baseUrl}/zones/hauts-de-seine`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/zones/boulogne-billancourt`,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/zones/hauts-de-seine`,
+      url: `${baseUrl}/zones/hauts-de-seine/antony`,
       changeFrequency: "monthly",
-      priority: 0.9,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/zones/hauts-de-seine/bagneux`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/zones/hauts-de-seine/chatenay-malabry`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/zones/hauts-de-seine/chatillon`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/zones/hauts-de-seine/clamart`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/zones/hauts-de-seine/fontenay-aux-roses`,
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/zones/hauts-de-seine/issy-les-moulineaux`,
@@ -74,7 +102,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/zones/hauts-de-seine/le-plessis-robinson`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/zones/hauts-de-seine/levallois-perret`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/zones/hauts-de-seine/malakoff`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/zones/hauts-de-seine/meudon`,
       changeFrequency: "monthly",
       priority: 0.8,
     },
@@ -85,6 +128,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/zones/hauts-de-seine/neuilly-sur-seine`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/zones/hauts-de-seine/sevres`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/zones/hauts-de-seine/vaucresson`,
       changeFrequency: "monthly",
       priority: 0.8,
     },
@@ -123,6 +176,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/zones/yvelines/versailles`,
       changeFrequency: "monthly",
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/zones/yvelines/louveciennes`,
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
   ];
 }
