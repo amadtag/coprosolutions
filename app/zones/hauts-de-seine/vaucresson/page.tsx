@@ -48,16 +48,16 @@ export default function VaucressonPage() {
       }
       nearbyCities={[
         {
-          name: "Garches",
-          href: "/zones/hauts-de-seine/garches",
-        },
-        {
-          name: "Marnes-la-Coquette",
-          href: "/zones/hauts-de-seine/marnes-la-coquette",
-        },
-        {
           name: "Sèvres",
           href: "/zones/hauts-de-seine/sevres",
+        },
+        {
+          name: "Meudon",
+          href: "/zones/hauts-de-seine/meudon",
+        },
+        {
+          name: "Boulogne-Billancourt",
+          href: "/zones/boulogne-billancourt",
         },
       ]}
     />

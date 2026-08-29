@@ -46,8 +46,8 @@ export default function MalakoffPage() {
       }
       nearbyCities={[
         {
-          name: "Montrouge",
-          href: "/zones/hauts-de-seine/montrouge",
+          name: "Châtillon",
+          href: "/zones/hauts-de-seine/chatillon",
         },
         {
           name: "Clamart",
