@@ -21,25 +21,91 @@ const cities = [
     name: "Issy-les-Moulineaux",
     href: "/zones/hauts-de-seine/issy-les-moulineaux",
     description:
-      "Prestations d'entretien pour les copropriétés et immeubles à Issy-les-Moulineaux.",
+      "Prestations d'entretien et de nettoyage pour les copropriétés et immeubles à Issy-les-Moulineaux.",
   },
   {
     name: "Levallois-Perret",
     href: "/zones/hauts-de-seine/levallois-perret",
     description:
-      "Nettoyage et entretien des copropriétés et immeubles à Levallois-Perret.",
+      "Nettoyage et entretien des copropriétés, résidences et immeubles à Levallois-Perret.",
   },
   {
     name: "Nanterre",
     href: "/zones/hauts-de-seine/nanterre",
     description:
-      "Solutions d'entretien et de nettoyage pour les immeubles à Nanterre.",
+      "Solutions d'entretien et de nettoyage pour les copropriétés et immeubles à Nanterre.",
   },
   {
     name: "Neuilly-sur-Seine",
     href: "/zones/hauts-de-seine/neuilly-sur-seine",
     description:
       "Entretien des copropriétés, résidences et immeubles à Neuilly-sur-Seine.",
+  },
+  {
+    name: "Antony",
+    href: "/zones/hauts-de-seine/antony",
+    description:
+      "Entretien et nettoyage de copropriétés, halls et parties communes à Antony.",
+  },
+  {
+    name: "Bagneux",
+    href: "/zones/hauts-de-seine/bagneux",
+    description:
+      "Prestations de nettoyage et d'entretien pour les copropriétés et immeubles à Bagneux.",
+  },
+  {
+    name: "Châtenay-Malabry",
+    href: "/zones/hauts-de-seine/chatenay-malabry",
+    description:
+      "Entretien des parties communes et nettoyage de copropriétés à Châtenay-Malabry.",
+  },
+  {
+    name: "Châtillon",
+    href: "/zones/hauts-de-seine/chatillon",
+    description:
+      "Solutions d'entretien et de nettoyage pour les copropriétés à Châtillon.",
+  },
+  {
+    name: "Clamart",
+    href: "/zones/hauts-de-seine/clamart",
+    description:
+      "Nettoyage et entretien des copropriétés, résidences et immeubles à Clamart.",
+  },
+  {
+    name: "Fontenay-aux-Roses",
+    href: "/zones/hauts-de-seine/fontenay-aux-roses",
+    description:
+      "Entretien des copropriétés et nettoyage des parties communes à Fontenay-aux-Roses.",
+  },
+  {
+    name: "Le Plessis-Robinson",
+    href: "/zones/hauts-de-seine/le-plessis-robinson",
+    description:
+      "Prestations d'entretien et de nettoyage pour les copropriétés au Plessis-Robinson.",
+  },
+  {
+    name: "Malakoff",
+    href: "/zones/hauts-de-seine/malakoff",
+    description:
+      "Nettoyage et entretien des copropriétés, immeubles et parties communes à Malakoff.",
+  },
+  {
+    name: "Meudon",
+    href: "/zones/hauts-de-seine/meudon",
+    description:
+      "Entretien des copropriétés, résidences et parties communes à Meudon.",
+  },
+  {
+    name: "Sèvres",
+    href: "/zones/hauts-de-seine/sevres",
+    description:
+      "Nettoyage et entretien des copropriétés et immeubles à Sèvres.",
+  },
+  {
+    name: "Vaucresson",
+    href: "/zones/hauts-de-seine/vaucresson",
+    description:
+      "Prestations d'entretien et de nettoyage pour les copropriétés à Vaucresson.",
   },
 ];
 
@@ -153,8 +219,8 @@ export default function HautsDeSeinePage() {
               </h3>
 
               <p className="leading-7 text-gray-600">
-                Organisation de la sortie et de la rentrée des conteneurs selon
-                le calendrier de collecte de la résidence.
+                Organisation de la sortie et de la rentrée des conteneurs
+                selon le calendrier de collecte de la résidence.
               </p>
             </article>
 
@@ -210,6 +276,7 @@ export default function HautsDeSeinePage() {
             <h3 className="mb-3 text-xl font-bold">
               Nettoyage des vitres
             </h3>
+
             <p className="leading-7 text-gray-600">
               Interventions ponctuelles pour les vitrages accessibles des
               parties communes.
@@ -220,6 +287,7 @@ export default function HautsDeSeinePage() {
             <h3 className="mb-3 text-xl font-bold">
               Shampoing des moquettes
             </h3>
+
             <p className="leading-7 text-gray-600">
               Nettoyage approfondi des moquettes et revêtements textiles des
               halls et circulations.
@@ -230,6 +298,7 @@ export default function HautsDeSeinePage() {
             <h3 className="mb-3 text-xl font-bold">
               Nettoyage après travaux
             </h3>
+
             <p className="leading-7 text-gray-600">
               Remise en état et nettoyage des espaces après des travaux ou une
               intervention technique.
@@ -240,6 +309,7 @@ export default function HautsDeSeinePage() {
             <h3 className="mb-3 text-xl font-bold">
               Prestations exceptionnelles
             </h3>
+
             <p className="leading-7 text-gray-600">
               Interventions ponctuelles étudiées selon la nature du besoin et
               les caractéristiques du site.
@@ -261,12 +331,13 @@ export default function HautsDeSeinePage() {
       <section className="bg-slate-50 px-6 py-16">
         <div className="mx-auto max-w-6xl">
           <h2 className="mb-4 text-center text-3xl font-bold">
-            Nos principales villes d'intervention dans le 92
+            Nos villes d'intervention dans les Hauts-de-Seine
           </h2>
 
           <p className="mx-auto mb-12 max-w-3xl text-center leading-7 text-gray-600">
-            Retrouvez nos pages locales consacrées aux principales communes
-            actuellement couvertes dans les Hauts-de-Seine.
+            CoproSolutions intervient dans plusieurs communes des
+            Hauts-de-Seine. Retrouvez ci-dessous nos pages locales consacrées
+            à chaque ville.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -274,10 +345,10 @@ export default function HautsDeSeinePage() {
               <a
                 key={city.href}
                 href={city.href}
-                className="rounded-2xl bg-white p-6 shadow-sm transition hover:shadow-md"
+                className="rounded-2xl bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
               >
                 <h3 className="mb-3 text-xl font-bold text-blue-700">
-                  {city.name}
+                  Entretien de copropriété à {city.name}
                 </h3>
 
                 <p className="leading-7 text-gray-600">
@@ -285,7 +356,7 @@ export default function HautsDeSeinePage() {
                 </p>
 
                 <span className="mt-5 inline-block font-semibold text-blue-700">
-                  Voir la page locale →
+                  Voir la page {city.name} →
                 </span>
               </a>
             ))}
