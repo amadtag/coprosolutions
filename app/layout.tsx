@@ -143,7 +143,7 @@ export default function RootLayout({
           }}
         >
           <div>
-            <strong>Copro Solutions</strong>
+            <strong>COPROSOLUTIONS</strong>
           </div>
 
           <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
@@ -162,12 +162,15 @@ export default function RootLayout({
               <a href="/" style={{ color: "white" }}>
                 Accueil
               </a>
+
               <a href="/services" style={{ color: "white" }}>
                 Services
               </a>
+
               <a href="/zones" style={{ color: "white" }}>
                 Zones
               </a>
+
               <a href="/contact" style={{ color: "white" }}>
                 Devis
               </a>
@@ -195,7 +198,7 @@ export default function RootLayout({
             textAlign: "center",
           }}
         >
-          © Coprosolutions - Entretien copropriété Île-de-France
+          © COPROSOLUTIONS - Entretien copropriété Île-de-France
         </footer>
       </body>
     </html>
