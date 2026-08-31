@@ -144,7 +144,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Paris
  {
+  url: `${baseUrl}/zones/paris-2`,
+  changeFrequency: "monthly",
+  priority: 0.8,
+},
+    {
   url: `${baseUrl}/zones/paris-3`,
+  changeFrequency: "monthly",
+  priority: 0.8,
+},
+{
+  url: `${baseUrl}/zones/paris-4`,
   changeFrequency: "monthly",
   priority: 0.8,
 },
