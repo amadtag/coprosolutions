@@ -143,6 +143,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
 
     // Paris
+  {
+  url: `${baseUrl}/zones/paris-8`,
+  changeFrequency: "monthly",
+  priority: 0.9,
+},
     {
   url: `${baseUrl}/zones/paris-9`,
   changeFrequency: "monthly",
