@@ -163,6 +163,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   changeFrequency: "monthly",
   priority: 0.8,
 },
+{
+  url: `${baseUrl}/zones/paris-14`,
+  changeFrequency: "monthly",
+  priority: 0.8,
+},
     {
       url: `${baseUrl}/zones/paris-15`,
       changeFrequency: "monthly",
