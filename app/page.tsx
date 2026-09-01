@@ -42,7 +42,7 @@ export default function Home() {
           backgroundPosition: "center",
         }}
       >
-        {/* Décor cartoon */}
+        {/* Décor */}
         <div className="pointer-events-none absolute -right-16 top-10 h-40 w-40 rounded-full bg-green-400/20 blur-2xl" />
         <div className="pointer-events-none absolute -left-20 bottom-0 h-52 w-52 rounded-full bg-blue-400/20 blur-3xl" />
 
@@ -50,24 +50,26 @@ export default function Home() {
 
           <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-5 py-2 backdrop-blur-md">
             <span className="text-2xl">🏢</span>
+
             <span className="text-sm font-bold uppercase tracking-widest text-green-300">
               COPROSOLUTIONS
             </span>
+
             <span className="text-2xl">✨</span>
           </div>
 
           <h1 className="mb-6 text-4xl font-black leading-tight drop-shadow-lg md:text-6xl">
-            Entretien de copropriétés et remplacement de gardiens en
+            Entretien de copropriétés, entretien d'immeuble et
             <span className="block text-green-300">
-              Île-de-France
+              remplacement de gardiens en Île-de-France
             </span>
           </h1>
 
           <p className="mx-auto mb-10 max-w-3xl text-lg leading-8 text-slate-100 md:text-xl">
             CoproSolutions accompagne les syndics, conseils syndicaux et
             gestionnaires immobiliers pour l'entretien et le nettoyage des
-            copropriétés, le remplacement de gardiens et l'entretien des
-            immeubles de bureaux à Paris et en Île-de-France.
+            copropriétés, l'entretien des immeubles, le remplacement de
+            gardiens et l'entretien des bureaux à Paris et en Île-de-France.
           </p>
 
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
@@ -91,21 +93,21 @@ export default function Home() {
 
           </div>
 
-          {/* Petits éléments de réassurance */}
           <div className="mt-10 flex flex-wrap justify-center gap-3 text-sm">
             <span className="rounded-full bg-white/10 px-4 py-2 backdrop-blur">
               ✓ Intervention professionnelle
             </span>
+
             <span className="rounded-full bg-white/10 px-4 py-2 backdrop-blur">
               ✓ Solutions adaptées
             </span>
+
             <span className="rounded-full bg-white/10 px-4 py-2 backdrop-blur">
               ✓ Paris & Île-de-France
             </span>
           </div>
         </div>
 
-        {/* Vague décorative */}
         <div className="absolute -bottom-1 left-0 right-0 h-12 rounded-t-[50%] bg-slate-50" />
       </section>
 
@@ -130,7 +132,9 @@ export default function Home() {
 
           <p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-gray-600">
             Des prestations adaptées aux besoins des copropriétés, syndics,
-            conseils syndicaux et gestionnaires immobiliers.
+            conseils syndicaux et gestionnaires immobiliers : entretien
+            d'immeuble, nettoyage, remplacement de gardiens et entretien
+            des espaces professionnels.
           </p>
 
         </div>
@@ -152,7 +156,8 @@ export default function Home() {
 
             <p className="leading-7 text-gray-600">
               Nettoyage et entretien des parties communes, halls, escaliers,
-              circulations et espaces communs.
+              circulations et espaces communs pour assurer un entretien
+              d'immeuble régulier et de qualité.
             </p>
 
             <div className="mt-5 font-bold text-blue-700">
@@ -171,12 +176,13 @@ export default function Home() {
             </div>
 
             <h3 className="mb-3 text-xl font-black text-blue-700">
-              Entretien de bureaux
+              Entretien d'immeuble et de bureaux
             </h3>
 
             <p className="leading-7 text-gray-600">
-              Nettoyage et entretien régulier des immeubles et espaces de
-              bureaux professionnels.
+              Nettoyage et entretien régulier des immeubles, bureaux et espaces
+              professionnels avec une organisation adaptée aux besoins de
+              chaque site.
             </p>
 
             <div className="mt-5 font-bold text-blue-700">
@@ -195,12 +201,13 @@ export default function Home() {
             </div>
 
             <h3 className="mb-3 text-xl font-black text-blue-700">
-              Remplacement de gardien
+              Remplacement de gardiens
             </h3>
 
             <p className="leading-7 text-gray-600">
-              Solution de remplacement temporaire ou de plus longue durée
-              pour assurer la continuité du service dans votre immeuble.
+              Solution de remplacement de gardiens temporaire ou de plus
+              longue durée pour assurer la continuité du service dans votre
+              immeuble ou votre copropriété.
             </p>
 
             <div className="mt-5 font-bold text-blue-700">
@@ -224,7 +231,8 @@ export default function Home() {
 
             <p className="leading-7 text-gray-600">
               Gestion régulière de la sortie et de la rentrée des conteneurs
-              de copropriété.
+              de copropriété pour faciliter l'entretien quotidien de
+              l'immeuble.
             </p>
 
             <div className="mt-5 font-bold text-blue-700">
@@ -248,7 +256,7 @@ export default function Home() {
 
             <p className="leading-7 text-gray-600">
               Nettoyage ponctuel, entretien spécifique et interventions
-              exceptionnelles dans les immeubles.
+              exceptionnelles dans les immeubles et copropriétés.
             </p>
 
             <div className="mt-5 font-bold text-blue-700">
@@ -272,7 +280,7 @@ export default function Home() {
 
             <p className="leading-7 text-gray-600">
               Prestations de nettoyage et d'entretien pour les copropriétés
-              parisiennes.
+              parisiennes, adaptées aux besoins des syndics et gestionnaires.
             </p>
 
             <div className="mt-5 font-bold text-blue-700">
@@ -295,7 +303,7 @@ export default function Home() {
 
             <div>
               <h2 className="text-xl font-black">
-                Un besoin pour votre copropriété ?
+                Besoin d'entretien d'immeuble ou de remplacement de gardien ?
               </h2>
 
               <p className="mt-1 text-blue-100">
@@ -340,7 +348,8 @@ export default function Home() {
 
             <p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-gray-600">
               CoproSolutions intervient à Paris et dans plusieurs départements
-              d'Île-de-France pour l'entretien des copropriétés et des immeubles.
+              d'Île-de-France pour l'entretien des copropriétés, l'entretien
+              des immeubles et le remplacement de gardiens.
             </p>
 
           </div>
@@ -482,12 +491,12 @@ export default function Home() {
             <div className="mb-4 text-4xl">👷</div>
 
             <h3 className="mb-3 text-xl font-black">
-              En cas d'absence
+              Remplacement de gardiens
             </h3>
 
             <p className="leading-7 text-gray-600">
               Nous pouvons intervenir lorsqu'un gardien est absent afin
-              d'assurer la continuité du service dans votre immeuble.
+              d'assurer la continuité du service et l'entretien de l'immeuble.
             </p>
           </div>
 
@@ -503,9 +512,9 @@ export default function Home() {
           </p>
 
           <p>
-            Nous pouvons également intervenir lorsqu'un gardien est absent ou
-            lorsqu'une copropriété recherche une solution de remplacement afin
-            d'assurer la continuité du service.
+            Notre service de remplacement de gardiens permet également aux
+            copropriétés de maintenir la continuité des prestations lorsqu'un
+            gardien est absent ou indisponible.
           </p>
 
         </div>
@@ -537,8 +546,9 @@ export default function Home() {
             </h2>
 
             <p className="mt-4 text-lg leading-8 text-blue-100">
-              Décrivez-nous votre besoin et nous vous recontacterons
-              rapidement.
+              Besoin d'un entretien d'immeuble, d'un nettoyage de copropriété
+              ou d'un remplacement de gardien ? Décrivez-nous votre besoin et
+              nous vous recontacterons rapidement.
             </p>
 
           </div>
@@ -604,7 +614,7 @@ export default function Home() {
               <textarea
                 id="message"
                 name="message"
-                placeholder="Décrivez votre besoin : copropriété, nombre de lots, fréquence d'entretien, remplacement de gardien..."
+                placeholder="Décrivez votre besoin : entretien d'immeuble, copropriété, nombre de lots, fréquence d'entretien, remplacement de gardien..."
                 rows={6}
                 className="w-full rounded-2xl border border-slate-200 p-4 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
                 required
@@ -622,8 +632,6 @@ export default function Home() {
 
           </form>
 
-
-          {/* Contact direct */}
 
           <div className="mt-10 text-center">
 
