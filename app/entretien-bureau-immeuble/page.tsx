@@ -1,8 +1,8 @@
 export const metadata = {
   title:
-    "Entretien de bureaux et immeubles administratifs en Île-de-France | CoproSolutions",
+    "Nettoyage de bureaux en Île-de-France | CoproSolutions",
   description:
-    "CoproSolutions assure l'entretien et le nettoyage de bureaux, immeubles administratifs et locaux professionnels à Paris et en Île-de-France. Prestations régulières ou ponctuelles adaptées à chaque entreprise.",
+    "CoproSolutions assure le nettoyage et l'entretien de bureaux, locaux professionnels et immeubles tertiaires à Paris et en Île-de-France. Prestations régulières ou ponctuelles adaptées à chaque entreprise.",
 };
 
 export default function EntretienBureauImmeuble() {
@@ -18,15 +18,14 @@ export default function EntretienBureauImmeuble() {
           </p>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Entretien de bureaux et immeubles administratifs
-            en Île-de-France
+            Nettoyage et entretien de bureaux en Île-de-France
           </h1>
 
           <p className="max-w-3xl mx-auto text-lg text-slate-200 leading-8">
             CoproSolutions accompagne les entreprises, gestionnaires
-            immobiliers et propriétaires dans l'entretien et le nettoyage
-            de leurs bureaux, immeubles administratifs et locaux
-            professionnels à Paris et en Île-de-France.
+            immobiliers et propriétaires dans le nettoyage et l'entretien
+            de leurs bureaux, locaux professionnels et immeubles tertiaires
+            à Paris et en Île-de-France.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
@@ -53,26 +52,25 @@ export default function EntretienBureauImmeuble() {
       <section className="max-w-5xl mx-auto py-16 px-6">
 
         <h2 className="text-3xl font-bold mb-6">
-          Un entretien professionnel pour vos bureaux et immeubles
+          Une entreprise de nettoyage pour vos bureaux et locaux professionnels
         </h2>
 
         <p className="text-gray-600 leading-8 mb-5">
-          Des locaux propres et bien entretenus contribuent directement à
-          l'image d'une entreprise, au confort des collaborateurs et à
-          l'accueil des visiteurs.
+          Des bureaux propres et bien entretenus contribuent à l'image de
+          l'entreprise, au confort des collaborateurs et à l'accueil des
+          clients et visiteurs.
         </p>
 
         <p className="text-gray-600 leading-8 mb-5">
-          CoproSolutions propose des prestations d'entretien adaptées aux
-          bureaux, immeubles administratifs, locaux professionnels et
-          espaces de travail.
+          CoproSolutions propose des prestations de nettoyage de bureaux,
+          d'entretien de locaux professionnels et de nettoyage d'immeubles
+          tertiaires adaptées aux besoins de chaque établissement.
         </p>
 
         <p className="text-gray-600 leading-8">
-          Notre organisation permet de mettre en place une fréquence
-          d'intervention adaptée à chaque site : entretien régulier,
-          intervention hebdomadaire, plusieurs passages par semaine ou
-          prestation ponctuelle selon les besoins.
+          Notre organisation permet de définir une fréquence d'intervention
+          adaptée à votre activité : entretien régulier, passages plusieurs
+          fois par semaine, intervention hebdomadaire ou prestation ponctuelle.
         </p>
 
       </section>
@@ -83,12 +81,13 @@ export default function EntretienBureauImmeuble() {
         <div className="max-w-6xl mx-auto">
 
           <h2 className="text-3xl font-bold text-center mb-4">
-            Nos prestations d'entretien de bureaux
+            Nos prestations de nettoyage de bureaux
           </h2>
 
           <p className="text-center text-gray-600 max-w-3xl mx-auto mb-12">
-            Des prestations modulables pour maintenir vos espaces
-            professionnels propres, accueillants et agréables au quotidien.
+            Une prestation de nettoyage professionnel modulable pour
+            maintenir vos espaces de travail propres, accueillants et
+            agréables au quotidien.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -100,7 +99,7 @@ export default function EntretienBureauImmeuble() {
               <p className="text-gray-600 leading-7">
                 Nettoyage et entretien des espaces de travail, bureaux,
                 postes de travail et différentes surfaces présentes dans
-                vos locaux.
+                vos locaux professionnels.
               </p>
             </div>
 
@@ -121,7 +120,7 @@ export default function EntretienBureauImmeuble() {
               </h3>
               <p className="text-gray-600 leading-7">
                 Nettoyage et entretien des sanitaires, lavabos et espaces
-                associés dans le respect des besoins du site.
+                associés dans le respect des besoins de chaque site.
               </p>
             </div>
 
@@ -147,12 +146,12 @@ export default function EntretienBureauImmeuble() {
 
             <div className="bg-white p-6 rounded-2xl border shadow-sm">
               <h3 className="text-xl font-bold text-blue-700 mb-3">
-                Entretien ponctuel
+                Nettoyage ponctuel
               </h3>
               <p className="text-gray-600 leading-7">
                 Interventions ponctuelles pour répondre à un besoin
-                spécifique, après travaux, déménagement, événement ou
-                remise en état.
+                spécifique : après travaux, déménagement, événement ou
+                remise en état des locaux.
               </p>
             </div>
 
@@ -165,12 +164,13 @@ export default function EntretienBureauImmeuble() {
       <section className="max-w-5xl mx-auto py-16 px-6">
 
         <h2 className="text-3xl font-bold mb-6">
-          Pour quels types de locaux ?
+          Quels locaux professionnels pouvons-nous entretenir ?
         </h2>
 
         <p className="text-gray-600 leading-8 mb-8">
-          Nos prestations peuvent être adaptées à différents environnements
-          professionnels et administratifs.
+          Nos prestations de nettoyage professionnel peuvent être adaptées
+          à différents environnements professionnels, administratifs et
+          tertiaires.
         </p>
 
         <div className="grid sm:grid-cols-2 gap-4">
@@ -197,13 +197,84 @@ export default function EntretienBureauImmeuble() {
 
       </section>
 
+      {/* LOCAL SEO */}
+      <section className="bg-slate-50 py-16 px-6">
+
+        <div className="max-w-5xl mx-auto">
+
+          <h2 className="text-3xl font-bold mb-6">
+            Nettoyage de bureaux à Boulogne-Billancourt,
+            Levallois-Perret et Neuilly-sur-Seine
+          </h2>
+
+          <p className="text-gray-600 leading-8 mb-5">
+            CoproSolutions intervient auprès des entreprises et
+            professionnels pour le nettoyage de bureaux dans les
+            Hauts-de-Seine et notamment à Boulogne-Billancourt,
+            Levallois-Perret, Neuilly-sur-Seine et Issy-les-Moulineaux.
+          </p>
+
+          <p className="text-gray-600 leading-8 mb-5">
+            Nous pouvons organiser l'entretien régulier de bureaux,
+            locaux professionnels et immeubles tertiaires selon la
+            configuration du site et la fréquence souhaitée.
+          </p>
+
+          <p className="text-gray-600 leading-8">
+            CoproSolutions intervient également à Paris et dans plusieurs
+            communes d'Île-de-France pour répondre aux besoins des
+            entreprises et gestionnaires immobiliers.
+          </p>
+
+          <div className="flex flex-wrap gap-3 mt-8">
+
+            <a
+              href="/zones/boulogne-billancourt"
+              className="bg-white border rounded-full px-5 py-2 font-medium hover:bg-slate-100"
+            >
+              Boulogne-Billancourt
+            </a>
+
+            <a
+              href="/zones/hauts-de-seine/levallois-perret"
+              className="bg-white border rounded-full px-5 py-2 font-medium hover:bg-slate-100"
+            >
+              Levallois-Perret
+            </a>
+
+            <a
+              href="/zones/hauts-de-seine/neuilly-sur-seine"
+              className="bg-white border rounded-full px-5 py-2 font-medium hover:bg-slate-100"
+            >
+              Neuilly-sur-Seine
+            </a>
+
+            <a
+              href="/zones/hauts-de-seine/issy-les-moulineaux"
+              className="bg-white border rounded-full px-5 py-2 font-medium hover:bg-slate-100"
+            >
+              Issy-les-Moulineaux
+            </a>
+
+            <a
+              href="/zones/paris-75"
+              className="bg-white border rounded-full px-5 py-2 font-medium hover:bg-slate-100"
+            >
+              Paris
+            </a>
+
+          </div>
+
+        </div>
+      </section>
+
       {/* FREQUENCE */}
       <section className="bg-blue-950 text-white py-16 px-6">
 
         <div className="max-w-5xl mx-auto">
 
           <h2 className="text-3xl font-bold mb-6">
-            Une fréquence d'entretien adaptée à votre activité
+            Une fréquence de nettoyage adaptée à votre activité
           </h2>
 
           <p className="text-blue-100 leading-8 mb-8">
@@ -236,7 +307,7 @@ export default function EntretienBureauImmeuble() {
 
             <div className="border border-blue-800 rounded-2xl p-6">
               <h3 className="font-bold text-xl mb-3">
-                Intervention ponctuelle
+                Nettoyage ponctuel
               </h3>
               <p className="text-blue-100 leading-7">
                 Pour une remise en état ou un besoin particulier nécessitant
@@ -253,11 +324,11 @@ export default function EntretienBureauImmeuble() {
       <section className="max-w-5xl mx-auto py-16 px-6">
 
         <h2 className="text-3xl font-bold mb-6">
-          Entretien d'immeubles administratifs et professionnels
+          Nettoyage d'immeubles administratifs et professionnels
         </h2>
 
         <p className="text-gray-600 leading-8 mb-5">
-          L'entretien d'un immeuble administratif ne se limite pas aux
+          Le nettoyage d'un immeuble administratif ne se limite pas aux
           bureaux. Les halls, couloirs, escaliers, sanitaires et autres
           espaces communs participent également à l'image du bâtiment.
         </p>
@@ -281,7 +352,7 @@ export default function EntretienBureauImmeuble() {
         <div className="max-w-5xl mx-auto">
 
           <h2 className="text-3xl font-bold mb-8">
-            Un service destiné aux professionnels
+            Une entreprise de nettoyage au service des professionnels
           </h2>
 
           <div className="space-y-4 text-gray-600 leading-8">
@@ -289,7 +360,7 @@ export default function EntretienBureauImmeuble() {
             <p>
               CoproSolutions travaille avec les entreprises, gestionnaires
               immobiliers, propriétaires et responsables de sites souhaitant
-              externaliser tout ou partie de l'entretien de leurs locaux.
+              externaliser tout ou partie du nettoyage de leurs locaux.
             </p>
 
             <p>
@@ -307,7 +378,7 @@ export default function EntretienBureauImmeuble() {
       <section className="max-w-5xl mx-auto py-16 px-6">
 
         <h2 className="text-3xl font-bold mb-6">
-          Où intervenons-nous ?
+          Où intervenons-nous pour le nettoyage de bureaux ?
         </h2>
 
         <p className="text-gray-600 leading-8 mb-6">
@@ -335,6 +406,68 @@ export default function EntretienBureauImmeuble() {
 
         </div>
 
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-slate-50 py-16 px-6">
+
+        <div className="max-w-5xl mx-auto">
+
+          <h2 className="text-3xl font-bold mb-8">
+            Questions fréquentes sur le nettoyage de bureaux
+          </h2>
+
+          <div className="space-y-6">
+
+            <div>
+              <h3 className="text-xl font-bold mb-2">
+                Quelle fréquence pour le nettoyage de bureaux ?
+              </h3>
+              <p className="text-gray-600 leading-8">
+                La fréquence dépend notamment de la superficie, du nombre
+                d'occupants, de la fréquentation des locaux et du niveau
+                d'entretien souhaité. Elle peut être quotidienne,
+                hebdomadaire ou ponctuelle.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold mb-2">
+                Intervenez-vous dans les Hauts-de-Seine ?
+              </h3>
+              <p className="text-gray-600 leading-8">
+                Oui. CoproSolutions intervient notamment à
+                Boulogne-Billancourt, Levallois-Perret, Neuilly-sur-Seine,
+                Issy-les-Moulineaux et dans d'autres communes des
+                Hauts-de-Seine.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold mb-2">
+                Proposez-vous un nettoyage ponctuel ?
+              </h3>
+              <p className="text-gray-600 leading-8">
+                Oui. Des interventions ponctuelles peuvent être organisées
+                pour une remise en état, après travaux, un déménagement ou
+                un besoin spécifique.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold mb-2">
+                Pouvez-vous entretenir un immeuble de bureaux complet ?
+              </h3>
+              <p className="text-gray-600 leading-8">
+                Oui. La prestation peut inclure les bureaux, halls,
+                circulations, escaliers, sanitaires, salles communes et
+                autres espaces nécessaires au bon entretien du bâtiment.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
       </section>
 
       {/* POURQUOI */}
@@ -367,7 +500,7 @@ export default function EntretienBureauImmeuble() {
             <div className="border border-slate-700 rounded-xl p-5">
               <strong>Prestations modulables</strong>
               <p className="text-slate-300 mt-2">
-                Entretien régulier ou intervention ponctuelle selon votre
+                Nettoyage régulier ou intervention ponctuelle selon votre
                 activité.
               </p>
             </div>
@@ -391,7 +524,7 @@ export default function EntretienBureauImmeuble() {
         <div className="max-w-3xl mx-auto">
 
           <h2 className="text-3xl md:text-4xl font-bold mb-5">
-            Besoin d'un entretien pour vos bureaux ?
+            Besoin d'un nettoyage de bureaux ?
           </h2>
 
           <p className="text-gray-600 leading-8 mb-8">
