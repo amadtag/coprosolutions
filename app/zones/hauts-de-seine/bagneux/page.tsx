@@ -3,9 +3,9 @@ import LocalCityPage from "@/app/zones/_components/LocalCityPage";
 
 export const metadata: Metadata = {
   title:
-    "Nettoyage et entretien de copropriété à Bagneux (92220) | CoproSolutions",
+    "Nettoyage de copropriété à Bagneux (92220) | CoproSolutions",
   description:
-    "CoproSolutions assure l'entretien et le nettoyage des copropriétés à Bagneux : parties communes, halls, escaliers, poubelles, parkings, bureaux et remplacement de gardiens.",
+    "CoproSolutions assure le nettoyage et l'entretien de copropriétés à Bagneux : parties communes, halls, escaliers, poubelles, parkings et entretien d'immeubles.",
   alternates: {
     canonical: "/zones/hauts-de-seine/bagneux",
   },
@@ -17,30 +17,52 @@ export default function BagneuxPage() {
       city="Bagneux"
       postalCode="92220"
       title="Nettoyage et entretien de copropriété à Bagneux"
-      description="CoproSolutions accompagne les syndics, conseils syndicaux et gestionnaires immobiliers pour l'entretien, le nettoyage des parties communes et les services aux immeubles à Bagneux."
+      description="CoproSolutions accompagne les syndics, conseils syndicaux et gestionnaires immobiliers pour le nettoyage et l'entretien des copropriétés à Bagneux."
       intro={
         <>
           <p>
             Bagneux compte de nombreuses résidences et copropriétés dont les
-            parties communes nécessitent un entretien régulier et organisé.
+            parties communes nécessitent un entretien régulier, organisé et
+            adapté à la configuration de chaque immeuble.
           </p>
 
           <p>
-            CoproSolutions intervient notamment pour les halls, escaliers,
-            paliers, ascenseurs, locaux poubelles, parkings et circulations
-            communes.
+            CoproSolutions accompagne les syndics, gestionnaires immobiliers
+            et conseils syndicaux pour assurer le nettoyage des halls,
+            escaliers, paliers, ascenseurs, couloirs et autres espaces
+            communs des résidences à Bagneux.
           </p>
 
           <p>
-            Les prestations sont adaptées à la configuration de chaque
-            immeuble, à sa fréquentation et à la fréquence de passage
-            souhaitée.
+            Nos prestations peuvent également comprendre l'entretien des
+            locaux poubelles, la sortie et la rentrée des conteneurs, le
+            nettoyage des parkings ainsi que l'entretien courant des
+            différentes zones communes de l'immeuble.
           </p>
 
           <p>
-            CoproSolutions peut également étudier les besoins de remplacement
-            temporaire ou prolongé d'un gardien d'immeuble afin d'assurer la
-            continuité des services de la copropriété.
+            La fréquence des interventions est adaptée aux besoins de chaque
+            copropriété, en fonction du nombre de halls, des surfaces, de la
+            fréquentation des lieux et des attentes du syndic ou du
+            gestionnaire immobilier.
+          </p>
+
+          <p>
+            CoproSolutions propose également des solutions de remplacement
+            temporaire ou prolongé de gardien d'immeuble afin d'assurer la
+            continuité des services au sein de la copropriété.
+          </p>
+
+          <p>
+            Pour les immeubles professionnels et entreprises situés à Bagneux,
+            découvrez également notre service de{" "}
+            <a
+              href="/entretien-bureau-immeuble"
+              className="underline font-medium"
+            >
+              nettoyage et entretien de bureaux
+            </a>
+            .
           </p>
         </>
       }
