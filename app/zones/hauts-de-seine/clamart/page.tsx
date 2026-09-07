@@ -3,9 +3,9 @@ import LocalCityPage from "@/app/zones/_components/LocalCityPage";
 
 export const metadata: Metadata = {
   title:
-    "Nettoyage et entretien de copropriété à Clamart (92140) | CoproSolutions",
+    "Nettoyage de copropriété à Clamart (92140) | CoproSolutions",
   description:
-    "CoproSolutions assure l'entretien et le nettoyage des copropriétés à Clamart : halls, escaliers, parties communes, poubelles, parkings et remplacement de gardiens.",
+    "CoproSolutions assure le nettoyage et l'entretien des copropriétés à Clamart : halls, escaliers, parties communes, poubelles, parkings et entretien d'immeubles.",
   alternates: {
     canonical: "/zones/hauts-de-seine/clamart",
   },
@@ -17,20 +17,53 @@ export default function ClamartPage() {
       city="Clamart"
       postalCode="92140"
       title="Nettoyage et entretien de copropriété à Clamart"
-      description="CoproSolutions accompagne les syndics et gestionnaires immobiliers pour l'entretien et le nettoyage des copropriétés et immeubles à Clamart."
+      description="CoproSolutions accompagne les syndics, conseils syndicaux et gestionnaires immobiliers pour le nettoyage et l'entretien des copropriétés à Clamart."
       intro={
         <>
           <p>
-            Clamart compte de nombreuses résidences et copropriétés dont les
-            parties communes nécessitent un entretien régulier.
+            À Clamart, les résidences et copropriétés nécessitent un entretien
+            régulier des parties communes afin de maintenir des espaces
+            propres, agréables et correctement entretenus.
           </p>
+
           <p>
-            Nous intervenons notamment pour les halls, escaliers, paliers,
-            ascenseurs, locaux poubelles, parkings et autres espaces communs.
+            CoproSolutions accompagne les syndics, gestionnaires immobiliers
+            et conseils syndicaux pour le nettoyage des halls d'entrée,
+            escaliers, paliers, couloirs, ascenseurs et autres espaces communs
+            des immeubles à Clamart.
           </p>
+
           <p>
-            Les prestations sont adaptées à la configuration de l'immeuble et
-            à la fréquence d'intervention souhaitée.
+            Nos prestations peuvent également comprendre l'entretien des
+            locaux poubelles, la sortie et la rentrée des conteneurs, le
+            nettoyage des parkings ainsi que l'entretien courant des
+            différentes zones communes de la copropriété.
+          </p>
+
+          <p>
+            La fréquence des interventions est adaptée à chaque résidence en
+            fonction de sa configuration, du nombre de halls, des surfaces à
+            entretenir, de la fréquentation et des besoins définis avec le
+            syndic ou le gestionnaire immobilier.
+          </p>
+
+          <p>
+            CoproSolutions propose également des solutions de remplacement
+            temporaire ou prolongé de gardien d'immeuble afin d'assurer la
+            continuité des services au sein de la copropriété en cas
+            d'absence.
+          </p>
+
+          <p>
+            Pour les entreprises et immeubles professionnels de Clamart,
+            découvrez également notre service de{" "}
+            <a
+              href="/entretien-bureau-immeuble"
+              className="underline font-medium"
+            >
+              nettoyage et entretien de bureaux
+            </a>
+            .
           </p>
         </>
       }
