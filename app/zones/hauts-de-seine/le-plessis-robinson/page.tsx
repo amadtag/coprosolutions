@@ -3,9 +3,9 @@ import LocalCityPage from "@/app/zones/_components/LocalCityPage";
 
 export const metadata: Metadata = {
   title:
-    "Entretien et nettoyage de copropriété au Plessis-Robinson (92350) | CoproSolutions",
+    "Nettoyage de copropriété au Plessis-Robinson (92350) | CoproSolutions",
   description:
-    "CoproSolutions assure l'entretien des copropriétés au Plessis-Robinson : nettoyage des parties communes, halls, escaliers, poubelles, parkings et remplacement de gardiens.",
+    "CoproSolutions assure le nettoyage et l'entretien des copropriétés au Plessis-Robinson : halls, escaliers, parties communes, poubelles, parkings et entretien d'immeubles.",
   alternates: {
     canonical: "/zones/hauts-de-seine/le-plessis-robinson",
   },
@@ -16,40 +16,62 @@ export default function LePlessisRobinsonPage() {
     <LocalCityPage
       city="Le Plessis-Robinson"
       postalCode="92350"
-      title="Entretien et nettoyage de copropriété au Plessis-Robinson"
-      description="CoproSolutions accompagne les syndics, gestionnaires immobiliers et conseils syndicaux du Plessis-Robinson pour l'entretien régulier des copropriétés, le nettoyage des parties communes et le remplacement de gardiens."
+      title="Nettoyage et entretien de copropriété au Plessis-Robinson"
+      description="CoproSolutions accompagne les syndics, conseils syndicaux et gestionnaires immobiliers pour le nettoyage et l'entretien des copropriétés au Plessis-Robinson."
       intro={
         <>
           <p>
-            À proximité de Clamart, Châtenay-Malabry et Meudon, Le
-            Plessis-Robinson compte de nombreuses résidences et ensembles
-            immobiliers dont l'entretien des parties communes nécessite une
-            organisation régulière et adaptée à chaque immeuble.
+            Au Plessis-Robinson, les résidences et copropriétés nécessitent un
+            entretien régulier des parties communes afin de maintenir des
+            espaces propres, agréables et correctement entretenus.
           </p>
 
           <p>
-            CoproSolutions intervient au Plessis-Robinson pour assurer le
-            nettoyage et l'entretien des halls d'entrée, escaliers, paliers,
-            ascenseurs, locaux poubelles, parkings et autres espaces communs
-            des copropriétés.
+            CoproSolutions accompagne les syndics, gestionnaires immobiliers
+            et conseils syndicaux pour le nettoyage des halls d'entrée,
+            escaliers, paliers, couloirs, ascenseurs et autres espaces communs
+            des immeubles au Plessis-Robinson.
           </p>
 
           <p>
-            Les prestations peuvent être organisées selon la configuration de
-            l'immeuble, sa fréquentation et les besoins définis avec le syndic
-            ou le gestionnaire immobilier. L'objectif est d'assurer des
-            parties communes propres, entretenues et suivies dans la durée.
+            Nos prestations peuvent également comprendre l'entretien des
+            locaux poubelles, la sortie et la rentrée des conteneurs, le
+            nettoyage des parkings ainsi que l'entretien courant des
+            différentes zones communes de la copropriété.
           </p>
 
           <p>
-            CoproSolutions peut également accompagner les copropriétés lors
-            d'un besoin ponctuel ou prolongé de remplacement de gardien
-            d'immeuble, notamment pendant une absence, un congé ou une période
-            de transition.
+            La fréquence des interventions est adaptée à chaque résidence en
+            fonction de sa configuration, du nombre de halls, des surfaces à
+            entretenir, de la fréquentation et des besoins définis avec le
+            syndic ou le gestionnaire immobilier.
+          </p>
+
+          <p>
+            CoproSolutions propose également des solutions de remplacement
+            temporaire ou prolongé de gardien d'immeuble afin d'assurer la
+            continuité des services au sein de la copropriété en cas
+            d'absence.
+          </p>
+
+          <p>
+            Pour les entreprises et immeubles professionnels du
+            Plessis-Robinson, découvrez également notre service de{" "}
+            <a
+              href="/entretien-bureau-immeuble"
+              className="underline font-medium"
+            >
+              nettoyage et entretien de bureaux
+            </a>
+            .
           </p>
         </>
       }
       nearbyCities={[
+        {
+          name: "Châtenay-Malabry",
+          href: "/zones/hauts-de-seine/chatenay-malabry",
+        },
         {
           name: "Clamart",
           href: "/zones/hauts-de-seine/clamart",
@@ -57,10 +79,6 @@ export default function LePlessisRobinsonPage() {
         {
           name: "Meudon",
           href: "/zones/hauts-de-seine/meudon",
-        },
-        {
-          name: "Châtenay-Malabry",
-          href: "/zones/hauts-de-seine/chatenay-malabry",
         },
       ]}
     />
