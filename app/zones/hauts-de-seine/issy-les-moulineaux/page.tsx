@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title:
     "Nettoyage de copropriété à Issy-les-Moulineaux (92130) | CoproSolutions",
   description:
-    "CoproSolutions assure le nettoyage et l'entretien de copropriétés à Issy-les-Moulineaux : parties communes, halls, escaliers, poubelles, parkings et entretien d'immeubles.",
+    "CoproSolutions assure le nettoyage et l'entretien des copropriétés à Issy-les-Moulineaux : halls, escaliers, parties communes, poubelles, parkings et immeubles.",
   alternates: {
     canonical: "/zones/hauts-de-seine/issy-les-moulineaux",
   },
@@ -21,36 +21,47 @@ export default function IssyLesMoulineauxPage() {
       intro={
         <>
           <p>
-            Issy-les-Moulineaux compte de nombreuses copropriétés, résidences
-            et immeubles dont les parties communes nécessitent un entretien
-            régulier et une organisation adaptée à chaque bâtiment.
+            À Issy-les-Moulineaux, les copropriétés, résidences et immeubles
+            nécessitent un entretien régulier des parties communes afin de
+            conserver des espaces propres, accueillants et correctement
+            entretenus.
           </p>
 
           <p>
             CoproSolutions accompagne les syndics, gestionnaires immobiliers
-            et conseils syndicaux dans l'organisation du nettoyage et de
-            l'entretien des immeubles à Issy-les-Moulineaux.
+            et conseils syndicaux pour le nettoyage et l'entretien des
+            copropriétés à Issy-les-Moulineaux. Nos interventions sont
+            adaptées à la configuration de chaque résidence et aux besoins
+            définis avec le gestionnaire.
           </p>
 
           <p>
-            Nos prestations de nettoyage de copropriété sont adaptées à la
-            configuration de chaque résidence, au nombre de halls, aux
-            surfaces, à la fréquentation des espaces communs et à la fréquence
-            d'intervention souhaitée.
+            Nous assurons notamment le nettoyage des halls d'entrée,
+            escaliers, paliers, couloirs, sols, ascenseurs, locaux communs et
+            autres espaces partagés de l'immeuble. Nous pouvons également
+            intervenir pour l'entretien des locaux poubelles, la sortie et la
+            rentrée des conteneurs ainsi que le nettoyage des parkings.
           </p>
 
           <p>
-            Nous intervenons notamment pour le nettoyage des halls d'entrée,
-            escaliers, couloirs, sols, parties communes, locaux poubelles et
-            parkings. Les interventions peuvent être régulières ou ponctuelles
-            selon les besoins de la copropriété.
+            La fréquence des interventions peut être définie selon la taille
+            de la copropriété, le nombre de halls, les surfaces à entretenir,
+            la fréquentation des parties communes et les besoins du syndic ou
+            du conseil syndical. Les prestations peuvent être régulières,
+            ponctuelles ou exceptionnelles.
           </p>
 
           <p>
-            CoproSolutions peut également accompagner les entreprises et
-            gestionnaires d'immeubles professionnels pour l'entretien de leurs
-            bureaux et locaux professionnels à Issy-les-Moulineaux.
-            {" "}
+            CoproSolutions propose également des solutions de remplacement
+            temporaire ou prolongé de gardien d'immeuble afin d'assurer la
+            continuité des services au sein de la copropriété en cas
+            d'absence, de congé ou de période de transition.
+          </p>
+
+          <p>
+            Nous intervenons également auprès des entreprises et immeubles
+            professionnels pour l'entretien des bureaux et locaux
+            professionnels à Issy-les-Moulineaux.{" "}
             <a
               href="/entretien-bureau-immeuble"
               className="font-semibold text-blue-700 hover:underline"
