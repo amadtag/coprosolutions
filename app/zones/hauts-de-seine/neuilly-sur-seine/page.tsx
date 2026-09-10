@@ -1,4 +1,3 @@
-```tsx
 import type { Metadata } from "next";
 import LocalCityPage from "@/app/zones/_components/LocalCityPage";
 
@@ -102,4 +101,3 @@ export default function NeuillySurSeinePage() {
     />
   );
 }
-```
