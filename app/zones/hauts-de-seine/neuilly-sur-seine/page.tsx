@@ -1,3 +1,4 @@
+```tsx
 import type { Metadata } from "next";
 import LocalCityPage from "@/app/zones/_components/LocalCityPage";
 
@@ -5,7 +6,7 @@ export const metadata: Metadata = {
   title:
     "Nettoyage de copropriété à Neuilly-sur-Seine (92200) | CoproSolutions",
   description:
-    "CoproSolutions assure le nettoyage et l'entretien de copropriétés à Neuilly-sur-Seine : parties communes, halls, escaliers, poubelles, parkings et entretien d'immeubles.",
+    "CoproSolutions assure le nettoyage et l'entretien des copropriétés à Neuilly-sur-Seine : halls, escaliers, parties communes, poubelles, parkings et immeubles.",
   alternates: {
     canonical: "/zones/hauts-de-seine/neuilly-sur-seine",
   },
@@ -21,35 +22,48 @@ export default function NeuillySurSeinePage() {
       intro={
         <>
           <p>
-            Neuilly-sur-Seine compte de nombreuses copropriétés, résidences et
-            immeubles dont les parties communes nécessitent un entretien
-            régulier et une organisation adaptée à chaque bâtiment.
+            À Neuilly-sur-Seine, les copropriétés, résidences et immeubles
+            nécessitent un entretien régulier des parties communes afin de
+            maintenir des espaces propres, agréables et correctement
+            entretenus.
           </p>
 
           <p>
             CoproSolutions accompagne les syndics, gestionnaires immobiliers
-            et conseils syndicaux dans l'organisation du nettoyage et de
-            l'entretien des immeubles à Neuilly-sur-Seine.
+            et conseils syndicaux pour le nettoyage et l'entretien des
+            copropriétés à Neuilly-sur-Seine. Nos interventions sont adaptées
+            à la configuration de chaque résidence et aux besoins définis
+            avec le gestionnaire.
           </p>
 
           <p>
-            Nos prestations de nettoyage de copropriété sont adaptées à la
-            configuration de chaque résidence, au nombre de halls, aux
-            surfaces, à la fréquentation des espaces communs et à la fréquence
-            d'intervention souhaitée.
+            Nous assurons notamment le nettoyage des halls d'entrée,
+            escaliers, paliers, couloirs, sols, ascenseurs et autres parties
+            communes. Nous pouvons également intervenir dans les locaux
+            poubelles, pour la sortie et la rentrée des conteneurs ainsi que
+            pour le nettoyage des parkings et autres espaces communs de
+            l'immeuble.
           </p>
 
           <p>
-            Nous intervenons notamment pour le nettoyage des halls d'entrée,
-            escaliers, couloirs, sols, parties communes, locaux poubelles et
-            parkings, avec des prestations régulières ou ponctuelles selon les
-            besoins de la copropriété.
+            La fréquence des interventions est adaptée à chaque copropriété en
+            fonction de sa taille, du nombre de halls, des surfaces à
+            entretenir, de la fréquentation et des besoins du syndic ou du
+            conseil syndical. Les prestations peuvent être régulières,
+            ponctuelles ou exceptionnelles.
           </p>
 
           <p>
-            CoproSolutions intervient également auprès des immeubles
-            professionnels et des bureaux à Neuilly-sur-Seine.
-            {" "}
+            CoproSolutions propose également des solutions de remplacement
+            temporaire ou prolongé de gardien d'immeuble afin d'assurer la
+            continuité des services au sein de la copropriété en cas
+            d'absence, de congé ou de période de transition.
+          </p>
+
+          <p>
+            Nous intervenons également auprès des entreprises et immeubles
+            professionnels pour le nettoyage et l'entretien de bureaux à
+            Neuilly-sur-Seine.{" "}
             <a
               href="/entretien-bureau-immeuble"
               className="font-semibold text-blue-700 hover:underline"
@@ -88,3 +102,4 @@ export default function NeuillySurSeinePage() {
     />
   );
 }
+```
