@@ -272,10 +272,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/zones/yvelines/saint-germain-en-laye`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 }
-{
-  url: `${baseUrl}/zones/yvelines/saint-germain-en-laye`,
-  changeFrequency: "monthly",
-  priority: 0.8,
-},
