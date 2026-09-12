@@ -278,4 +278,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
   url: `${baseUrl}/zones/yvelines/saint-germain-en-laye`,
   changeFrequency: "monthly",
   priority: 0.8,
-}
+},
