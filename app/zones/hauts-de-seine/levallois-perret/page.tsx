@@ -3,9 +3,9 @@ import LocalCityPage from "@/app/zones/_components/LocalCityPage";
 
 export const metadata: Metadata = {
   title:
-    "Nettoyage de copropriété à Levallois-Perret (92300) | CoproSolutions",
+    "Nettoyage de bureaux et de copropriétés à Levallois-Perret | CoproSolutions",
   description:
-    "CoproSolutions assure le nettoyage et l'entretien des copropriétés à Levallois-Perret : halls, escaliers, parties communes, poubelles, parkings et immeubles.",
+    "CoproSolutions assure le nettoyage de bureaux et de copropriétés à Levallois-Perret : parties communes, locaux professionnels, halls, escaliers, parkings et entretien des immeubles.",
   alternates: {
     canonical: "/zones/hauts-de-seine/levallois-perret",
   },
@@ -16,7 +16,7 @@ export default function LevalloisPerretPage() {
     <LocalCityPage
       city="Levallois-Perret"
       postalCode="92300"
-      title="Nettoyage et entretien de copropriété à Levallois-Perret"
+      title="Nettoyage de bureaux et de copropriétés à Levallois-Perret"
       description="CoproSolutions accompagne les syndics, conseils syndicaux et gestionnaires immobiliers pour le nettoyage et l'entretien des copropriétés, résidences et immeubles à Levallois-Perret."
       intro={
         <>
