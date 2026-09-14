@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "Nettoyage et entretien de copropriété à Paris | CoproSolutions",
+    "Nettoyage de copropriété à Paris (75)| CoproSolutions",
   description:
-    "CoproSolutions accompagne les syndics et copropriétés à Paris : nettoyage des parties communes, entretien des immeubles, gestion des poubelles, interventions ponctuelles et remplacement de gardiens.",
+    "CoproSolutions assure le nettoyage de copropriété à Paris (75) : parties communes, halls, escaliers, parkings, poubelles, vitres et entretien des immeubles.",
   alternates: {
     canonical: "/zones/paris-75",
   },
@@ -21,13 +21,15 @@ export default function Page() {
       }}
     >
       <h1>
-        Nettoyage et entretien de copropriété à Paris
+        Nettoyage de copropriété à Paris (75)
       </h1>
 
       <p>
-        <strong>CoproSolutions</strong> accompagne les syndics, conseils
-        syndicaux et gestionnaires immobiliers pour l'entretien et le
-        nettoyage des copropriétés à <strong>Paris (75)</strong>.
+      <strong>CoproSolutions</strong> accompagne les syndics, conseils
+        syndicaux et gestionnaires immobiliers pour le{" "}
+      <strong>nettoyage de copropriété à Paris (75)</strong>. Nous assurons
+        l'entretien des parties communes, halls, escaliers, paliers, ascenseurs,
+        locaux poubelles, parkings et autres espaces communs des immeubles.
       </p>
 
       <p>
