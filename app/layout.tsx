@@ -8,14 +8,18 @@ export const metadata: Metadata = {
 
   title: {
     default:
-      "CoproSolutions | Entretien de copropriétés et remplacement de gardiens",
+      "CoproSolutions | Entretien d'immeuble et de copropriété",
     template: "%s | CoproSolutions",
   },
 
   description:
-    "CoproSolutions accompagne les syndics et copropriétés pour l'entretien, le nettoyage des immeubles, le remplacement de gardiens et l'entretien de bureaux à Paris et en Île-de-France.",
+    "CoproSolutions assure l'entretien d'immeubles et de copropriétés, le nettoyage des parties communes, l'entretien de bureaux et le remplacement de gardiens à Paris et en Île-de-France.",
 
   keywords: [
+    "entretien immeuble",
+    "entretien d'immeuble",
+    "entretien parties communes",
+    "entretien immeuble de bureaux",
     "entretien copropriété",
     "nettoyage copropriété",
     "nettoyage immeuble",
@@ -53,17 +57,17 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "CoproSolutions",
     title:
-      "CoproSolutions | Entretien de copropriétés et remplacement de gardiens",
+      "CoproSolutions | Entretien d'immeuble et de copropriété",
     description:
-      "Entretien et nettoyage de copropriétés, bureaux et immeubles. Remplacement de gardiens et services d'entretien pour syndics et copropriétés à Paris et en Île-de-France.",
+      "Entretien et nettoyage d'immeubles et de copropriétés, bureaux et parties communes. Remplacement de gardiens à Paris et en Île-de-France.",
   },
 
   twitter: {
     card: "summary_large_image",
     title:
-      "CoproSolutions | Entretien de copropriétés et remplacement de gardiens",
+      "CoproSolutions | Entretien d'immeuble et de copropriété",
     description:
-      "Entretien de copropriétés, nettoyage d'immeubles, bureaux et remplacement de gardiens à Paris et en Île-de-France.",
+      "Entretien d'immeubles, nettoyage de copropriétés, bureaux et remplacement de gardiens à Paris et en Île-de-France.",
   },
 
   category: "business",
