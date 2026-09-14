@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "Entretien et nettoyage de copropriété dans les Hauts-de-Seine (92) | CoproSolutions",
+    "Nettoyage de copropriété dans les Hauts-de-Seine (92) | CoproSolutions",
   description:
-    "CoproSolutions assure l'entretien et le nettoyage des copropriétés dans les Hauts-de-Seine : halls, escaliers, parties communes, poubelles, parkings, bureaux et remplacement de gardiens.",
+    "CoproSolutions assure le nettoyage de copropriété dans les Hauts-de-Seine (92) : parties communes, halls, escaliers, parkings, poubelles, bureaux et remplacement de gardiens.",
   alternates: {
     canonical: "/zones/hauts-de-seine",
   },
@@ -120,15 +120,16 @@ export default function HautsDeSeinePage() {
           </p>
 
           <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl">
-            Entretien et nettoyage de copropriété dans les Hauts-de-Seine (92)
+            Nettoyage de copropriété dans les Hauts-de-Seine (92)
           </h1>
 
-          <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-200">
-            CoproSolutions accompagne les syndics, conseils syndicaux,
-            gestionnaires immobiliers et professionnels pour l'entretien,
-            le nettoyage et les services aux immeubles dans les
-            Hauts-de-Seine.
-          </p>
+          <p>
+  CoproSolutions accompagne les syndics, conseils syndicaux et
+  gestionnaires immobiliers pour le nettoyage et l'entretien des
+  copropriétés dans les Hauts-de-Seine (92). Nous intervenons également
+  pour l'entretien des immeubles, des parties communes, des parkings
+  et des locaux professionnels.
+</p>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <a
