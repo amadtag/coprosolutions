@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "Entretien et nettoyage de copropriété dans les Yvelines (78) | CoproSolutions",
+    "Entreprise de nettoyage de copropriété dans les Yvelines (78) | CoproSolutions",
   description:
-    "CoproSolutions accompagne les syndics et copropriétés dans les Yvelines : nettoyage des parties communes, entretien des immeubles, poubelles, remplacement de gardiens et travaux exceptionnels.",
+    "CoproSolutions est une entreprise de nettoyage de copropriété dans les Yvelines (78) : parties communes, halls, escaliers, parkings, poubelles et entretien des immeubles.",
   alternates: {
     canonical: "/zones/yvelines",
   },
@@ -17,19 +17,21 @@ export default function YvelinesPage() {
       style={{ lineHeight: 1.7 }}
     >
       <h1 className="text-4xl font-bold mb-6">
-        Entretien et nettoyage de copropriété dans les Yvelines (78)
+        Entreprise de nettoyage de copropriété dans les Yvelines (78)
       </h1>
 
       <p className="mb-4">
-        <strong>CoproSolutions</strong> accompagne les syndics, conseils
-        syndicaux et gestionnaires immobiliers pour l'entretien des
-        copropriétés dans les <strong>Yvelines (78)</strong>.
+      <strong>CoproSolutions</strong> est une entreprise de nettoyage de
+        copropriété intervenant dans les <strong>Yvelines (78)</strong>.
+        Nous accompagnons les syndics, conseils syndicaux et gestionnaires
+        immobiliers pour l'entretien des immeubles et des parties communes.
       </p>
 
       <p className="mb-4">
-        Nous intervenons pour le nettoyage et l'entretien des immeubles,
-        résidences et parties communes afin de maintenir un environnement
-        propre et agréable pour les résidents.
+        Nos équipes peuvent intervenir pour le nettoyage régulier ou ponctuel
+        des halls, escaliers, paliers, ascenseurs, locaux poubelles, parkings
+        et autres espaces communs des résidences. Les prestations sont adaptées
+        à la configuration et aux besoins de chaque copropriété.
       </p>
 
       <h2 className="text-2xl font-semibold mt-8 mb-4">
