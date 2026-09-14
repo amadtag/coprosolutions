@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "Entretien et nettoyage de copropriété dans le Val-de-Marne (94) | CoproSolutions",
+    "Entreprise de nettoyage de copropriété dans le Val-de-Marne (94) | CoproSolutions",
   description:
-    "CoproSolutions accompagne les syndics et copropriétés du Val-de-Marne : nettoyage des parties communes, entretien des immeubles, gestion des poubelles, interventions ponctuelles et remplacement de gardiens.",
+    "CoproSolutions est une entreprise de nettoyage de copropriété dans le Val-de-Marne (94) : parties communes, halls, escaliers, parkings, poubelles et entretien des immeubles.",
   alternates: {
     canonical: "/zones/val-de-marne",
   },
@@ -21,19 +21,21 @@ export default function ValDeMarnePage() {
       }}
     >
       <h1>
-        Entretien et nettoyage de copropriété dans le Val-de-Marne (94)
+        Entretien de nettoyage de copropriété dans le Val-de-Marne (94)
       </h1>
 
       <p>
-        <strong>CoproSolutions</strong> accompagne les syndics, conseils
-        syndicaux et gestionnaires immobiliers pour l'entretien des
-        copropriétés dans le <strong>Val-de-Marne (94)</strong>.
+        <strong>CoproSolutions</strong> est une entreprise de nettoyage de
+        copropriété intervenant dans le <strong>Val-de-Marne (94)</strong>.
+        Nous accompagnons les syndics, conseils syndicaux et gestionnaires
+        immobiliers pour l'entretien des immeubles et des parties communes.
       </p>
 
       <p>
-        Nous assurons le nettoyage et l'entretien des immeubles et parties
-        communes avec des prestations adaptées aux besoins de chaque
-        résidence.
+        Nos équipes peuvent intervenir pour le nettoyage régulier ou ponctuel
+        des halls, escaliers, paliers, ascenseurs, locaux poubelles, parkings
+        et autres espaces communs des résidences. Les prestations sont adaptées
+        à la configuration et aux besoins de chaque copropriété.
       </p>
 
       <h2>Nos services dans le Val-de-Marne</h2>
