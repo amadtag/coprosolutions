@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "Remplacement de gardien d’immeuble en Île-de-France | CoproSolutions",
+    "Remplacement de gardien d’immeuble et copropriété | CoproSolutions",
   description:
-    "CoproSolutions propose le remplacement de gardien d’immeuble pour copropriétés et résidences : congés, absences temporaires ou besoins plus longs à Paris et en Île-de-France.",
+    "CoproSolutions propose le remplacement de gardien d’immeuble en copropriété : congés, absences temporaires, arrêts ou besoins de plus longue durée à Paris et en Île-de-France.",
   alternates: {
     canonical: "/remplacement-gardien",
   },
