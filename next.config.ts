@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         destination: "/zones/hauts-de-seine",
         permanent: true,
       },
+      {
+        source: "/nettoyage-copropriete-yvelines",
+        destination: "/zones/yvelines",
+        permanent: true,
+      },
     ];
   },
 };
