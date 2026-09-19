@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title:
     "Nettoyage de copropriété dans les Hauts-de-Seine (92) | CoproSolutions",
   description:
-    "CoproSolutions assure le nettoyage de copropriété dans les Hauts-de-Seine (92) : parties communes, halls, escaliers, parkings, poubelles, bureaux et remplacement de gardiens.",
+    "CoproSolutions assure le nettoyage et l'entretien des copropriétés dans les Hauts-de-Seine (92) : parties communes, halls, escaliers, parkings, poubelles et immeubles.",
   alternates: {
     canonical: "/zones/hauts-de-seine",
   },
@@ -112,9 +112,11 @@ const cities = [
 export default function HautsDeSeinePage() {
   return (
     <main className="bg-white text-slate-800">
+
       {/* HERO */}
       <section className="bg-slate-900 px-6 py-20 text-white">
         <div className="mx-auto max-w-5xl text-center">
+
           <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-green-400">
             COPROSOLUTIONS · HAUTS-DE-SEINE 92
           </p>
@@ -123,13 +125,13 @@ export default function HautsDeSeinePage() {
             Nettoyage de copropriété dans les Hauts-de-Seine (92)
           </h1>
 
-          <p>
-  CoproSolutions accompagne les syndics, conseils syndicaux et
-  gestionnaires immobiliers pour le nettoyage et l'entretien des
-  copropriétés dans les Hauts-de-Seine (92). Nous intervenons également
-  pour l'entretien des immeubles, des parties communes, des parkings
-  et des locaux professionnels.
-</p>
+          <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-200">
+            CoproSolutions accompagne les syndics, conseils syndicaux et
+            gestionnaires immobiliers pour le nettoyage et l'entretien des
+            copropriétés dans les Hauts-de-Seine (92). Nous intervenons pour
+            l'entretien des parties communes, halls, escaliers, parkings,
+            locaux poubelles et autres espaces de l'immeuble.
+          </p>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <a
@@ -146,71 +148,79 @@ export default function HautsDeSeinePage() {
               📞 06 58 87 65 79
             </a>
           </div>
+
         </div>
       </section>
 
       {/* INTRODUCTION */}
       <section className="mx-auto max-w-5xl px-6 py-16">
+
         <h2 className="mb-6 text-3xl font-bold">
-          Une solution d'entretien pour les copropriétés du 92
+          Entreprise de nettoyage de copropriété dans le 92
         </h2>
 
         <div className="space-y-5 text-lg leading-8 text-gray-600">
+
           <p>
-            Les Hauts-de-Seine regroupent de nombreuses copropriétés,
-            résidences, immeubles professionnels et bâtiments administratifs.
-            Leur entretien nécessite une organisation adaptée à la taille des
-            bâtiments, à leur fréquentation et aux contraintes propres à
-            chaque site.
+            CoproSolutions intervient dans les Hauts-de-Seine pour le
+            nettoyage et l'entretien des copropriétés, résidences et
+            immeubles. Les prestations sont organisées selon la configuration
+            du bâtiment, sa fréquentation et les besoins définis avec le
+            syndic ou le gestionnaire immobilier.
           </p>
 
           <p>
-            CoproSolutions intervient auprès des syndics, gestionnaires
-            immobiliers et conseils syndicaux pour organiser des prestations
-            de nettoyage et d'entretien des parties communes dans les
-            Hauts-de-Seine.
+            Le nettoyage des parties communes peut comprendre les halls
+            d'entrée, escaliers, paliers, couloirs, ascenseurs, sols, locaux
+            communs et autres espaces utilisés quotidiennement par les
+            résidents et visiteurs.
           </p>
 
           <p>
-            Les interventions peuvent être régulières ou ponctuelles et être
-            adaptées au nombre de halls, aux étages, aux surfaces, aux
-            équipements et au niveau de service souhaité.
+            Les interventions peuvent être régulières, plusieurs fois par
+            semaine, hebdomadaires ou ponctuelles. L'organisation est adaptée
+            à la taille de la copropriété, au nombre de halls, aux surfaces à
+            entretenir et aux contraintes du site.
           </p>
+
         </div>
       </section>
 
       {/* SERVICES */}
       <section className="bg-slate-50 px-6 py-16">
+
         <div className="mx-auto max-w-6xl">
+
           <h2 className="mb-4 text-center text-3xl font-bold">
-            Nos services dans les Hauts-de-Seine
+            Nos services de nettoyage de copropriété dans le 92
           </h2>
 
           <p className="mx-auto mb-12 max-w-3xl text-center leading-7 text-gray-600">
-            Une offre adaptée aux besoins des copropriétés, résidences,
-            bureaux et immeubles professionnels.
+            Des prestations adaptées aux copropriétés, résidences,
+            immeubles et bâtiments professionnels des Hauts-de-Seine.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Entretien de copropriété
+                Nettoyage des parties communes
               </h3>
 
               <p className="leading-7 text-gray-600">
-                Nettoyage des halls, escaliers, paliers, circulations,
-                ascenseurs et autres espaces communs.
+                Nettoyage des halls, escaliers, paliers, couloirs,
+                ascenseurs, sols et autres espaces communs de la copropriété.
               </p>
             </article>
 
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Nettoyage des immeubles
+                Entretien des immeubles
               </h3>
 
               <p className="leading-7 text-gray-600">
                 Entretien courant des espaces communs et des zones fréquentées
-                par les résidents et visiteurs.
+                par les résidents, visiteurs et intervenants.
               </p>
             </article>
 
@@ -232,13 +242,13 @@ export default function HautsDeSeinePage() {
 
               <p className="leading-7 text-gray-600">
                 Interventions régulières ou ponctuelles dans les parkings,
-                rampes et accès communs.
+                rampes, accès et autres espaces communs.
               </p>
             </article>
 
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Entretien de bureaux
+                Nettoyage des locaux professionnels
               </h3>
 
               <p className="leading-7 text-gray-600">
@@ -257,22 +267,26 @@ export default function HautsDeSeinePage() {
                 temporaire ou de besoin prolongé.
               </p>
             </article>
+
           </div>
         </div>
       </section>
 
       {/* PRESTATIONS COMPLEMENTAIRES */}
       <section className="mx-auto max-w-5xl px-6 py-16">
+
         <h2 className="mb-6 text-3xl font-bold">
-          Des prestations complémentaires pour votre immeuble
+          Prestations complémentaires pour les copropriétés
         </h2>
 
         <p className="mb-8 text-lg leading-8 text-gray-600">
-          En complément de l'entretien courant, nous pouvons étudier
-          différentes prestations ponctuelles.
+          En complément du nettoyage courant des parties communes,
+          CoproSolutions peut étudier différentes interventions ponctuelles
+          selon les besoins de l'immeuble.
         </p>
 
         <div className="grid gap-5 md:grid-cols-2">
+
           <div className="rounded-xl border p-6">
             <h3 className="mb-3 text-xl font-bold">
               Nettoyage des vitres
@@ -301,8 +315,8 @@ export default function HautsDeSeinePage() {
             </h3>
 
             <p className="leading-7 text-gray-600">
-              Remise en état et nettoyage des espaces après des travaux ou une
-              intervention technique.
+              Remise en état et nettoyage des espaces après des travaux ou
+              une intervention technique.
             </p>
           </div>
 
@@ -312,10 +326,11 @@ export default function HautsDeSeinePage() {
             </h3>
 
             <p className="leading-7 text-gray-600">
-              Interventions ponctuelles étudiées selon la nature du besoin et
-              les caractéristiques du site.
+              Interventions ponctuelles étudiées selon la nature du besoin
+              et les caractéristiques du site.
             </p>
           </div>
+
         </div>
 
         <div className="mt-8">
@@ -326,30 +341,35 @@ export default function HautsDeSeinePage() {
             Voir nos travaux et prestations exceptionnels →
           </a>
         </div>
+
       </section>
 
       {/* VILLES */}
       <section className="bg-slate-50 px-6 py-16">
+
         <div className="mx-auto max-w-6xl">
+
           <h2 className="mb-4 text-center text-3xl font-bold">
-            Nos villes d'intervention dans les Hauts-de-Seine
+            Villes d'intervention dans les Hauts-de-Seine
           </h2>
 
           <p className="mx-auto mb-12 max-w-3xl text-center leading-7 text-gray-600">
             CoproSolutions intervient dans plusieurs communes des
-            Hauts-de-Seine. Retrouvez ci-dessous nos pages locales consacrées
-            à chaque ville.
+            Hauts-de-Seine pour le nettoyage et l'entretien des copropriétés.
+            Retrouvez ci-dessous nos pages locales.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
             {cities.map((city) => (
               <a
                 key={city.href}
                 href={city.href}
                 className="rounded-2xl bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
               >
+
                 <h3 className="mb-3 text-xl font-bold text-blue-700">
-                  Entretien de copropriété à {city.name}
+                  Nettoyage de copropriété à {city.name}
                 </h3>
 
                 <p className="leading-7 text-gray-600">
@@ -359,68 +379,85 @@ export default function HautsDeSeinePage() {
                 <span className="mt-5 inline-block font-semibold text-blue-700">
                   Voir la page {city.name} →
                 </span>
+
               </a>
             ))}
+
           </div>
         </div>
       </section>
 
       {/* ORGANISATION */}
       <section className="mx-auto max-w-5xl px-6 py-16">
+
         <h2 className="mb-6 text-3xl font-bold">
           Une organisation adaptée à chaque copropriété
         </h2>
 
         <div className="space-y-5 text-lg leading-8 text-gray-600">
+
           <p>
-            Une copropriété de petite taille n'a pas les mêmes besoins qu'un
-            ensemble immobilier composé de plusieurs halls ou de nombreux
-            espaces communs.
+            Une petite copropriété n'a pas les mêmes besoins qu'un ensemble
+            immobilier composé de plusieurs halls, étages et espaces communs.
           </p>
 
           <p>
-            CoproSolutions adapte l'organisation des prestations aux
+            CoproSolutions adapte l'organisation du nettoyage aux
             caractéristiques du site, à sa fréquentation et à la fréquence
             d'intervention souhaitée.
           </p>
 
           <p>
-            L'objectif est de proposer une organisation claire et cohérente
-            avec les besoins du syndic ou du gestionnaire immobilier.
+            La prestation peut être organisée selon un entretien régulier,
+            plusieurs passages par semaine ou des interventions ponctuelles
+            lorsque la copropriété rencontre un besoin spécifique.
           </p>
+
         </div>
       </section>
 
       {/* SYNDICS */}
       <section className="bg-slate-50 px-6 py-16">
+
         <div className="mx-auto max-w-5xl">
+
           <h2 className="mb-6 text-3xl font-bold">
-            Une solution pour les syndics et gestionnaires immobiliers
+            Nettoyage de copropriété pour les syndics et gestionnaires
           </h2>
 
           <div className="space-y-5 text-lg leading-8 text-gray-600">
+
             <p>
-              CoproSolutions accompagne les professionnels de l'immobilier
-              dans leurs besoins d'entretien, de nettoyage et de continuité de
-              service.
+              CoproSolutions accompagne les syndics, conseils syndicaux et
+              gestionnaires immobiliers dans leurs besoins de nettoyage et
+              d'entretien des immeubles dans les Hauts-de-Seine.
             </p>
 
             <p>
               Les besoins sont étudiés en fonction de la configuration de
-              l'immeuble, des prestations souhaitées et des contraintes
-              d'organisation du site.
+              l'immeuble, des prestations souhaitées, de la fréquence
+              d'intervention et des contraintes d'organisation du site.
             </p>
+
+            <p>
+              L'objectif est de mettre en place un process adapté à chaque
+              copropriété afin de faciliter l'organisation et le suivi des
+              prestations.
+            </p>
+
           </div>
         </div>
       </section>
 
       {/* AUTRES SERVICES */}
       <section className="mx-auto max-w-5xl px-6 py-16">
+
         <h2 className="mb-8 text-3xl font-bold">
           Nos autres services
         </h2>
 
         <div className="grid gap-4 md:grid-cols-2">
+
           <a
             href="/entretien-copropriété-idf"
             className="rounded-xl border p-5 font-semibold text-blue-700 hover:shadow-md"
@@ -432,7 +469,7 @@ export default function HautsDeSeinePage() {
             href="/entretien-bureau-immeuble"
             className="rounded-xl border p-5 font-semibold text-blue-700 hover:shadow-md"
           >
-            Entretien de bureaux et immeubles administratifs →
+            Nettoyage de bureaux et immeubles professionnels →
           </a>
 
           <a
@@ -462,23 +499,28 @@ export default function HautsDeSeinePage() {
           >
             Voir tous nos services →
           </a>
+
         </div>
       </section>
 
       {/* CTA */}
       <section className="bg-blue-950 px-6 py-20 text-center text-white">
+
         <div className="mx-auto max-w-3xl">
+
           <h2 className="mb-5 text-3xl font-bold">
-            Besoin d'un entretien dans les Hauts-de-Seine ?
+            Besoin d'un nettoyage de copropriété dans le 92 ?
           </h2>
 
           <p className="mb-8 text-lg leading-8 text-blue-100">
             Indiquez-nous la localisation de votre immeuble, son nombre de
             halls, sa taille, les prestations recherchées et la fréquence
-            souhaitée. Nous pourrons étudier votre besoin.
+            souhaitée. Nous pourrons étudier votre besoin et proposer une
+            organisation adaptée.
           </p>
 
           <div className="flex flex-col justify-center gap-3 sm:flex-row">
+
             <a
               href="/contact"
               className="rounded-xl bg-green-600 px-6 py-3 font-bold text-white hover:bg-green-700"
@@ -492,6 +534,7 @@ export default function HautsDeSeinePage() {
             >
               📞 06 58 87 65 79
             </a>
+
           </div>
 
           <p className="mt-6">
@@ -502,8 +545,10 @@ export default function HautsDeSeinePage() {
               coprosolutions@coprosolutions.net
             </a>
           </p>
+
         </div>
       </section>
+
     </main>
   );
 }
