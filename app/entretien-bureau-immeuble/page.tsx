@@ -1,8 +1,13 @@
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title:
-    "Nettoyage de bureaux en Île-de-France | CoproSolutions",
+    "Nettoyage de bureaux à Paris et en Île-de-France | CoproSolutions",
   description:
-    "CoproSolutions assure le nettoyage et l'entretien de bureaux, locaux professionnels et immeubles tertiaires à Paris et en Île-de-France. Prestations régulières ou ponctuelles adaptées à chaque entreprise.",
+    "CoproSolutions assure le nettoyage de bureaux, locaux professionnels et immeubles tertiaires à Paris, Boulogne-Billancourt, Levallois-Perret et en Île-de-France. Devis gratuit.",
+  alternates: {
+    canonical: "/entretien-bureau-immeuble",
+  },
 };
 
 export default function EntretienBureauImmeuble() {
@@ -18,7 +23,7 @@ export default function EntretienBureauImmeuble() {
           </p>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Nettoyage et entretien de bureaux en Île-de-France
+            Nettoyage de bureaux à Paris et en Île-de-France
           </h1>
 
           <p className="max-w-3xl mx-auto text-lg text-slate-200 leading-8">
@@ -52,7 +57,7 @@ export default function EntretienBureauImmeuble() {
       <section className="max-w-5xl mx-auto py-16 px-6">
 
         <h2 className="text-3xl font-bold mb-6">
-          Une entreprise de nettoyage pour vos bureaux et locaux professionnels
+          Entreprise de nettoyage de bureaux et locaux professionnels
         </h2>
 
         <p className="text-gray-600 leading-8 mb-5">
@@ -63,14 +68,17 @@ export default function EntretienBureauImmeuble() {
 
         <p className="text-gray-600 leading-8 mb-5">
           CoproSolutions propose des prestations de nettoyage de bureaux,
-          d'entretien de locaux professionnels et de nettoyage d'immeubles
-          tertiaires adaptées aux besoins de chaque établissement.
+          d'entretien de locaux professionnels et d'immeubles tertiaires à
+          Paris et dans les Hauts-de-Seine. Nos interventions sont adaptées
+          aux besoins de chaque entreprise, gestionnaire immobilier ou
+          responsable de site.
         </p>
 
         <p className="text-gray-600 leading-8">
-          Notre organisation permet de définir une fréquence d'intervention
-          adaptée à votre activité : entretien régulier, passages plusieurs
-          fois par semaine, intervention hebdomadaire ou prestation ponctuelle.
+          Nous pouvons organiser un entretien régulier ou ponctuel selon la
+          superficie des locaux, leur fréquentation et les horaires
+          souhaités : nettoyage quotidien, plusieurs passages par semaine,
+          intervention hebdomadaire ou remise en état ponctuelle.
         </p>
 
       </section>
@@ -203,27 +211,30 @@ export default function EntretienBureauImmeuble() {
         <div className="max-w-5xl mx-auto">
 
           <h2 className="text-3xl font-bold mb-6">
-            Nettoyage de bureaux à Boulogne-Billancourt,
-            Levallois-Perret et Neuilly-sur-Seine
+            Nettoyage de bureaux à Boulogne-Billancourt, Levallois-Perret
+            et Neuilly-sur-Seine
           </h2>
 
           <p className="text-gray-600 leading-8 mb-5">
-            CoproSolutions intervient auprès des entreprises et
-            professionnels pour le nettoyage de bureaux dans les
-            Hauts-de-Seine et notamment à Boulogne-Billancourt,
-            Levallois-Perret, Neuilly-sur-Seine et Issy-les-Moulineaux.
+            CoproSolutions intervient auprès des entreprises, professionnels
+            et gestionnaires immobiliers pour le nettoyage de bureaux et de
+            locaux professionnels dans les Hauts-de-Seine, notamment à
+            Boulogne-Billancourt, Levallois-Perret, Neuilly-sur-Seine et
+            Issy-les-Moulineaux.
           </p>
 
           <p className="text-gray-600 leading-8 mb-5">
-            Nous pouvons organiser l'entretien régulier de bureaux,
-            locaux professionnels et immeubles tertiaires selon la
-            configuration du site et la fréquence souhaitée.
+            Nous proposons l'entretien régulier des bureaux, espaces
+            d'accueil, salles de réunion, sanitaires, circulations, halls
+            et autres espaces professionnels. La fréquence des interventions
+            est définie selon la configuration du site et les besoins du
+            client.
           </p>
 
           <p className="text-gray-600 leading-8">
             CoproSolutions intervient également à Paris et dans plusieurs
-            communes d'Île-de-France pour répondre aux besoins des
-            entreprises et gestionnaires immobiliers.
+            communes d'Île-de-France pour le nettoyage de bureaux, locaux
+            professionnels et immeubles tertiaires.
           </p>
 
           <div className="flex flex-wrap gap-3 mt-8">
