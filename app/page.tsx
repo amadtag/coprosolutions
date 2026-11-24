@@ -323,7 +323,31 @@ export default function Home() {
               href="#contact"
               className="rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="mb-4 text-4xl">🗑️</div>
+              
+<div className="mb-4 flex items-center justify-center">
+  <svg
+    viewBox="0 0 190 125"
+    className="h-24 w-40"
+    role="img"
+    aria-label="Deux bacs roulants verts, un à couvercle jaune et un à couvercle vert"
+  >
+    <g>
+      <rect x="12" y="30" width="65" height="70" rx="7" fill="#168344" stroke="#116534" strokeWidth="2" />
+      <path d="M8 29 L81 29 L76 17 Q75 14 70 14 L19 14 Q14 14 13 18 Z" fill="#FACC15" stroke="#B98A08" strokeWidth="2" />
+      <path d="M30 36 V91 M59 36 V91" stroke="#35A35F" strokeWidth="3" />
+      <circle cx="22" cy="105" r="8" fill="#222" />
+      <circle cx="67" cy="105" r="8" fill="#222" />
+    </g>
+    <g transform="translate(96 0)">
+      <rect x="12" y="30" width="65" height="70" rx="7" fill="#168344" stroke="#116534" strokeWidth="2" />
+      <path d="M8 29 L81 29 L76 17 Q75 14 70 14 L19 14 Q14 14 13 18 Z" fill="#16A34A" stroke="#116534" strokeWidth="2" />
+      <path d="M30 36 V91 M59 36 V91" stroke="#35A35F" strokeWidth="3" />
+      <circle cx="22" cy="105" r="8" fill="#222" />
+      <circle cx="67" cy="105" r="8" fill="#222" />
+    </g>
+  </svg>
+</div>
+
 
               <h3 className="mb-3 text-xl font-black text-blue-700">
                 Sortie et rentrée des poubelles
