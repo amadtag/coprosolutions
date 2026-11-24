@@ -72,20 +72,12 @@ export default function Home() {
 </h1>
 
 <p className="mx-auto mb-10 max-w-3xl text-lg leading-8 text-slate-100 md:text-xl">
-  CoproSolutions accompagne les syndics et les conseils syndicaux
-  à Paris et en Île-de-France pour l'entretien des immeubles et
-  copropriétés : nettoyage des parties communes, entretien des
-  bureaux, remplacement de gardiens et aide au recrutement de
-  personnel d'immeuble.
+  CoproSolutions intervient à Paris et en Île-de-France auprès des
+  syndics et des conseils syndicaux pour l'entretien des immeubles,
+  des copropriétés et des immeubles de bureaux. Nos prestations
+  comprennent le nettoyage des parties communes, l'entretien des
+  bureaux, le remplacement et le recrutement de gardiens d'immeuble.
 </p>
-
-
-          <p className="mx-auto mb-10 max-w-3xl text-lg leading-8 text-slate-100 md:text-xl">
-            CoproSolutions accompagne les syndics et les conseils syndicaux
-            à Paris et en Île-de-France : nettoyage des copropriétés et des
-            bureaux, remplacement de gardiens et aide au recrutement de
-            personnel d'immeuble.
-          </p>
 
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
 
