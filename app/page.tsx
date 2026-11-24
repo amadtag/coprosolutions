@@ -1,92 +1,104 @@
+
 "use client";
 
-import { useRef } from "react";
-import emailjs from "@emailjs/browser";
+import { useState, type FormEvent } from "react";
+
+type FormStatus = "idle" | "sending" | "success" | "error";
 
 export default function Home() {
-  const form = useRef<HTMLFormElement | null>(null);
+  const [status, setStatus] = useState<FormStatus>("idle");
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  async function sendRequest(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("sending");
 
-    if (!form.current) return;
+    const form = event.currentTarget;
+    const formData = new FormData(form);
 
-    emailjs
-      .sendForm(
-        "service_1mimw3j",
-        "template_s24a987",
-        form.current,
-        "ZHwB2YyGJMNzEnWDq"
-      )
-      .then(() => {
-        alert("Message envoyé !");
-        form.current?.reset();
-      })
-      .catch(() => {
-        alert("Erreur lors de l'envoi");
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nom: String(formData.get("name") || "").trim(),
+          email: String(formData.get("email") || "").trim(),
+          telephone: String(formData.get("telephone") || "").trim(),
+          service: String(formData.get("service") || "").trim(),
+          demande: String(formData.get("message") || "").trim(),
+        }),
       });
-  };
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Erreur lors de l'envoi.");
+      }
+
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  }
 
   return (
     <main className="min-h-screen overflow-hidden bg-slate-50 text-slate-800">
 
-      {/* =========================
-          HERO
-      ========================= */}
-      <section
-        className="relative overflow-hidden px-6 py-24 text-white md:py-32"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(15,23,42,0.70), rgba(15,23,42,0.82)), url('/images/immeuble-paris.jpg.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        {/* Décor */}
+      {/* ACCUEIL */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-blue-800 px-6 py-24 text-white md:py-32">
+
         <div className="pointer-events-none absolute -right-16 top-10 h-40 w-40 rounded-full bg-green-400/20 blur-2xl" />
+
         <div className="pointer-events-none absolute -left-20 bottom-0 h-52 w-52 rounded-full bg-blue-400/20 blur-3xl" />
 
         <div className="relative mx-auto max-w-5xl text-center">
 
           <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-5 py-2 backdrop-blur-md">
             <span className="text-2xl">🏢</span>
-
             <span className="text-sm font-bold uppercase tracking-widest text-green-300">
               COPROSOLUTIONS
             </span>
-
             <span className="text-2xl">✨</span>
           </div>
 
-          <h1 className="mb-6 text-4xl font-black leading-tight drop-shadow-lg md:text-6xl">
-            Entretien de copropriétés, entretien d'immeuble et
-            <span className="block text-green-300">
-              remplacement de gardiens en Île-de-France
-            </span>
-          </h1>
+          
+<h1 className="mb-6 text-4xl font-black leading-tight drop-shadow-lg md:text-6xl">
+  Entretien des immeubles et copropriétés
+  <span className="block text-green-300">
+    Notre engagement au quotidien.
+  </span>
+</h1>
+
+<p className="mx-auto mb-10 max-w-3xl text-lg leading-8 text-slate-100 md:text-xl">
+  CoproSolutions accompagne les syndics et les conseils syndicaux
+  à Paris et en Île-de-France pour l'entretien des immeubles et
+  copropriétés : nettoyage des parties communes, entretien des
+  bureaux, remplacement de gardiens et aide au recrutement de
+  personnel d'immeuble.
+</p>
+
 
           <p className="mx-auto mb-10 max-w-3xl text-lg leading-8 text-slate-100 md:text-xl">
-            CoproSolutions accompagne les syndics, conseils syndicaux et
-            gestionnaires immobiliers pour l'entretien et le nettoyage des
-            copropriétés, l'entretien des immeubles, le remplacement de
-            gardiens et l'entretien des bureaux à Paris et en Île-de-France.
+            CoproSolutions accompagne les syndics et les conseils syndicaux
+            à Paris et en Île-de-France : nettoyage des copropriétés et des
+            bureaux, remplacement de gardiens et aide au recrutement de
+            personnel d'immeuble.
           </p>
 
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
 
             <a
               href="tel:+33658876579"
-              className="group rounded-2xl bg-black px-7 py-4 font-black text-white shadow-xl transition duration-300 hover:-translate-y-1 hover:bg-slate-900"
+              className="rounded-2xl bg-black px-7 py-4 font-black text-white shadow-xl transition hover:-translate-y-1 hover:bg-slate-800"
             >
-              <span className="mr-2 inline-block transition group-hover:rotate-12">
-                📞
-              </span>
-              Appeler maintenant
+              📞 Appeler maintenant
             </a>
 
             <a
               href="#contact"
-              className="rounded-2xl bg-green-500 px-7 py-4 font-black text-white shadow-xl transition duration-300 hover:-translate-y-1 hover:bg-green-600"
+              className="rounded-2xl bg-green-500 px-7 py-4 font-black text-white shadow-xl transition hover:-translate-y-1 hover:bg-green-600"
             >
               💬 Demander un devis gratuit
             </a>
@@ -94,27 +106,73 @@ export default function Home() {
           </div>
 
           <div className="mt-10 flex flex-wrap justify-center gap-3 text-sm">
-            <span className="rounded-full bg-white/10 px-4 py-2 backdrop-blur">
-              ✓ Intervention professionnelle
+
+            <span className="rounded-full bg-white/10 px-4 py-2">
+              ✓ Trois domaines de services
             </span>
 
-            <span className="rounded-full bg-white/10 px-4 py-2 backdrop-blur">
-              ✓ Solutions adaptées
+            <span className="rounded-full bg-white/10 px-4 py-2">
+              ✓ Solutions adaptées aux immeubles
             </span>
 
-            <span className="rounded-full bg-white/10 px-4 py-2 backdrop-blur">
-              ✓ Paris & Île-de-France
+            <span className="rounded-full bg-white/10 px-4 py-2">
+              ✓ Paris et Île-de-France
             </span>
+
           </div>
+
         </div>
 
         <div className="absolute -bottom-1 left-0 right-0 h-12 rounded-t-[50%] bg-slate-50" />
+
       </section>
 
 
-      {/* =========================
-          SERVICES
-      ========================= */}
+      {/* PHOTO DE L'IMMEUBLE */}
+      <section className="bg-slate-50 px-6 py-12">
+
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 rounded-3xl bg-white p-7 shadow-sm md:flex-row md:p-10">
+
+          <div className="shrink-0">
+            <img
+              src="/images/immeuble-paris.jpg"
+              alt="Immeuble parisien"
+              width={190}
+              height={265}
+              loading="eager"
+              className="mx-auto h-auto w-[190px] max-w-full rounded-xl object-contain shadow-md"
+            />
+          </div>
+
+          <div className="max-w-2xl text-center md:text-left">
+
+            <p className="mb-3 text-sm font-bold uppercase tracking-wider text-green-700">
+              COPROSOLUTIONS — PARIS ET ÎLE-DE-FRANCE
+            </p>
+
+            <h2 className="mb-4 text-2xl font-black text-slate-900 md:text-3xl">
+  Un processus adapté à chaque copropriété
+</h2>
+
+    <p className="leading-8 text-gray-600">
+  Nous proposons un processus adapté à la taille de chaque
+  copropriété et à ses besoins : entretien et nettoyage des
+  immeubles, remplacement de gardiens et accompagnement au
+  recrutement de personnel d'immeuble.
+</p>
+
+<p className="mt-4 text-lg font-black uppercase text-orange-600">
+  Aide au recrutement 100 % gratuite
+</p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* TROIS ACTIVITÉS PRINCIPALES */}
       <section
         id="services"
         className="mx-auto max-w-7xl px-6 py-20 md:py-24"
@@ -123,193 +181,219 @@ export default function Home() {
         <div className="mb-12 text-center">
 
           <span className="inline-block rounded-full bg-blue-100 px-4 py-2 text-sm font-bold text-blue-700">
-            🧹 NOS SOLUTIONS
+            NOS TROIS DOMAINES D'INTERVENTION
           </span>
 
           <h2 className="mt-4 text-3xl font-black md:text-4xl">
-            Nos services pour copropriétés et immeubles
+            Des services complets pour les copropriétés et les immeubles
           </h2>
 
           <p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-gray-600">
-            Des prestations adaptées aux besoins des copropriétés, syndics,
-            conseils syndicaux et gestionnaires immobiliers : entretien
-            d'immeuble, nettoyage, remplacement de gardiens et entretien
-            des espaces professionnels.
+            Un accompagnement destiné aux syndics, conseils syndicaux
+            et gestionnaires immobiliers, de l'entretien quotidien
+            à la recherche de personnel.
           </p>
 
         </div>
 
+
         <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
 
-          {/* Carte 1 */}
+          {/* SERVICE 1 */}
           <a
-            href="/entretien-copropriété-idf"
-            className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
+            href="#contact"
+            className="group rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
           >
+
             <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-100 text-4xl transition group-hover:rotate-6">
               🧹
             </div>
 
+            <p className="mb-2 text-sm font-bold uppercase tracking-wide text-blue-600">
+              SERVICE 1
+            </p>
+
             <h3 className="mb-3 text-xl font-black text-blue-700">
-              Entretien de copropriété
+              Nettoyage et entretien des immeubles
             </h3>
 
             <p className="leading-7 text-gray-600">
-              Nettoyage et entretien des parties communes, halls, escaliers,
-              circulations et espaces communs pour assurer un entretien
-              d'immeuble régulier et de qualité.
+              Entretien des parties communes des copropriétés :
+              halls, escaliers, paliers, circulations, ascenseurs
+              et locaux communs. Prestations également proposées
+              pour les immeubles de bureaux et locaux professionnels.
             </p>
 
             <div className="mt-5 font-bold text-blue-700">
-              Découvrir le service →
+              Demander un devis →
             </div>
+
           </a>
 
 
-          {/* Carte 2 */}
-          <a
-            href="/entretien-bureau-immeuble"
-            className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
-          >
-            <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-yellow-100 text-4xl transition group-hover:rotate-6">
-              🏢
-            </div>
-
-            <h3 className="mb-3 text-xl font-black text-blue-700">
-              Entretien d'immeuble et de bureaux
-            </h3>
-
-            <p className="leading-7 text-gray-600">
-              Nettoyage et entretien régulier des immeubles, bureaux et espaces
-              professionnels avec une organisation adaptée aux besoins de
-              chaque site.
-            </p>
-
-            <div className="mt-5 font-bold text-blue-700">
-              Découvrir le service →
-            </div>
-          </a>
-
-
-          {/* Carte 3 */}
+          {/* SERVICE 2 */}
           <a
             href="/remplacement-gardien"
-            className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
+            className="group rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
           >
+
             <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-green-100 text-4xl transition group-hover:rotate-6">
               👷
             </div>
 
+            <p className="mb-2 text-sm font-bold uppercase tracking-wide text-green-700">
+              SERVICE 2
+            </p>
+
             <h3 className="mb-3 text-xl font-black text-blue-700">
-              Remplacement de gardiens
+              Remplacement de gardiens d'immeubles
             </h3>
 
             <p className="leading-7 text-gray-600">
-              Solution de remplacement de gardiens temporaire ou de plus
-              longue durée pour assurer la continuité du service dans votre
-              immeuble ou votre copropriété.
+              Remplacement de courte, moyenne ou longue durée
+              pour les congés, absences ou périodes de transition,
+              afin de contribuer à la continuité du service dans
+              votre immeuble.
             </p>
 
             <div className="mt-5 font-bold text-blue-700">
               Découvrir le service →
             </div>
+
           </a>
 
 
-          {/* Carte 4 */}
+          {/* SERVICE 3 */}
           <a
-            href="/sortie-et-rentrée-poubelle"
-            className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
+            href="#contact"
+            className="group rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
           >
-            <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-100 text-4xl transition group-hover:rotate-6">
-              🗑️
+
+            <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-100 text-4xl transition group-hover:rotate-6">
+              🤝
             </div>
 
+            <p className="mb-2 text-sm font-bold uppercase tracking-wide text-indigo-700">
+              SERVICE 3
+            </p>
+
             <h3 className="mb-3 text-xl font-black text-blue-700">
-              Sortie et rentrée des poubelles
+              Aide au recrutement de personnel d'immeuble
             </h3>
 
             <p className="leading-7 text-gray-600">
-              Gestion régulière de la sortie et de la rentrée des conteneurs
-              de copropriété pour faciliter l'entretien quotidien de
-              l'immeuble.
+              Accompagnement des syndics et conseils syndicaux
+              dans la recherche et le recrutement de gardiens
+              et de personnel adaptés aux besoins de leur copropriété.
             </p>
 
             <div className="mt-5 font-bold text-blue-700">
-              Découvrir le service →
-            </div>
-          </a>
-
-
-          {/* Carte 5 */}
-          <a
-            href="/travaux-exceptionnels"
-            className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
-          >
-            <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-100 text-4xl transition group-hover:rotate-6">
-              🛠️
+              Demander un accompagnement →
             </div>
 
-            <h3 className="mb-3 text-xl font-black text-blue-700">
-              Travaux exceptionnels
-            </h3>
-
-            <p className="leading-7 text-gray-600">
-              Nettoyage ponctuel, entretien spécifique et interventions
-              exceptionnelles dans les immeubles et copropriétés.
-            </p>
-
-            <div className="mt-5 font-bold text-blue-700">
-              Découvrir le service →
-            </div>
-          </a>
-
-
-          {/* Carte 6 */}
-          <a
-            href="/nettoyage-copropriete-paris"
-            className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
-          >
-            <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-red-100 text-4xl transition group-hover:rotate-6">
-              🏙️
-            </div>
-
-            <h3 className="mb-3 text-xl font-black text-blue-700">
-              Nettoyage de copropriété à Paris
-            </h3>
-
-            <p className="leading-7 text-gray-600">
-              Prestations de nettoyage et d'entretien pour les copropriétés
-              parisiennes, adaptées aux besoins des syndics et gestionnaires.
-            </p>
-
-            <div className="mt-5 font-bold text-blue-700">
-              Découvrir le service →
-            </div>
           </a>
 
         </div>
+
       </section>
 
 
-      {/* =========================
-          BANDEAU CTA
-      ========================= */}
+      {/* PRESTATIONS COMPLÉMENTAIRES */}
+      <section className="bg-white px-6 py-16">
+
+        <div className="mx-auto max-w-7xl">
+
+          <div className="mb-10 text-center">
+
+            <h2 className="text-3xl font-black md:text-4xl">
+              Des prestations complémentaires selon vos besoins
+            </h2>
+
+            <p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-gray-600">
+              En complément de nos trois domaines principaux,
+              nous pouvons étudier des interventions spécifiques
+              pour votre immeuble.
+            </p>
+
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+
+            <a
+              href="#contact"
+              className="rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+            >
+              <div className="mb-4 text-4xl">🗑️</div>
+
+              <h3 className="mb-3 text-xl font-black text-blue-700">
+                Sortie et rentrée des poubelles
+              </h3>
+
+              <p className="leading-7 text-gray-600">
+                Organisation de la sortie et de la rentrée des
+                conteneurs selon les jours de collecte.
+              </p>
+            </a>
+
+            <a
+              href="#contact"
+              className="rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+            >
+              <div className="mb-4 text-4xl">🛠️</div>
+
+              <h3 className="mb-3 text-xl font-black text-blue-700">
+                Travaux et nettoyages ponctuels
+              </h3>
+
+              <p className="leading-7 text-gray-600">
+                Interventions spécifiques : parkings, moquettes,
+                nettoyage après travaux et besoins exceptionnels.
+              </p>
+            </a>
+
+            <a
+              href="#contact"
+              className="rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+            >
+              <div className="mb-4 text-4xl">🏢</div>
+
+              <h3 className="mb-3 text-xl font-black text-blue-700">
+                Entretien des bureaux
+              </h3>
+
+              <p className="leading-7 text-gray-600">
+                Entretien régulier ou ponctuel des bureaux,
+                locaux professionnels et espaces administratifs.
+              </p>
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* BANDEAU DE CONTACT */}
       <section className="px-6 py-6">
+
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 rounded-3xl bg-blue-700 px-7 py-8 text-white shadow-xl md:flex-row md:px-10">
 
           <div className="flex items-center gap-4">
+
             <div className="text-5xl">💪</div>
 
             <div>
               <h2 className="text-xl font-black">
-                Besoin d'entretien d'immeuble ou de remplacement de gardien ?
+                Un besoin pour votre copropriété ou votre immeuble ?
               </h2>
 
               <p className="mt-1 text-blue-100">
-                Parlons de votre immeuble et de vos besoins.
+                Entretien, remplacement de gardien ou aide au recrutement :
+                parlons-en.
               </p>
             </div>
+
           </div>
 
           <a
@@ -320,18 +404,18 @@ export default function Home() {
           </a>
 
         </div>
+
       </section>
 
 
-      {/* =========================
-          ZONES
-      ========================= */}
+      {/* ZONES D'INTERVENTION */}
       <section
         id="zones"
         className="relative overflow-hidden bg-slate-100 px-6 py-20 md:py-24"
       >
 
         <div className="pointer-events-none absolute -right-20 top-10 h-64 w-64 rounded-full bg-green-200/50 blur-3xl" />
+
         <div className="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-blue-200/50 blur-3xl" />
 
         <div className="relative mx-auto max-w-6xl">
@@ -347,101 +431,50 @@ export default function Home() {
             </h2>
 
             <p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-gray-600">
-              CoproSolutions intervient à Paris et dans plusieurs départements
-              d'Île-de-France pour l'entretien des copropriétés, l'entretien
-              des immeubles et le remplacement de gardiens.
+              CoproSolutions intervient à Paris et dans plusieurs
+              départements d'Île-de-France pour l'entretien des
+              immeubles, le remplacement de gardiens et
+              l'accompagnement au recrutement.
             </p>
 
           </div>
 
+          <div className="grid gap-5 text-center sm:grid-cols-2 lg:grid-cols-4">
 
-          <div className="grid gap-5 text-center md:grid-cols-2 lg:grid-cols-4">
-
-            <a
-              href="/zones/paris-75"
-              className="group rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
-            >
+            <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
               <div className="mb-3 text-4xl">🗼</div>
+              <strong className="text-lg">Paris (75)</strong>
+            </div>
 
-              <strong className="text-lg">
-                Paris (75)
-              </strong>
-
-              <div className="mt-2 text-sm font-semibold text-blue-600 group-hover:underline">
-                Voir la zone →
-              </div>
-            </a>
-
-
-            <a
-              href="/zones/hauts-de-seine"
-              className="group rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
-            >
+            <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
               <div className="mb-3 text-4xl">🏙️</div>
+              <strong className="text-lg">Hauts-de-Seine (92)</strong>
+            </div>
 
-              <strong className="text-lg">
-                Hauts-de-Seine (92)
-              </strong>
-
-              <div className="mt-2 text-sm font-semibold text-blue-600 group-hover:underline">
-                Voir la zone →
-              </div>
-            </a>
-
-
-            <a
-              href="/zones/yvelines"
-              className="group rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
-            >
+            <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
               <div className="mb-3 text-4xl">🌳</div>
+              <strong className="text-lg">Yvelines (78)</strong>
+            </div>
 
-              <strong className="text-lg">
-                Yvelines (78)
-              </strong>
-
-              <div className="mt-2 text-sm font-semibold text-blue-600 group-hover:underline">
-                Voir la zone →
-              </div>
-            </a>
-
-
-            <a
-              href="/zones/val-de-marne"
-              className="group rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
-            >
+            <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
               <div className="mb-3 text-4xl">🏘️</div>
-
-              <strong className="text-lg">
-                Val-de-Marne (94)
-              </strong>
-
-              <div className="mt-2 text-sm font-semibold text-blue-600 group-hover:underline">
-                Voir la zone →
-              </div>
-            </a>
+              <strong className="text-lg">Val-de-Marne (94)</strong>
+            </div>
 
           </div>
 
-
-          <div className="mt-10 text-center">
-
-            <a
-              href="/zones"
-              className="inline-flex rounded-full bg-blue-700 px-6 py-3 font-bold text-white shadow-lg transition hover:-translate-y-1 hover:bg-blue-800"
-            >
-              Voir toutes nos zones d'intervention →
-            </a>
-
-          </div>
+          <p className="mt-8 text-center text-gray-600">
+            Vous souhaitez connaître nos possibilités d'intervention
+            dans votre commune ? Contactez-nous pour étudier votre besoin.
+          </p>
 
         </div>
+
       </section>
 
 
-      {/* =========================
-          POUR QUI
-      ========================= */}
-      <section className="mx-auto max-w-5xl px-6 py-20 md:py-24">
+      {/* ACCOMPAGNEMENT DES SYNDICS ET CONSEILS SYNDICAUX */}
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
 
         <div className="mb-10 text-center">
 
@@ -450,15 +483,21 @@ export default function Home() {
           </span>
 
           <h2 className="mt-4 text-3xl font-black md:text-4xl">
-            Une solution pour les syndics et copropriétés
+            Un partenaire pour les syndics et les conseils syndicaux
           </h2>
 
-        </div>
+          <p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-gray-600">
+            Nous étudions les besoins de chaque résidence avec les
+            interlocuteurs qui la gèrent, pour proposer une réponse
+            adaptée à son organisation.
+          </p>
 
+        </div>
 
         <div className="grid gap-6 md:grid-cols-3">
 
           <div className="rounded-3xl bg-blue-50 p-7">
+
             <div className="mb-4 text-4xl">👔</div>
 
             <h3 className="mb-3 text-xl font-black">
@@ -466,173 +505,242 @@ export default function Home() {
             </h3>
 
             <p className="leading-7 text-gray-600">
-              CoproSolutions accompagne les syndics de copropriété dans la
-              gestion quotidienne de l'entretien des immeubles.
+              Un interlocuteur pour étudier les besoins d'entretien,
+              organiser un remplacement ou accompagner une recherche
+              de personnel.
             </p>
+
           </div>
 
-
           <div className="rounded-3xl bg-green-50 p-7">
+
             <div className="mb-4 text-4xl">🏠</div>
 
             <h3 className="mb-3 text-xl font-black">
-              Pour les copropriétés
+              Pour les conseils syndicaux
             </h3>
 
             <p className="leading-7 text-gray-600">
-              Notre objectif est de proposer une organisation fiable et
-              professionnelle pour maintenir les parties communes propres,
-              entretenues et accueillantes.
+              Un accompagnement pour préciser les besoins de la
+              copropriété et faciliter les échanges autour des
+              prestations recherchées.
             </p>
+
           </div>
 
+          <div className="rounded-3xl bg-indigo-50 p-7">
 
-          <div className="rounded-3xl bg-orange-50 p-7">
-            <div className="mb-4 text-4xl">👷</div>
+            <div className="mb-4 text-4xl">🤝</div>
 
             <h3 className="mb-3 text-xl font-black">
-              Remplacement de gardiens
+              Aide au recrutement
             </h3>
 
             <p className="leading-7 text-gray-600">
-              Nous pouvons intervenir lorsqu'un gardien est absent afin
-              d'assurer la continuité du service et l'entretien de l'immeuble.
+              Un accompagnement des syndics et conseils syndicaux
+              dans la recherche de gardiens et de personnel d'immeuble
+              correspondant à leurs besoins.
             </p>
+
           </div>
-
-        </div>
-
-
-        <div className="mt-8 space-y-4 text-center leading-8 text-gray-600">
-
-          <p>
-            CoproSolutions accompagne les conseils syndicaux et gestionnaires
-            immobiliers dans la gestion quotidienne de l'entretien des
-            immeubles.
-          </p>
-
-          <p>
-            Notre service de remplacement de gardiens permet également aux
-            copropriétés de maintenir la continuité des prestations lorsqu'un
-            gardien est absent ou indisponible.
-          </p>
 
         </div>
 
       </section>
 
 
-      {/* =========================
-          CONTACT
-      ========================= */}
+      {/* CONTACT */}
       <section
         id="contact"
         className="relative overflow-hidden bg-blue-950 px-6 py-20 text-white md:py-24"
       >
 
         <div className="pointer-events-none absolute -right-20 top-10 h-72 w-72 rounded-full bg-green-500/20 blur-3xl" />
+
         <div className="pointer-events-none absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl" />
 
         <div className="relative mx-auto max-w-3xl">
 
           <div className="mb-10 text-center">
 
-            <div className="mb-4 text-5xl">
-              📩
-            </div>
+            <div className="mb-4 text-5xl">📩</div>
 
             <h2 className="text-3xl font-black md:text-4xl">
               Demandez votre devis
             </h2>
 
             <p className="mt-4 text-lg leading-8 text-blue-100">
-              Besoin d'un entretien d'immeuble, d'un nettoyage de copropriété
-              ou d'un remplacement de gardien ? Décrivez-nous votre besoin et
-              nous vous recontacterons rapidement.
+              Entretien de copropriété ou de bureaux, remplacement
+              de gardien, aide au recrutement : décrivez-nous votre
+              besoin et nous vous recontacterons rapidement.
             </p>
 
           </div>
 
 
           <form
-            ref={form}
-            onSubmit={sendEmail}
+            onSubmit={sendRequest}
             className="space-y-5 rounded-3xl bg-white p-7 text-black shadow-2xl md:p-9"
           >
 
             <div>
-
               <label
-                htmlFor="name"
+                htmlFor="home-name"
                 className="mb-2 block font-bold text-slate-700"
               >
-                Nom / Société
+                Nom / Société *
               </label>
 
               <input
-                id="name"
+                id="home-name"
                 type="text"
                 name="name"
                 placeholder="Votre nom ou société"
-                className="w-full rounded-2xl border border-slate-200 p-4 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                maxLength={150}
                 required
+                className="w-full rounded-2xl border border-slate-200 p-4 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
               />
-
             </div>
 
 
             <div>
-
               <label
-                htmlFor="email"
+                htmlFor="home-email"
                 className="mb-2 block font-bold text-slate-700"
               >
-                Email
+                Email *
               </label>
 
               <input
-                id="email"
+                id="home-email"
                 type="email"
                 name="email"
                 placeholder="votre@email.fr"
-                className="w-full rounded-2xl border border-slate-200 p-4 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                maxLength={254}
                 required
+                className="w-full rounded-2xl border border-slate-200 p-4 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
               />
-
             </div>
 
 
             <div>
-
               <label
-                htmlFor="message"
+                htmlFor="home-phone"
                 className="mb-2 block font-bold text-slate-700"
               >
-                Votre besoin
+                Téléphone
+              </label>
+
+              <input
+                id="home-phone"
+                type="tel"
+                name="telephone"
+                placeholder="Votre numéro de téléphone"
+                maxLength={40}
+                className="w-full rounded-2xl border border-slate-200 p-4 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              />
+            </div>
+
+
+            <div>
+              <label
+                htmlFor="home-service"
+                className="mb-2 block font-bold text-slate-700"
+              >
+                Service souhaité
+              </label>
+
+              <select
+                id="home-service"
+                name="service"
+                defaultValue=""
+                className="w-full rounded-2xl border border-slate-200 bg-white p-4 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              >
+                <option value="">Choisissez un service</option>
+
+                <option value="Nettoyage et entretien de copropriété">
+                  Nettoyage et entretien de copropriété
+                </option>
+
+                <option value="Entretien d'immeubles de bureaux">
+                  Entretien d'immeubles de bureaux
+                </option>
+
+                <option value="Remplacement de gardien – courte durée">
+                  Remplacement de gardien – courte durée
+                </option>
+
+                <option value="Remplacement de gardien – moyenne durée">
+                  Remplacement de gardien – moyenne durée
+                </option>
+
+                <option value="Remplacement de gardien – longue durée">
+                  Remplacement de gardien – longue durée
+                </option>
+
+                <option value="Aide au recrutement pour un syndic ou conseil syndical">
+                  Aide au recrutement pour un syndic ou conseil syndical
+                </option>
+
+                <option value="Autre demande">
+                  Autre demande
+                </option>
+
+              </select>
+            </div>
+
+
+            <div>
+              <label
+                htmlFor="home-message"
+                className="mb-2 block font-bold text-slate-700"
+              >
+                Votre besoin *
               </label>
 
               <textarea
-                id="message"
+                id="home-message"
                 name="message"
-                placeholder="Décrivez votre besoin : entretien d'immeuble, copropriété, nombre de lots, fréquence d'entretien, remplacement de gardien..."
+                placeholder="Décrivez votre besoin, votre immeuble et la prestation recherchée..."
                 rows={6}
-                className="w-full rounded-2xl border border-slate-200 p-4 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                maxLength={5000}
                 required
+                className="w-full rounded-2xl border border-slate-200 p-4 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
               />
-
             </div>
 
 
             <button
               type="submit"
-              className="w-full rounded-2xl bg-green-500 py-4 font-black text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-green-600"
+              disabled={status === "sending"}
+              className="w-full rounded-2xl bg-green-500 py-4 font-black text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-green-600 disabled:cursor-not-allowed disabled:opacity-60"
             >
-              🚀 Envoyer ma demande
+              {status === "sending"
+                ? "Envoi en cours..."
+                : "Valider ma demande de devis"}
             </button>
+
+
+            <div aria-live="polite">
+
+              {status === "success" && (
+                <p className="font-semibold text-green-700">
+                  Votre demande a bien été envoyée. Merci pour votre confiance !
+                </p>
+              )}
+
+              {status === "error" && (
+                <p className="font-semibold text-red-700">
+                  L'envoi n'a pas abouti. Merci de réessayer ou de nous appeler.
+                </p>
+              )}
+
+            </div>
 
           </form>
 
 
+          {/* COORDONNÉES DE L'ENTREPRISE */}
           <div className="mt-10 text-center">
 
             <p className="mb-3 text-blue-100">
@@ -647,15 +755,19 @@ export default function Home() {
             </a>
 
             <p className="mt-4">
-
               <a
                 href="mailto:coprosolutions@coprosolutions.net"
                 className="text-blue-200 transition hover:text-white hover:underline"
               >
                 coprosolutions@coprosolutions.net
               </a>
-
             </p>
+
+            <address className="mt-5 not-italic leading-7 text-blue-100">
+              Siège social : 73 rue du Château,
+              <br />
+              92100 Boulogne-Billancourt
+            </address>
 
           </div>
 
@@ -664,9 +776,7 @@ export default function Home() {
       </section>
 
 
-      {/* =========================
-          BOUTONS FIXES
-      ========================= */}
+      {/* BOUTONS FIXES */}
       <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-3">
 
         <a
@@ -691,13 +801,9 @@ export default function Home() {
           aria-label="Contacter CoproSolutions sur WhatsApp"
           className="flex items-center gap-2 rounded-full bg-green-500 px-5 py-3 font-black text-white shadow-2xl transition duration-300 hover:-translate-y-1 hover:bg-green-600"
         >
-          <span className="text-xl">
-            💬
-          </span>
+          <span className="text-xl">💬</span>
 
-          <span>
-            WhatsApp
-          </span>
+          <span>WhatsApp</span>
         </a>
 
       </div>
