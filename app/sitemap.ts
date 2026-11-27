@@ -1,281 +1,48 @@
-import type { MetadataRoute } from "next";
+﻿import type { MetadataRoute } from "next";
+import fs from "fs";
+import path from "path";
 
 const baseUrl = "https://www.coprosolutions.net";
 
+function getRoutes(dir: string, baseRoute = ""): string[] {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  let routes: string[] = [];
+
+  for (const entry of entries) {
+    if (entry.name.startsWith("_") || entry.name === "api") continue;
+
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      routes = routes.concat(getRoutes(fullPath, `${baseRoute}/${entry.name}`));
+    } else if (entry.name === "page.tsx") {
+      routes.push(baseRoute || "/");
+    }
+  }
+  return routes;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: baseUrl,
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/services`,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/zones`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/remplacement-gardien`,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/entretien-bureau-immeuble`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/entretien-copropriété-idf`,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/nettoyage-copropriete-paris`,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/sortie-et-rentrée-poubelle`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/travaux-exceptionnels`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+  const appDir = path.join(process.cwd(), "app");
+  const routes = getRoutes(appDir);
 
-    // Hauts-de-Seine
-    {
-      url: `${baseUrl}/zones/hauts-de-seine`,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/zones/boulogne-billancourt`,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/zones/hauts-de-seine/antony`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/zones/hauts-de-seine/bagneux`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/zones/hauts-de-seine/chatenay-malabry`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/zones/hauts-de-seine/chatillon`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/zones/hauts-de-seine/clamart`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/zones/hauts-de-seine/fontenay-aux-roses`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/zones/hauts-de-seine/issy-les-moulineaux`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/zones/hauts-de-seine/le-plessis-robinson`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/zones/hauts-de-seine/levallois-perret`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/zones/hauts-de-seine/malakoff`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/zones/hauts-de-seine/meudon`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/zones/hauts-de-seine/nanterre`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/zones/hauts-de-seine/neuilly-sur-seine`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/zones/hauts-de-seine/sevres`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/zones/hauts-de-seine/vaucresson`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+  return routes.map((route) => {
+    const isHome = route === "/";
+    const isMainPage = [
+      "/services",
+      "/zones",
+      "/remplacement-gardien",
+      "/nettoyage-copropriete-paris",
+      "/zones/hauts-de-seine",
+      "/zones/yvelines",
+      "/zones/val-de-marne",
+      "/zones/boulogne-billancourt",
+    ].includes(route);
 
-    // Paris
- {
-  url: `${baseUrl}/zones/paris-2`,
-  changeFrequency: "monthly",
-  priority: 0.8,
-},
-    {
-  url: `${baseUrl}/zones/paris-3`,
-  changeFrequency: "monthly",
-  priority: 0.8,
-},
-{
-  url: `${baseUrl}/zones/paris-4`,
-  changeFrequency: "monthly",
-  priority: 0.8,
-},
-    {
-  url: `${baseUrl}/zones/paris-5`,
-  changeFrequency: "monthly",
-  priority: 0.8,
-},
-    {
-  url: `${baseUrl}/zones/paris-6`,
-  changeFrequency: "monthly",
-  priority: 0.8,
-},
-    {
-  url: `${baseUrl}/zones/paris-7`,
-  changeFrequency: "monthly",
-  priority: 0.8,
-},
-    {
-  url: `${baseUrl}/zones/paris-8`,
-  changeFrequency: "monthly",
-  priority: 0.9,
-},
-    {
-  url: `${baseUrl}/zones/paris-9`,
-  changeFrequency: "monthly",
-  priority: 0.8,
-},
-{
-  url: `${baseUrl}/zones/paris-10`,
-  changeFrequency: "monthly",
-  priority: 0.8,
-},
-{
-  url: `${baseUrl}/zones/paris-11`,
-  changeFrequency: "monthly",
-  priority: 0.8,
-},
-{
-  url: `${baseUrl}/zones/paris-12`,
-  changeFrequency: "monthly",
-  priority: 0.8,
-},
-{
-  url: `${baseUrl}/zones/paris-13`,
-  changeFrequency: "monthly",
-  priority: 0.8,
-},
-{
-  url: `${baseUrl}/zones/paris-14`,
-  changeFrequency: "monthly",
-  priority: 0.8,
-},
-    {
-      url: `${baseUrl}/zones/paris-15`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-  url: `${baseUrl}/zones/paris-16`,
-  changeFrequency: "monthly",
-  priority: 0.8,
-},
-{
-  url: `${baseUrl}/zones/paris-17`,
-  changeFrequency: "monthly",
-  priority: 0.8,
-},
-{
-  url: `${baseUrl}/zones/paris-18`,
-  changeFrequency: "monthly",
-  priority: 0.8,
-},
-{
-  url: `${baseUrl}/zones/paris-19`,
-  changeFrequency: "monthly",
-  priority: 0.8,
-},
-{
-  url: `${baseUrl}/zones/paris-20`,
-  changeFrequency: "monthly",
-  priority: 0.8,
-},
-    {
-      url: `${baseUrl}/zones/paris-75`,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-
-    // Val-de-Marne
-    {
-      url: `${baseUrl}/zones/val-de-marne`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/zones/val-de-marne/creteil`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-
-    // Yvelines
-    {
-      url: `${baseUrl}/zones/yvelines`,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/zones/yvelines/versailles`,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/zones/yvelines/louveciennes`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/zones/yvelines/saint-germain-en-laye`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-  ];
+    return {
+      url: isHome ? baseUrl : `${baseUrl}${encodeURI(route)}`,
+      lastModified: new Date(),
+      changeFrequency: isHome ? "weekly" : "monthly",
+      priority: isHome ? 1 : isMainPage ? 0.9 : 0.8,
+    };
+  });
 }

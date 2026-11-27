@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import "./globals.css";
 
 const siteUrl = "https://www.coprosolutions.net";
@@ -34,10 +34,6 @@ export const metadata: Metadata = {
     "entretien copropriété Boulogne-Billancourt",
     "CoproSolutions",
   ],
-
-  alternates: {
-    canonical: "/",
-  },
 
   robots: {
     index: true,
@@ -79,7 +75,15 @@ const localBusinessSchema = {
   "@id": `${siteUrl}/#organization`,
   name: "CoproSolutions",
   url: siteUrl,
-  telephone: "+33658876579",
+    telephone: "+33658876579",
+  email: "coprosolutions@coprosolutions.net",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "73 rue du Château",
+    addressLocality: "Boulogne-Billancourt",
+    postalCode: "92100",
+    addressCountry: "FR",
+  },
   description:
     "Entreprise spécialisée dans l'entretien de copropriétés, le nettoyage d'immeubles, l'entretien de bureaux et le remplacement de gardiens en Île-de-France.",
   areaServed: [
@@ -208,3 +212,4 @@ export default function RootLayout({
     </html>
   );
 }
+
