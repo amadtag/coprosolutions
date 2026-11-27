@@ -2,9 +2,9 @@
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Remplacement de gardien d'immeuble sous 24 à 48h (Paris, 92, 78)",
+  title: "Remplacement de gardien d'immeuble sous 24 à 48h (Paris, 92, 78) | CoproSolutions",
   description:
-    "Remplacement de gardien d'immeuble et concierge en copropriété à Paris et en Île-de-France : arrêt maladie, congés d'été, passation de clés et suivi qualité terrain sans sous-traitance.",
+    "Basée à Boulogne-Billancourt, CoproSolutions assure le remplacement de gardien d'immeuble en copropriété (Paris 75, 92, 78) : arrêt maladie, congés, passation de clés et suivi qualité sans sous-traitance.",
   alternates: {
     canonical: "/remplacement-gardien",
   },
@@ -14,7 +14,7 @@ const faqItems = [
   {
     question: "En combien de temps pouvez-vous remplacer un gardien d'immeuble en arrêt maladie ?",
     answer:
-      "Basés à Boulogne-Billancourt (92), nous mettons en place un gardien remplaçant qualifié sous 24 à 48h sur Paris (75), les Hauts-de-Seine (92), les Yvelines (78) et le Val-de-Marne (94), dès validation du devis.",
+      "Basés au 73 rue du Château à Boulogne-Billancourt (92100), nous mettons en place un gardien remplaçant qualifié sous 24 à 48h sur Paris (75), les Hauts-de-Seine (92), les Yvelines (78) et le Val-de-Marne (94), dès validation du devis.",
   },
   {
     question: "Comment se déroule la passation des clés, badges et consignes de la loge ?",
@@ -40,7 +40,7 @@ const serviceSchema = {
       "@type": "Service",
       name: "Remplacement de gardien d'immeuble et de copropriété",
       description:
-        "Remplacement de gardien d'immeuble de courte, moyenne ou longue durée pour syndics et copropriétés à Paris et en Île-de-France.",
+        "Remplacement de gardien d'immeuble de courte, moyenne ou longue durée pour syndics et copropriétés à Paris (75), Hauts-de-Seine (92) et Yvelines (78).",
       provider: {
         "@id": "https://www.coprosolutions.net/#organization",
       },
@@ -72,7 +72,7 @@ export default function RemplacementGardien() {
       <section className="bg-slate-900 px-6 py-20 text-white">
         <div className="mx-auto max-w-5xl text-center">
           <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-green-400">
-            COPROSOLUTIONS • INTERVENTION SOUS 24 À 48H
+            COPROSOLUTIONS • INTERVENTION SOUS 24 À 48H (PARIS, 92, 78)
           </p>
 
           <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl">
@@ -118,17 +118,21 @@ export default function RemplacementGardien() {
           </p>
 
           <p>
-            Forts de <strong>5 années d’expérience à la direction d’une agence spécialisée
-            dans le remplacement de gardiens en Île-de-France</strong>, nous avons conçu
-            une organisation terrain rodée au départ de Boulogne-Billancourt (92) pour
-            déployer des remplaçants fiables, autonomes et habitués aux exigences des
-            résidences parisiennes et de l’Ouest parisien.
+            Forts de{" "}
+            <strong>
+              5 années d’expérience à la direction d’une agence spécialisée dans le
+              remplacement de gardiens en Île-de-France
+            </strong>
+            , nous avons conçu une organisation terrain rodée au départ de
+            Boulogne-Billancourt (73 rue du Château, 92100) pour déployer des
+            remplaçants fiables, autonomes et habitués aux exigences des résidences
+            parisiennes et de l’Ouest parisien.
           </p>
 
           <p>
-            Que votre immeuble relève d’un poste d’employé d’immeuble ou d’un gardien
-            en loge, chaque intervention fait l’objet d’un démarrage encadré sur site
-            et d’un suivi direct par le dirigeant.
+            Que votre immeuble relève d’un poste d’employé d’immeuble (catégorie A)
+            ou d’un gardien logé (catégorie B), chaque intervention fait l’objet
+            d’un démarrage encadré sur site et d’un suivi direct par le dirigeant.
           </p>
         </div>
       </section>
@@ -140,8 +144,8 @@ export default function RemplacementGardien() {
             Notre protocole de remplacement en 3 étapes
           </h2>
           <p className="mx-auto mb-12 max-w-3xl text-center text-blue-100">
-            Un processus sécurisé pour les gestionnaires de copropriété, de la demande
-            de devis jusqu’au retour du titulaire.
+            Un processus sécurisé et éprouvé pour les gestionnaires de copropriété,
+            de la demande de devis jusqu’au retour du titulaire.
           </p>
 
           <div className="grid gap-6 md:grid-cols-3">
@@ -160,18 +164,18 @@ export default function RemplacementGardien() {
               <h3 className="mb-2 text-xl font-bold">Passation des clés & consignes</h3>
               <p className="text-sm leading-7 text-blue-100">
                 Accueil sur site avec remise formalisée du trousseau, badges Vigik,
-                codes techniques, plan des locaux poubelles et consignes du conseil
-                syndical.
+                codes techniques, plan des locaux poubelles et prise en compte des
+                consignes de la résidence.
               </p>
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <div className="mb-3 text-3xl font-black text-green-400">03</div>
-              <h3 className="mb-2 text-xl font-bold">Contrôle qualité & restitution</h3>
+              <h3 className="mb-2 text-xl font-bold">Suivi qualité & relation CS apaisée</h3>
               <p className="text-sm leading-7 text-blue-100">
-                Passage de contrôle du dirigeant en cours de mission, remontée des
-                anomalies éventuelles au gestionnaire et restitution complète des clés
-                en fin de remplacement.
+                Contrôles réguliers sur site par le dirigeant, remontée rapide des
+                anomalies au gestionnaire et suivi relationnel dédié pour prévenir
+                toute réclamation des résidents.
               </p>
             </div>
           </div>
@@ -361,6 +365,15 @@ export default function RemplacementGardien() {
           <Link href="/zones/boulogne-billancourt" className="rounded-xl border p-4 text-center font-semibold text-slate-700 hover:shadow-md">
             Boulogne-Billancourt
           </Link>
+          <Link href="/zones/hauts-de-seine/neuilly-sur-seine" className="rounded-xl border p-4 text-center font-semibold text-slate-700 hover:shadow-md">
+            Neuilly-sur-Seine
+          </Link>
+          <Link href="/zones/hauts-de-seine/issy-les-moulineaux" className="rounded-xl border p-4 text-center font-semibold text-slate-700 hover:shadow-md">
+            Issy-les-Moulineaux
+          </Link>
+          <Link href="/zones/hauts-de-seine/levallois-perret" className="rounded-xl border p-4 text-center font-semibold text-slate-700 hover:shadow-md">
+            Levallois-Perret
+          </Link>
           <Link href="/zones/paris-15" className="rounded-xl border p-4 text-center font-semibold text-slate-700 hover:shadow-md">
             Paris 15e
           </Link>
@@ -369,6 +382,9 @@ export default function RemplacementGardien() {
           </Link>
           <Link href="/zones/yvelines/versailles" className="rounded-xl border p-4 text-center font-semibold text-slate-700 hover:shadow-md">
             Versailles
+          </Link>
+          <Link href="/zones/yvelines" className="rounded-xl border p-4 text-center font-semibold text-slate-700 hover:shadow-md">
+            Saint-Germain-en-Laye
           </Link>
         </div>
 
@@ -414,10 +430,11 @@ export default function RemplacementGardien() {
             </a>
           </div>
 
-          <p className="mt-6">
+          <p className="mt-6 text-sm text-blue-200">
+            Siège social : 73 rue du Château, 92100 Boulogne-Billancourt •{" "}
             <a
               href="mailto:coprosolutions@coprosolutions.net"
-              className="text-blue-100 hover:underline"
+              className="underline hover:text-white"
             >
               coprosolutions@coprosolutions.net
             </a>
