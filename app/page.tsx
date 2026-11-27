@@ -35,10 +35,11 @@ export default function Home() {
           </h1>
 
           <p className="mx-auto mb-10 max-w-3xl text-lg leading-8 text-slate-100 md:text-xl">
-            Basée à Boulogne-Billancourt, <strong>Coprosolutions</strong> accompagne
-            les syndics et conseils syndicaux à Paris (75), dans les Hauts-de-Seine (92)
-            et les Yvelines (78) : entretien des parties communes, remplacement de
-            gardiens au pied levé, débarras d&apos;encombrants et remises en état.
+            Basée à Boulogne-Billancourt, <strong>Coprosolutions</strong>{" "}
+            accompagne les syndics et conseils syndicaux à Paris (75), dans les
+            Hauts-de-Seine (92) et les Yvelines (78) : entretien des parties
+            communes, remplacement de gardiens au pied levé, débarras
+            d&apos;encombrants et remises en état.
           </p>
 
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
@@ -97,10 +98,14 @@ export default function Home() {
             </h2>
 
             <p className="leading-8 text-gray-600">
-              Après <strong>5 années à la direction d&apos;une agence spécialisée en remplacement
-              de gardiens et entretien de copropriétés</strong> (en franchise), j&apos;ai fondé
-              Coprosolutions au 73 rue du Château à Boulogne-Billancourt pour offrir aux
-              gestionnaires des process déjà rodés et un suivi direct sans intermédiaire.
+              Après{" "}
+              <strong>
+                5 années à la direction d&apos;une agence spécialisée en remplacement
+                de gardiens et entretien de copropriétés
+              </strong>{" "}
+              (en franchise), j&apos;ai fondé Coprosolutions au 73 rue du Château à
+              Boulogne-Billancourt pour offrir aux gestionnaires des process déjà
+              rodés et un suivi direct sans intermédiaire.
             </p>
 
             <p className="mt-4 text-base font-black uppercase text-orange-600">
@@ -128,7 +133,7 @@ export default function Home() {
         </div>
 
         <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
-          {/* SERVICE 1 — CORRIGÉ VERS /nettoyage-copropriete-paris */}
+          {/* SERVICE 1 — VERS /nettoyage-copropriete-paris */}
           <Link
             href="/nettoyage-copropriete-paris"
             className="group rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
