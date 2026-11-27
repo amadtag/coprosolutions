@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title:
-    "Entreprise de nettoyage de copropriété dans le 92 | CoproSolutions",
+    "Entreprise de nettoyage de copropriété dans le 92 | CoproSolutions Boulogne",
   description:
-    "CoproSolutions assure le nettoyage et l'entretien des copropriétés dans les Hauts-de-Seine (92) : halls, escaliers, parkings, poubelles et parties communes. Devis gratuit sous 24 h.",
+    "Basée à Boulogne-Billancourt (92100), CoproSolutions assure le nettoyage de copropriété dans les Hauts-de-Seine (92) : halls, escaliers, poubelles, parkings et devis AG sous 24h.",
   alternates: {
     canonical: "/zones/hauts-de-seine",
   },
@@ -15,13 +16,13 @@ const cities = [
     name: "Boulogne-Billancourt",
     href: "/zones/boulogne-billancourt",
     description:
-      "Entretien et nettoyage de copropriétés, immeubles et parties communes à Boulogne-Billancourt.",
+      "Siège social au 73 rue du Château : entretien et nettoyage de copropriétés, halls et parties communes à Boulogne-Billancourt.",
   },
   {
     name: "Issy-les-Moulineaux",
     href: "/zones/hauts-de-seine/issy-les-moulineaux",
     description:
-      "Prestations d'entretien et de nettoyage pour les copropriétés et immeubles à Issy-les-Moulineaux.",
+      "Prestations d'entretien et de nettoyage pour les copropriétés et résidences à Issy-les-Moulineaux.",
   },
   {
     name: "Levallois-Perret",
@@ -39,13 +40,25 @@ const cities = [
     name: "Neuilly-sur-Seine",
     href: "/zones/hauts-de-seine/neuilly-sur-seine",
     description:
-      "Entretien des copropriétés, résidences et immeubles à Neuilly-sur-Seine.",
+      "Entretien soigné des copropriétés de standing, résidences et immeubles à Neuilly-sur-Seine.",
   },
   {
     name: "Antony",
     href: "/zones/hauts-de-seine/antony",
     description:
       "Entretien et nettoyage de copropriétés, halls et parties communes à Antony.",
+  },
+  {
+    name: "Courbevoie",
+    href: "/zones/hauts-de-seine",
+    description:
+      "Nettoyage régulier des parties communes, parkings et locaux poubelles à Courbevoie et La Défense.",
+  },
+  {
+    name: "Saint-Cloud",
+    href: "/zones/hauts-de-seine",
+    description:
+      "Entretien d'immeubles, résidences arborées et copropriétés à Saint-Cloud.",
   },
   {
     name: "Bagneux",
@@ -109,14 +122,73 @@ const cities = [
   },
 ];
 
+const faqItems = [
+  {
+    question: "Où est située votre entreprise de nettoyage dans les Hauts-de-Seine (92) ?",
+    answer:
+      "Notre siège social est implanté au 73 rue du Château à Boulogne-Billancourt (92100). Cette proximité nous permet d'intervenir sous 24 à 48h dans tout le département 92 (Issy-les-Moulineaux, Neuilly-sur-Seine, Levallois-Perret, Courbevoie, Saint-Cloud, Sèvres, Antony, Clamart, Meudon).",
+  },
+  {
+    question: "Comment garantissez-vous la régularité et le suivi qualité des prestations ?",
+    answer:
+      "Issus de 5 années de direction d'agence spécialisée en copropriétés, nos protocoles reposent sur une transparence totale sur site, un circuit d'alerte direct avec le gestionnaire, des audits qualité réguliers réalisés par le dirigeant et un suivi relationnel dédié avec le conseil syndical.",
+  },
+  {
+    question: "Fournissez-vous un devis comparatif pour les Assemblées Générales dans le 92 ?",
+    answer:
+      "Oui. Après visite de l'immeuble et étude de votre cahier des charges, nous vous transmettons un devis détaillé poste par poste sous 24 à 48h ainsi que votre dossier complet de référencement syndic (RC Pro, attestation URSSAF, Kbis).",
+  },
+  {
+    question: "Intervenez-vous en urgence pour remplacer un gardien dans le 92 ?",
+    answer:
+      "Oui. Nous assurons le remplacement de gardiens d'immeubles en courte, moyenne ou longue durée sous 24 à 48h avec passation de consignes structurée (sortie des poubelles, courrier, nettoyage des parties communes et surveillance).",
+  },
+];
+
+const schema92 = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      name: "Nettoyage et entretien de copropriété dans les Hauts-de-Seine (92)",
+      description:
+        "Entreprise de nettoyage de copropriété basée à Boulogne-Billancourt (92100) : entretien régulier des parties communes, rotation des poubelles, parkings et remplacement de gardiens dans le 92.",
+      provider: {
+        "@id": "https://www.coprosolutions.net/#organization",
+      },
+      areaServed: {
+        "@type": "AdministrativeArea",
+        name: "Hauts-de-Seine",
+        postalCode: "92000",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    },
+  ],
+};
+
 export default function HautsDeSeinePage() {
   return (
     <main className="bg-white text-slate-800">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema92) }}
+      />
+
       {/* HERO */}
       <section className="bg-slate-900 px-6 py-20 text-white">
         <div className="mx-auto max-w-5xl text-center">
           <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-green-400">
-            COPROSOLUTIONS · HAUTS-DE-SEINE 92
+            COPROSOLUTIONS · SIÈGE À BOULOGNE-BILLANCOURT (92100)
           </p>
 
           <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl">
@@ -124,20 +196,20 @@ export default function HautsDeSeinePage() {
           </h1>
 
           <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-200">
-            CoproSolutions accompagne les syndics, conseils syndicaux et
-            gestionnaires immobiliers pour le nettoyage et l'entretien des
-            copropriétés dans les Hauts-de-Seine. Nous intervenons pour
-            l'entretien des halls, escaliers, paliers, ascenseurs, parkings,
-            locaux poubelles et autres parties communes des immeubles.
+            Implantée au <strong>73 rue du Château à Boulogne-Billancourt</strong>,
+            CoproSolutions accompagne les syndics et conseils syndicaux du 92
+            pour l&apos;entretien régulier des parties communes, la sortie des
+            poubelles, le nettoyage des parkings et le remplacement de gardiens
+            sous 24 à 48h.
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <a
+            <Link
               href="/contact"
               className="rounded-xl bg-green-600 px-6 py-3 font-bold text-white hover:bg-green-700"
             >
-              Demander un devis gratuit
-            </a>
+              Demander un devis gratuit sous 24h
+            </Link>
 
             <a
               href="tel:+33658876579"
@@ -148,7 +220,7 @@ export default function HautsDeSeinePage() {
           </div>
 
           <p className="mt-5 text-sm text-slate-300">
-            Étude de votre besoin et devis gratuit sous 24 h.
+            5 ans d&apos;expertise en direction d&apos;agence copropriétés • Zéro sous-traitance
           </p>
         </div>
       </section>
@@ -156,33 +228,109 @@ export default function HautsDeSeinePage() {
       {/* INTRODUCTION */}
       <section className="mx-auto max-w-5xl px-6 py-16">
         <h2 className="mb-6 text-3xl font-bold">
-          Entreprise de nettoyage de copropriété dans le 92
+          Votre entreprise de nettoyage de copropriété de proximité dans le 92
         </h2>
 
         <div className="space-y-5 text-lg leading-8 text-gray-600">
           <p>
-            CoproSolutions propose des prestations de nettoyage et d'entretien
-            de copropriétés dans les Hauts-de-Seine (92). Nous accompagnons les
-            syndics de copropriété, les gestionnaires immobiliers et les
-            conseils syndicaux dans l'organisation de l'entretien des
-            immeubles et des résidences.
+            Basée au cœur des Hauts-de-Seine à{" "}
+            <strong>Boulogne-Billancourt (73 rue du Château, 92100)</strong>,
+            CoproSolutions assure le nettoyage et l&apos;entretien d&apos;immeubles
+            pour les cabinets de syndics, gestionnaires immobiliers et conseils
+            syndicaux du département 92.
           </p>
 
           <p>
-            Le nettoyage des parties communes concerne notamment les halls
-            d'entrée, escaliers, paliers, couloirs, ascenseurs, sols, locaux
-            poubelles et espaces de circulation. Chaque prestation est étudiée
-            en fonction de la configuration de l'immeuble et des besoins de la
-            copropriété.
+            Fort d&apos;une expérience de{" "}
+            <strong>
+              5 années à la direction d&apos;une agence spécialisée en remplacement de
+              gardiens et entretien de copropriétés
+            </strong>{" "}
+            (en franchise), le dirigeant encadre directement chaque résidence :
+            halls d&apos;entrée, escaliers, paliers, ascenseurs, locaux poubelles et
+            parkings souterrains.
           </p>
 
           <p>
-            Selon les caractéristiques du bâtiment, l'entretien peut être
-            organisé plusieurs fois par semaine, une fois par semaine ou de
-            manière ponctuelle. La fréquence et le contenu des interventions
-            sont définis en fonction des surfaces, du nombre de bâtiments et
-            des contraintes du site.
+            Vous préparez un appel d&apos;offres pour votre prochaine{" "}
+            <strong>Assemblée Générale</strong> ou souhaitez remplacer un
+            prestataire défaillant ? Nous visitons l&apos;immeuble et vous remettons
+            un devis comparatif détaillé sous 24 à 48h.
           </p>
+        </div>
+      </section>
+
+      {/* ENGAGEMENTS RÉSULTATS — DISCRET & ORIENTÉ SYNDIC */}
+      <section className="bg-blue-950 px-6 py-16 text-white">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-10 text-center">
+            <span className="inline-block rounded-full bg-green-500/20 px-4 py-1.5 text-sm font-bold text-green-300">
+              L&apos;EXIGENCE COPROSOLUTIONS
+            </span>
+            <h2 className="mt-3 text-3xl font-bold">
+              Une méthodologie éprouvée pour soulager votre gestion quotidienne
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-slate-300">
+              Issus de 5 années de direction d&apos;agence spécialisée en copropriétés,
+              nos protocoles de suivi sont présentés en détail lors de chaque visite
+              d&apos;immeuble.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="mb-2 text-2xl font-black text-green-400">01</div>
+              <h3 className="mb-2 text-lg font-bold">
+                Transparence sur site
+              </h3>
+              <p className="text-sm leading-6 text-slate-300">
+                Un dispositif d&apos;information clair déployé dès la prise en charge
+                pour rassurer les copropriétaires et limiter les appels au cabinet.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="mb-2 text-2xl font-black text-green-400">02</div>
+              <h3 className="mb-2 text-lg font-bold">
+                Veille technique active
+              </h3>
+              <p className="text-sm leading-6 text-slate-300">
+                Un circuit de communication direct avec votre gestionnaire pour
+                signaler et anticiper les anomalies terrain en temps réel.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="mb-2 text-2xl font-black text-green-400">03</div>
+              <h3 className="mb-2 text-lg font-bold">
+                Contrôle qualité incarné
+              </h3>
+              <p className="text-sm leading-6 text-slate-300">
+                Des vérifications régulières sur place par le dirigeant et un
+                suivi visuel systématique de nos interventions ponctuelles.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="mb-2 text-2xl font-black text-green-400">04</div>
+              <h3 className="mb-2 text-lg font-bold">
+                Relation CS apaisée
+              </h3>
+              <p className="text-sm leading-6 text-slate-300">
+                Un protocole de suivi dédié avec le conseil syndical pour
+                prévenir les insatisfactions et valoriser la qualité de votre gestion.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link
+              href="/contact"
+              className="inline-block rounded-xl border border-green-400/40 bg-green-500/10 px-5 py-2.5 text-sm font-bold text-green-300 transition hover:bg-green-500/20"
+            >
+              Découvrir notre protocole lors d&apos;une visite d&apos;immeuble →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -190,12 +338,12 @@ export default function HautsDeSeinePage() {
       <section className="bg-slate-50 px-6 py-16">
         <div className="mx-auto max-w-6xl">
           <h2 className="mb-4 text-center text-3xl font-bold">
-            Nos services de nettoyage et d'entretien dans les Hauts-de-Seine
+            Nos services de nettoyage et d&apos;entretien dans les Hauts-de-Seine
           </h2>
 
           <p className="mx-auto mb-12 max-w-3xl text-center leading-7 text-gray-600">
-            Des solutions d'entretien adaptées aux copropriétés, résidences,
-            immeubles et bâtiments professionnels du département 92.
+            Des solutions d&apos;entretien adaptées aux copropriétés, résidences,
+            immeubles haussmanniens ou modernes et bâtiments professionnels du 92.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -204,165 +352,60 @@ export default function HautsDeSeinePage() {
                 Nettoyage des parties communes
               </h3>
               <p className="leading-7 text-gray-600">
-                Nettoyage des halls d'entrée, escaliers, paliers, couloirs,
-                ascenseurs, sols et espaces de circulation des résidents.
+                Nettoyage des halls d&apos;entrée, escaliers, paliers, couloirs,
+                ascenseurs, vitrerie d&apos;accès et espaces de circulation des résidents.
               </p>
             </article>
 
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Entretien régulier des immeubles
+                Contrats annuels & devis AG
               </h3>
               <p className="leading-7 text-gray-600">
-                Organisation de prestations d'entretien courant selon la
-                fréquence souhaitée : passages hebdomadaires ou plusieurs fois
-                par semaine.
+                Organisation de prestations d&apos;entretien courant selon la
+                fréquence votée en AG : de 1 à 6 passages par semaine.
               </p>
             </article>
 
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Sortie et rentrée des poubelles
+                Sortie et lavage des poubelles
               </h3>
               <p className="leading-7 text-gray-600">
-                Sortie et rentrée des conteneurs en fonction des jours de
-                collecte et des consignes propres à chaque résidence.
+                Sortie et rentrée des conteneurs selon les jours de collecte de
+                chaque commune du 92, nettoyage et désinfection des locaux bacs.
               </p>
             </article>
 
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Nettoyage des parkings
+                Nettoyage des parkings & caves
               </h3>
               <p className="leading-7 text-gray-600">
-                Nettoyage des parkings, rampes d'accès, circulations et autres
-                espaces communs, dans le cadre d'interventions régulières ou
-                ponctuelles.
+                Balayage mécanisé des parkings souterrains, rampes d&apos;accès,
+                locaux vélos et débarras d&apos;encombrants sous 24/48h.
               </p>
             </article>
 
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Nettoyage de bureaux et locaux professionnels
+                Nettoyage de bureaux et cabinets
               </h3>
               <p className="leading-7 text-gray-600">
-                Entretien des bureaux, locaux professionnels et immeubles
-                administratifs selon les besoins et les caractéristiques des
-                locaux.
+                Entretien régulier ou ponctuel des cabinets de syndics,
+                agences immobilières et immeubles de bureaux dans le 92.
               </p>
             </article>
 
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Remplacement de gardiens
+                Remplacement de gardiens (24/48h)
               </h3>
               <p className="leading-7 text-gray-600">
-                Solutions de remplacement de gardiens et concierges en cas de
-                congés, d'absence temporaire ou de besoin prolongé.
+                Remplacement de courte, moyenne ou longue durée pour congés ou
+                arrêts maladie avec passation de consignes rigoureuse.
               </p>
             </article>
-          </div>
-        </div>
-      </section>
-
-      {/* CONTRATS D'ENTRETIEN */}
-      <section className="mx-auto max-w-5xl px-6 py-16">
-        <h2 className="mb-6 text-3xl font-bold">
-          Contrat d'entretien de copropriété dans les Hauts-de-Seine
-        </h2>
-
-        <div className="space-y-5 text-lg leading-8 text-gray-600">
-          <p>
-            Pour les copropriétés qui souhaitent organiser durablement le
-            nettoyage de leur immeuble, CoproSolutions étudie les besoins
-            d'entretien régulier et les prestations à prévoir au cours de
-            l'année.
-          </p>
-
-          <p>
-            L'organisation peut notamment comprendre le nettoyage des parties
-            communes, l'entretien des halls et escaliers, la gestion des
-            poubelles ainsi que des interventions complémentaires dans les
-            parkings et les espaces communs.
-          </p>
-
-          <p>
-            La fréquence des passages, les tâches à effectuer et les modalités
-            d'intervention sont étudiées avec le syndic ou le gestionnaire afin
-            de définir une prestation adaptée à chaque immeuble.
-          </p>
-        </div>
-
-        <div className="mt-8">
-          <a
-            href="/contact"
-            className="inline-block rounded-xl bg-green-600 px-6 py-3 font-bold text-white hover:bg-green-700"
-          >
-            Étudier un contrat d'entretien
-          </a>
-        </div>
-      </section>
-
-      {/* PRESTATIONS COMPLEMENTAIRES */}
-      <section className="bg-slate-50 px-6 py-16">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="mb-6 text-3xl font-bold">
-            Prestations complémentaires pour les copropriétés
-          </h2>
-
-          <p className="mb-8 text-lg leading-8 text-gray-600">
-            En complément du nettoyage courant des parties communes,
-            CoproSolutions peut étudier différentes interventions ponctuelles
-            selon les besoins de l'immeuble.
-          </p>
-
-          <div className="grid gap-5 md:grid-cols-2">
-            <div className="rounded-xl border bg-white p-6">
-              <h3 className="mb-3 text-xl font-bold">Nettoyage des vitres</h3>
-              <p className="leading-7 text-gray-600">
-                Interventions ponctuelles pour les vitrages accessibles des
-                parties communes.
-              </p>
-            </div>
-
-            <div className="rounded-xl border bg-white p-6">
-              <h3 className="mb-3 text-xl font-bold">
-                Shampoing des moquettes
-              </h3>
-              <p className="leading-7 text-gray-600">
-                Nettoyage approfondi des moquettes et revêtements textiles des
-                halls et circulations.
-              </p>
-            </div>
-
-            <div className="rounded-xl border bg-white p-6">
-              <h3 className="mb-3 text-xl font-bold">
-                Nettoyage après travaux
-              </h3>
-              <p className="leading-7 text-gray-600">
-                Remise en état et nettoyage des espaces après des travaux ou
-                une intervention technique.
-              </p>
-            </div>
-
-            <div className="rounded-xl border bg-white p-6">
-              <h3 className="mb-3 text-xl font-bold">
-                Entretien des espaces extérieurs
-              </h3>
-              <p className="leading-7 text-gray-600">
-                Étude des besoins ponctuels concernant les accès, espaces
-                extérieurs et surfaces communes de la résidence.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <a
-              href="/travaux-exceptionnels"
-              className="font-semibold text-blue-700 hover:underline"
-            >
-              Voir nos travaux et prestations exceptionnels →
-            </a>
           </div>
         </div>
       </section>
@@ -371,20 +414,18 @@ export default function HautsDeSeinePage() {
       <section className="px-6 py-16">
         <div className="mx-auto max-w-6xl">
           <h2 className="mb-4 text-center text-3xl font-bold">
-            Villes d'intervention dans les Hauts-de-Seine
+            Villes d&apos;intervention dans les Hauts-de-Seine (92)
           </h2>
 
           <p className="mx-auto mb-12 max-w-3xl text-center leading-7 text-gray-600">
-            CoproSolutions intervient dans plusieurs communes des
-            Hauts-de-Seine pour le nettoyage et l'entretien des copropriétés,
-            résidences et immeubles professionnels. Retrouvez nos pages locales
-            pour découvrir nos prestations par ville.
+            Depuis notre agence de Boulogne-Billancourt, nous intervenons
+            quotidiennement dans les principales communes des Hauts-de-Seine.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {cities.map((city) => (
-              <a
-                key={city.href}
+              <Link
+                key={city.name}
                 href={city.href}
                 className="rounded-2xl bg-slate-50 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
               >
@@ -392,75 +433,14 @@ export default function HautsDeSeinePage() {
                   Nettoyage de copropriété à {city.name}
                 </h3>
 
-                <p className="leading-7 text-gray-600">
-                  {city.description}
-                </p>
+                <p className="leading-7 text-gray-600">{city.description}</p>
 
                 <span className="mt-5 inline-block font-semibold text-blue-700">
-                  Voir la page {city.name} →
+                  Voir nos interventions à {city.name} →
                 </span>
-              </a>
+              </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ORGANISATION */}
-      <section className="bg-slate-50 px-6 py-16">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="mb-6 text-3xl font-bold">
-            Une organisation adaptée à chaque copropriété
-          </h2>
-
-          <div className="space-y-5 text-lg leading-8 text-gray-600">
-            <p>
-              Une petite copropriété n'a pas les mêmes besoins qu'un ensemble
-              immobilier composé de plusieurs bâtiments, halls, étages et
-              espaces communs. C'est pourquoi l'organisation de l'entretien
-              doit tenir compte des caractéristiques propres à chaque site.
-            </p>
-
-            <p>
-              Avant de définir une prestation, plusieurs éléments peuvent être
-              étudiés : le nombre de halls, les surfaces à nettoyer, la
-              fréquentation de l'immeuble, les accès, les locaux poubelles et
-              les horaires d'intervention souhaités.
-            </p>
-
-            <p>
-              CoproSolutions étudie ces éléments avec le syndic ou le
-              gestionnaire immobilier afin de proposer un process adapté aux
-              besoins de la copropriété.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* SYNDICS */}
-      <section className="mx-auto max-w-5xl px-6 py-16">
-        <h2 className="mb-6 text-3xl font-bold">
-          Une solution pour les syndics et gestionnaires immobiliers du 92
-        </h2>
-
-        <div className="space-y-5 text-lg leading-8 text-gray-600">
-          <p>
-            CoproSolutions accompagne les syndics, conseils syndicaux et
-            gestionnaires immobiliers dans leurs besoins de nettoyage et
-            d'entretien des immeubles dans les Hauts-de-Seine.
-          </p>
-
-          <p>
-            Vous recherchez une entreprise pour assurer l'entretien régulier
-            d'une résidence, organiser la sortie des poubelles ou prévoir une
-            intervention ponctuelle ? Nous étudions les caractéristiques de
-            votre immeuble et les prestations souhaitées.
-          </p>
-
-          <p>
-            Notre objectif est de faciliter l'organisation des interventions
-            et de définir un cadre de prestation adapté aux attentes du
-            gestionnaire et de la copropriété.
-          </p>
         </div>
       </section>
 
@@ -471,113 +451,54 @@ export default function HautsDeSeinePage() {
             Questions fréquentes sur le nettoyage de copropriété dans le 92
           </h2>
 
-          <div className="space-y-6">
-            <article>
-              <h3 className="mb-2 text-xl font-bold">
-                Dans quelles villes des Hauts-de-Seine intervenez-vous ?
-              </h3>
-              <p className="leading-7 text-gray-600">
-                CoproSolutions intervient dans plusieurs communes du
-                département, notamment Boulogne-Billancourt, Issy-les-Moulineaux,
-                Nanterre, Antony, Levallois-Perret, Neuilly-sur-Seine et les
-                autres villes présentées sur cette page.
-              </p>
-            </article>
-
-            <article>
-              <h3 className="mb-2 text-xl font-bold">
-                Quelles parties d'un immeuble peuvent être nettoyées ?
-              </h3>
-              <p className="leading-7 text-gray-600">
-                Les prestations peuvent concerner les halls, escaliers,
-                paliers, couloirs, ascenseurs, sols, locaux poubelles, parkings
-                et autres espaces communs, selon les besoins de la copropriété.
-              </p>
-            </article>
-
-            <article>
-              <h3 className="mb-2 text-xl font-bold">
-                Proposez-vous un entretien régulier des copropriétés ?
-              </h3>
-              <p className="leading-7 text-gray-600">
-                Oui. Les besoins peuvent être étudiés pour organiser des
-                passages réguliers, plusieurs fois par semaine ou selon une
-                fréquence définie avec le syndic ou le gestionnaire.
-              </p>
-            </article>
-
-            <article>
-              <h3 className="mb-2 text-xl font-bold">
-                Peut-on demander une intervention ponctuelle ?
-              </h3>
-              <p className="leading-7 text-gray-600">
-                Oui. Des interventions ponctuelles peuvent être étudiées pour
-                le nettoyage des parkings, des vitres accessibles, des
-                moquettes ou la remise en état après travaux.
-              </p>
-            </article>
-
-            <article>
-              <h3 className="mb-2 text-xl font-bold">
-                Comment demander un devis pour une copropriété dans le 92 ?
-              </h3>
-              <p className="leading-7 text-gray-600">
-                Vous pouvez nous transmettre la ville, le nombre de bâtiments,
-                les surfaces concernées, les prestations souhaitées et la
-                fréquence envisagée depuis notre page contact. Le devis est
-                gratuit et votre demande est étudiée sous 24 h.
-              </p>
-            </article>
+          <div className="space-y-4">
+            {faqItems.map((item) => (
+              <details
+                key={item.question}
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+              >
+                <summary className="cursor-pointer text-lg font-bold text-blue-900">
+                  {item.question}
+                </summary>
+                <p className="mt-3 leading-7 text-gray-600">{item.answer}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
 
       {/* AUTRES SERVICES */}
       <section className="mx-auto max-w-5xl px-6 py-16">
-        <h2 className="mb-8 text-3xl font-bold">Nos autres services</h2>
+        <h2 className="mb-8 text-3xl font-bold">Nos autres prestations copropriétés</h2>
 
         <div className="grid gap-4 md:grid-cols-2">
-          <a
-            href="/entretien-copropriété-idf"
+          <Link
+            href="/nettoyage-copropriete-paris"
             className="rounded-xl border p-5 font-semibold text-blue-700 hover:shadow-md"
           >
-            Entretien de copropriété en Île-de-France →
-          </a>
+            Nettoyage de copropriété à Paris (75) →
+          </Link>
 
-          <a
-            href="/entretien-bureau-immeuble"
-            className="rounded-xl border p-5 font-semibold text-blue-700 hover:shadow-md"
-          >
-            Nettoyage de bureaux et immeubles professionnels →
-          </a>
-
-          <a
+          <Link
             href="/remplacement-gardien"
             className="rounded-xl border p-5 font-semibold text-blue-700 hover:shadow-md"
           >
-            Remplacement de gardien →
-          </a>
+            Remplacement de gardien d&apos;immeuble →
+          </Link>
 
-          <a
-            href="/sortie-et-rentrée-poubelle"
-            className="rounded-xl border p-5 font-semibold text-blue-700 hover:shadow-md"
-          >
-            Sortie et rentrée des poubelles →
-          </a>
-
-          <a
+          <Link
             href="/travaux-exceptionnels"
             className="rounded-xl border p-5 font-semibold text-blue-700 hover:shadow-md"
           >
-            Travaux exceptionnels →
-          </a>
+            Débarras d&apos;encombrants & travaux exceptionnels →
+          </Link>
 
-          <a
-            href="/services"
+          <Link
+            href="/entretien-bureau-immeuble"
             className="rounded-xl border p-5 font-semibold text-blue-700 hover:shadow-md"
           >
-            Voir tous nos services →
-          </a>
+            Nettoyage de bureaux et cabinets →
+          </Link>
         </div>
       </section>
 
@@ -585,23 +506,22 @@ export default function HautsDeSeinePage() {
       <section className="bg-blue-950 px-6 py-20 text-center text-white">
         <div className="mx-auto max-w-3xl">
           <h2 className="mb-5 text-3xl font-bold">
-            Besoin d'une entreprise de nettoyage de copropriété dans le 92 ?
+            Besoin d&apos;une entreprise de nettoyage de copropriété dans le 92 ?
           </h2>
 
           <p className="mb-8 text-lg leading-8 text-blue-100">
-            Vous êtes syndic, gestionnaire immobilier ou membre d'un conseil
-            syndical ? Présentez-nous votre immeuble, sa localisation, les
-            prestations recherchées et la fréquence souhaitée. CoproSolutions
-            étudiera votre demande afin de définir une organisation adaptée.
+            Indiquez-nous l&apos;adresse de votre résidence dans les Hauts-de-Seine
+            et la fréquence souhaitée : nous organisons une visite sur site et
+            vous transmettons un devis détaillé sous 24h.
           </p>
 
           <div className="flex flex-col justify-center gap-3 sm:flex-row">
-            <a
+            <Link
               href="/contact"
               className="rounded-xl bg-green-600 px-6 py-3 font-bold text-white hover:bg-green-700"
             >
-              Demander un devis gratuit sous 24 h
-            </a>
+              Demander un devis gratuit sous 24h
+            </Link>
 
             <a
               href="tel:+33658876579"
@@ -611,10 +531,11 @@ export default function HautsDeSeinePage() {
             </a>
           </div>
 
-          <p className="mt-6">
+          <p className="mt-6 text-sm text-blue-200">
+            Siège social : 73 rue du Château, 92100 Boulogne-Billancourt •{" "}
             <a
               href="mailto:coprosolutions@coprosolutions.net"
-              className="text-blue-100 hover:underline"
+              className="underline hover:text-white"
             >
               coprosolutions@coprosolutions.net
             </a>
