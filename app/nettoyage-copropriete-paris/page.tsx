@@ -1,41 +1,124 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Nettoyage de copropriétés à Paris (75) | CoproSolutions",
+  title: "Entreprise de nettoyage de copropriétés à Paris (75) — Devis AG 48h",
   description:
-    "CoproSolutions assure le nettoyage et l'entretien de copropriétés à Paris : halls, escaliers, paliers, ascenseurs, locaux poubelles, parkings et parties communes.",
+    "Nettoyage et entretien d'immeubles et copropriétés à Paris (75) : halls haussmanniens, escaliers, tapis, ascenseurs, sortie des poubelles et devis comparatif AG sous 48h.",
   alternates: {
     canonical: "/nettoyage-copropriete-paris",
   },
 };
 
+const parisArrondissements = [
+  { name: "Paris 2e", href: "/zones/paris-2" },
+  { name: "Paris 3e", href: "/zones/paris-3" },
+  { name: "Paris 4e", href: "/zones/paris-4" },
+  { name: "Paris 5e", href: "/zones/paris-5" },
+  { name: "Paris 6e", href: "/zones/paris-6" },
+  { name: "Paris 7e", href: "/zones/paris-7" },
+  { name: "Paris 8e", href: "/zones/paris-8" },
+  { name: "Paris 9e", href: "/zones/paris-9" },
+  { name: "Paris 10e", href: "/zones/paris-10" },
+  { name: "Paris 11e", href: "/zones/paris-11" },
+  { name: "Paris 12e", href: "/zones/paris-12" },
+  { name: "Paris 13e", href: "/zones/paris-13" },
+  { name: "Paris 14e", href: "/zones/paris-14" },
+  { name: "Paris 15e", href: "/zones/paris-15" },
+  { name: "Paris 16e", href: "/zones/paris-16" },
+  { name: "Paris 17e", href: "/zones/paris-17" },
+  { name: "Paris 18e", href: "/zones/paris-18" },
+  { name: "Paris 19e", href: "/zones/paris-19" },
+  { name: "Paris 20e", href: "/zones/paris-20" },
+];
+
+const faqItems = [
+  {
+    question: "Comment obtenir un devis comparatif pour une Assemblée Générale à Paris ?",
+    answer:
+      "Nous effectuons une visite technique gratuite de votre immeuble parisien (ou étudions votre cahier des charges actuel) et vous remettons un devis détaillé poste par poste sous 48h, prêt à être joint à la convocation d'AG.",
+  },
+  {
+    question: "Utilisez-vous des produits adaptés aux immeubles haussmanniens (marbre, tapis, laiton) ?",
+    answer:
+      "Oui. Nos agents sont formés à l'entretien des matériaux anciens des copropriétés parisiennes : aspiration avec brosses adaptées des tapis d'escalier, lavage au savon neutre des sols en pierre ou marbre, et lustrage des cuivres et boiseries.",
+  },
+  {
+    question: "Comment gérez-vous la sortie des poubelles dans les rues parisiennes ?",
+    answer:
+      "Nous respectons scrupuleusement les créneaux de collecte de la Ville de Paris par arrondissement (bacs verts, jaunes et blancs) : sortie en fin de journée ou tôt le matin et rentrée immédiate après passage de la benne afin d'éviter toute amende de voirie.",
+  },
+  {
+    question: "Travaillez-vous avec des sous-traitants à Paris ?",
+    answer:
+      "Non, zéro sous-traitance. Tous nos agents sont salariés de CoproSolutions et encadrés directement par le dirigeant avec affichage du cahier des charges dans le hall et contrôle qualité régulier.",
+  },
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      name: "Nettoyage et entretien de copropriétés à Paris (75)",
+      description:
+        "Entretien régulier des parties communes, immeubles haussmanniens et résidences à Paris : halls, escaliers, ascenseurs, locaux poubelles et vitrerie.",
+      provider: {
+        "@id": "https://www.coprosolutions.net/#organization",
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Paris",
+        postalCode: "75000",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    },
+  ],
+};
+
 export default function NettoyageCoproprieteParis() {
   return (
-    <main className="bg-white text-slate-800">
+    <div className="bg-white text-slate-800">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+
       {/* HERO */}
       <section className="bg-slate-900 px-6 py-20 text-white">
         <div className="mx-auto max-w-5xl text-center">
           <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-green-400">
-            COPROSOLUTIONS
+            COPROSOLUTIONS • PARIS (75) • DEVIS AG SOUS 48H
           </p>
 
           <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl">
-            Nettoyage de copropriétés à Paris (75)
+            Nettoyage et entretien de copropriétés à Paris (75)
           </h1>
 
           <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-200">
-            CoproSolutions accompagne les syndics, conseils syndicaux et
-            gestionnaires immobiliers pour le nettoyage et l'entretien des
-            copropriétés, immeubles et parties communes à Paris.
+            Immeubles haussmanniens, résidences modernes ou ensembles sur cour :
+            CoproSolutions assure l’entretien régulier des parties communes, la
+            rotation des poubelles et le suivi qualité sur site pour les syndics
+            et conseils syndicaux parisiens.
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <a
+            <Link
               href="/contact"
               className="rounded-xl bg-green-600 px-6 py-3 font-bold text-white hover:bg-green-700"
             >
-              Demander un devis
-            </a>
+              Demander un devis comparatif AG
+            </Link>
 
             <a
               href="tel:+33658876579"
@@ -50,27 +133,30 @@ export default function NettoyageCoproprieteParis() {
       {/* INTRODUCTION */}
       <section className="mx-auto max-w-5xl px-6 py-16">
         <h2 className="mb-6 text-3xl font-bold">
-          Entretien des copropriétés parisiennes
+          Une entreprise de nettoyage dédiée aux copropriétés parisiennes
         </h2>
 
         <div className="space-y-5 text-lg leading-8 text-gray-600">
           <p>
-            L'entretien régulier d'une copropriété contribue à préserver la
-            propreté des espaces communs et l'image de la résidence auprès des
-            occupants, visiteurs et copropriétaires.
+            À Paris, l’entretien d’une copropriété exige rigueur, discrétion et
+            connaissance des contraintes locales : accès par digicode ou Vigik,
+            escaliers de service, tapis en laine, parquets cirés, cours pavées
+            et créneaux stricts de collecte des ordures ménagères.
           </p>
 
           <p>
-            CoproSolutions intervient à Paris pour assurer des prestations de
-            nettoyage adaptées aux caractéristiques de chaque immeuble :
-            nombre de halls, étages, circulations, équipements, fréquence de
-            passage et besoins spécifiques.
+            Implantée aux portes de Paris (73 rue du Château à Boulogne-Billancourt),
+            <strong> CoproSolutions</strong> accompagne les cabinets de syndics
+            et les conseils syndicaux avec un engagement simple :{" "}
+            <strong>zéro sous-traitance</strong>, un cahier des charges affiché
+            dans chaque immeuble et des contrôles qualité réguliers effectués
+            directement par le dirigeant.
           </p>
 
           <p>
-            Nous travaillons avec les syndics, gestionnaires immobiliers et
-            conseils syndicaux qui souhaitent mettre en place une organisation
-            régulière ou compléter un dispositif d'entretien déjà existant.
+            Vous préparez votre prochaine Assemblée Générale ou souhaitez changer
+            de prestataire suite à un manque de suivi ? Nous visitons votre
+            immeuble et vous remettons un chiffrage clair sous 48h.
           </p>
         </div>
       </section>
@@ -79,72 +165,72 @@ export default function NettoyageCoproprieteParis() {
       <section className="bg-slate-50 px-6 py-16">
         <div className="mx-auto max-w-6xl">
           <h2 className="mb-4 text-center text-3xl font-bold">
-            Nos prestations de nettoyage à Paris
+            Nos prestations d’entretien d’immeubles à Paris
           </h2>
 
           <p className="mx-auto mb-12 max-w-3xl text-center leading-7 text-gray-600">
-            Une organisation adaptable aux besoins et aux contraintes de votre
-            copropriété.
+            Un cahier des charges précis, adapté à la configuration et au standing
+            de chaque copropriété parisienne.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Halls d'immeubles
+                Halls d’entrée & boiseries
               </h3>
               <p className="leading-7 text-gray-600">
-                Nettoyage des entrées, sols, portes, surfaces accessibles et
-                espaces d'accueil des résidents.
+                Lavage des sols (marbre, pierre, carrelage), nettoyage des portes
+                vitrées, miroirs, boîtes aux lettres, interphones et cuivres.
               </p>
             </article>
 
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Escaliers et paliers
+                Escaliers, tapis et paliers
               </h3>
               <p className="leading-7 text-gray-600">
-                Entretien des escaliers, paliers et circulations communes afin
-                de maintenir les parties communes propres.
+                Aspiration soignée des tapis d’escalier, lavage des marches,
+                dépoussiérage des rampes, plinthes et rebords de fenêtres.
               </p>
             </article>
 
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Ascenseurs
+                Cabines d’ascenseurs
               </h3>
               <p className="leading-7 text-gray-600">
-                Nettoyage courant des cabines et des espaces accessibles autour
-                des ascenseurs.
+                Nettoyage des miroirs, parois inox, platines de commande, sols et
+                aspiration régulière des rails de portes palières.
               </p>
             </article>
 
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Locaux poubelles
+                Sortie des poubelles & locaux bacs
               </h3>
               <p className="leading-7 text-gray-600">
-                Nettoyage des locaux dédiés aux conteneurs et entretien des
-                espaces concernés.
+                Rotation des conteneurs selon les jours de collecte de votre
+                arrondissement, lavage et désinfection des locaux poubelles.
               </p>
             </article>
 
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Parkings et accès
+                Cours intérieures & parkings
               </h3>
               <p className="leading-7 text-gray-600">
-                Nettoyage des parkings, accès communs et zones de circulation
-                selon les besoins de la résidence.
+                Balayage des cours pavées, passages cochers, locaux vélos/poussettes
+                et nettoyage des parkings souterrains.
               </p>
             </article>
 
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Nettoyage des vitres
+                Vitrerie & remises en état
               </h3>
               <p className="leading-7 text-gray-600">
-                Des interventions ponctuelles peuvent être organisées pour
-                l'entretien des vitrages accessibles.
+                Nettoyage des verrières, fenêtres d’escaliers, débarras de caves
+                et remise en état après travaux ou sinistre.
               </p>
             </article>
           </div>
@@ -154,195 +240,112 @@ export default function NettoyageCoproprieteParis() {
       {/* FREQUENCE */}
       <section className="mx-auto max-w-5xl px-6 py-16">
         <h2 className="mb-6 text-3xl font-bold">
-          Une fréquence adaptée à votre copropriété
+          Des formules calibrées selon la taille de votre immeuble
         </h2>
 
         <p className="mb-8 text-lg leading-8 text-gray-600">
-          La fréquence d'entretien dépend notamment de la taille de
-          l'immeuble, du nombre de halls, de la fréquentation des parties
-          communes et du niveau de service recherché.
+          Nous adaptons le nombre de passages hebdomadaires au trafic de la
+          résidence et au budget voté en Assemblée Générale :
         </p>
 
         <div className="grid gap-6 md:grid-cols-3">
           <article className="rounded-2xl border p-6">
-            <h3 className="mb-3 text-xl font-bold">
-              Entretien régulier
+            <h3 className="mb-3 text-xl font-bold text-blue-900">
+              1 à 2 passages / semaine
             </h3>
             <p className="leading-7 text-gray-600">
-              Pour maintenir quotidiennement ou plusieurs fois par semaine les
-              parties communes propres et accueillantes.
+              Idéal pour les petits immeubles parisiens (10 à 25 lots) :
+              entretien complet des parties communes et des accès.
             </p>
           </article>
 
           <article className="rounded-2xl border p-6">
-            <h3 className="mb-3 text-xl font-bold">
-              Entretien périodique
+            <h3 className="mb-3 text-xl font-bold text-blue-900">
+              3 à 6 passages / semaine
             </h3>
             <p className="leading-7 text-gray-600">
-              Une organisation adaptée aux immeubles ayant des besoins moins
-              fréquents ou à une prestation complémentaire.
+              Adapté aux résidences à fort passage, immeubles avec professions
+              libérales ou copropriétés sans gardien nécessitant la sortie des bacs.
             </p>
           </article>
 
           <article className="rounded-2xl border p-6">
-            <h3 className="mb-3 text-xl font-bold">
-              Intervention ponctuelle
+            <h3 className="mb-3 text-xl font-bold text-blue-900">
+              Renfort & travaux ponctuels
             </h3>
             <p className="leading-7 text-gray-600">
-              Pour une remise en état, un nettoyage approfondi ou un besoin
-              spécifique.
+              Shampouinage de tapis, lavage haute pression de cour, débarras
+              d’encombrants avec compte-rendu photo avant/après.
             </p>
           </article>
         </div>
       </section>
 
-      {/* BESOINS SPECIFIQUES */}
-      <section className="bg-slate-50 px-6 py-16">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="mb-6 text-3xl font-bold">
-            Des prestations complémentaires
-          </h2>
-
-          <p className="mb-8 text-lg leading-8 text-gray-600">
-            En complément du nettoyage courant, nous pouvons étudier différents
-            besoins spécifiques pour votre immeuble.
-          </p>
-
-          <ul className="grid gap-4 md:grid-cols-2">
-            <li className="rounded-xl border bg-white p-5">
-              Nettoyage approfondi des parties communes
-            </li>
-            <li className="rounded-xl border bg-white p-5">
-              Shampoing et nettoyage des moquettes
-            </li>
-            <li className="rounded-xl border bg-white p-5">
-              Nettoyage des parkings
-            </li>
-            <li className="rounded-xl border bg-white p-5">
-              Nettoyage après travaux
-            </li>
-            <li className="rounded-xl border bg-white p-5">
-              Sortie et rentrée des poubelles
-            </li>
-            <li className="rounded-xl border bg-white p-5">
-              Prestations exceptionnelles
-            </li>
-          </ul>
-
-          <div className="mt-8 flex flex-wrap gap-5">
-            <a
-              href="/sortie-et-rentrée-poubelle"
-              className="font-semibold text-blue-700 hover:underline"
-            >
-              Voir le service poubelles →
-            </a>
-
-            <a
-              href="/travaux-exceptionnels"
-              className="font-semibold text-blue-700 hover:underline"
-            >
-              Voir les travaux exceptionnels →
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* POUR QUI */}
-      <section className="mx-auto max-w-5xl px-6 py-16">
-        <h2 className="mb-8 text-3xl font-bold">
-          Pour les syndics et gestionnaires immobiliers
-        </h2>
-
-        <div className="space-y-5 text-lg leading-8 text-gray-600">
-          <p>
-            Nos prestations s'adressent notamment aux syndics de copropriété,
-            gestionnaires immobiliers et conseils syndicaux qui recherchent une
-            organisation claire pour l'entretien d'un immeuble parisien.
-          </p>
-
-          <p>
-            Nous pouvons étudier les caractéristiques de la résidence afin de
-            définir les prestations nécessaires et la fréquence d'intervention
-            adaptée.
-          </p>
-        </div>
-      </section>
-
-      {/* LIENS VERS AUTRES SERVICES */}
+      {/* FAQ */}
       <section className="bg-slate-50 px-6 py-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="mb-8 text-3xl font-bold">
-            Nos autres services
+            Questions fréquentes — Nettoyage de copropriété à Paris
           </h2>
 
-          <div className="grid gap-4 md:grid-cols-2">
-            <a
-              href="/entretien-copropriété-idf"
-              className="rounded-xl border bg-white p-5 font-semibold text-blue-700 hover:shadow-md"
-            >
-              Entretien de copropriété en Île-de-France →
-            </a>
-
-            <a
-              href="/entretien-bureau-immeuble"
-              className="rounded-xl border bg-white p-5 font-semibold text-blue-700 hover:shadow-md"
-            >
-              Entretien de bureaux et immeubles administratifs →
-            </a>
-
-            <a
-              href="/remplacement-gardien"
-              className="rounded-xl border bg-white p-5 font-semibold text-blue-700 hover:shadow-md"
-            >
-              Remplacement de gardien →
-            </a>
-
-            <a
-              href="/services"
-              className="rounded-xl border bg-white p-5 font-semibold text-blue-700 hover:shadow-md"
-            >
-              Voir tous nos services →
-            </a>
+          <div className="space-y-4">
+            {faqItems.map((item) => (
+              <details
+                key={item.question}
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+              >
+                <summary className="cursor-pointer text-lg font-bold text-blue-900">
+                  {item.question}
+                </summary>
+                <p className="mt-3 leading-7 text-gray-600">{item.answer}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ZONES PARIS */}
-      <section className="mx-auto max-w-5xl px-6 py-16">
-        <h2 className="mb-6 text-3xl font-bold">
-          Nettoyage de copropriétés dans Paris et ses arrondissements
+      {/* MAILLAGE COMPLET DES ARRONDISSEMENTS PARISIENS */}
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <h2 className="mb-4 text-3xl font-bold">
+          Nos interventions par arrondissement à Paris (75)
         </h2>
 
         <p className="mb-8 text-lg leading-8 text-gray-600">
-          CoproSolutions intervient dans différents secteurs de Paris pour
-          l'entretien et le nettoyage des copropriétés et immeubles.
+          Sélectionnez votre arrondissement pour découvrir nos modalités
+          d’intervention locale à Paris :
         </p>
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-xl border bg-slate-50 p-5">
-            Paris 15e
-          </div>
-
-          <div className="rounded-xl border bg-slate-50 p-5">
-            Paris et alentours
-          </div>
-
-          <div className="rounded-xl border bg-slate-50 p-5">
-            Immeubles résidentiels
-          </div>
-
-          <div className="rounded-xl border bg-slate-50 p-5">
-            Copropriétés et résidences
-          </div>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
+          {parisArrondissements.map((arr) => (
+            <Link
+              key={arr.href}
+              href={arr.href}
+              className="rounded-xl border bg-slate-50 p-3 text-center font-semibold text-blue-700 transition hover:bg-white hover:shadow-md"
+            >
+              {arr.name}
+            </Link>
+          ))}
         </div>
 
-        <div className="mt-8">
-          <a
+        <div className="mt-8 flex flex-wrap gap-6">
+          <Link
             href="/zones/paris-75"
             className="font-semibold text-blue-700 hover:underline"
           >
-            Voir notre zone d'intervention Paris (75) →
-          </a>
+            Vue d’ensemble Paris (75) →
+          </Link>
+          <Link
+            href="/remplacement-gardien"
+            className="font-semibold text-blue-700 hover:underline"
+          >
+            Remplacement de gardien d’immeuble à Paris →
+          </Link>
+          <Link
+            href="/travaux-exceptionnels"
+            className="font-semibold text-blue-700 hover:underline"
+          >
+            Débarras & travaux exceptionnels →
+          </Link>
         </div>
       </section>
 
@@ -350,23 +353,22 @@ export default function NettoyageCoproprieteParis() {
       <section className="bg-blue-950 px-6 py-20 text-center text-white">
         <div className="mx-auto max-w-3xl">
           <h2 className="mb-5 text-3xl font-bold">
-            Besoin d'un devis pour votre copropriété à Paris ?
+            Besoin d’un devis pour votre copropriété à Paris ?
           </h2>
 
           <p className="mb-8 text-lg leading-8 text-blue-100">
-            Communiquez-nous le nombre de lots, le nombre de halls, les
-            caractéristiques de votre immeuble et la fréquence souhaitée.
-            Nous pourrons étudier votre besoin et vous proposer une solution
-            adaptée.
+            Indiquez-nous l’adresse de l’immeuble, le nombre de lots et la
+            fréquence souhaitée : nous organisons une visite rapide et vous
+            remettons un devis détaillé sous 48h.
           </p>
 
           <div className="flex flex-col justify-center gap-3 sm:flex-row">
-            <a
+            <Link
               href="/contact"
               className="rounded-xl bg-green-600 px-6 py-3 font-bold text-white hover:bg-green-700"
             >
               Demander un devis gratuit
-            </a>
+            </Link>
 
             <a
               href="tel:+33658876579"
@@ -386,6 +388,6 @@ export default function NettoyageCoproprieteParis() {
           </p>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

@@ -1,79 +1,180 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title:
-    "Remplacement de gardien d’immeuble et copropriété | CoproSolutions",
+  title: "Remplacement de gardien d'immeuble sous 24 à 48h (Paris, 92, 78)",
   description:
-    "CoproSolutions propose le remplacement de gardien d’immeuble en copropriété : congés, absences temporaires, arrêts ou besoins de plus longue durée à Paris et en Île-de-France.",
+    "Remplacement de gardien d'immeuble et concierge en copropriété à Paris et en Île-de-France : arrêt maladie, congés d'été, passation de clés et suivi qualité terrain sans sous-traitance.",
   alternates: {
     canonical: "/remplacement-gardien",
   },
 };
 
+const faqItems = [
+  {
+    question: "En combien de temps pouvez-vous remplacer un gardien d'immeuble en arrêt maladie ?",
+    answer:
+      "Basés à Boulogne-Billancourt (92), nous mettons en place un gardien remplaçant qualifié sous 24 à 48h sur Paris (75), les Hauts-de-Seine (92), les Yvelines (78) et le Val-de-Marne (94), dès validation du devis.",
+  },
+  {
+    question: "Comment se déroule la passation des clés, badges et consignes de la loge ?",
+    answer:
+      "Un protocole de passation écrit est établi le premier jour (avec le gardien titulaire, un membre du conseil syndical ou le gestionnaire) : inventaire des clés et passes Vigik, codes d'accès, horaires d'ouverture de la loge, distribution du courrier et jours de sortie des bacs.",
+  },
+  {
+    question: "Quelle est la différence entre un remplacement en catégorie A et catégorie B ?",
+    answer:
+      "Nous adaptons le profil et le planning aux spécificités de votre copropriété : simple service d'entretien et sortie des poubelles (catégorie A) ou tenue complète de la loge, accueil des résidents, réception des colis/courriers et surveillance (catégorie B).",
+  },
+  {
+    question: "Fournissez-vous les documents administratifs pour le syndic ?",
+    answer:
+      "Oui, notre dossier administratif complet (attestation de vigilance URSSAF à jour, assurance Responsabilité Civile Professionnelle, extrait Kbis) est transmis immédiatement avec le chiffrage sous 24h.",
+  },
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      name: "Remplacement de gardien d'immeuble et de copropriété",
+      description:
+        "Remplacement de gardien d'immeuble de courte, moyenne ou longue durée pour syndics et copropriétés à Paris et en Île-de-France.",
+      provider: {
+        "@id": "https://www.coprosolutions.net/#organization",
+      },
+      areaServed: ["Paris", "Hauts-de-Seine", "Yvelines", "Val-de-Marne", "Île-de-France"],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    },
+  ],
+};
+
 export default function RemplacementGardien() {
   return (
-    <main className="bg-white text-slate-800">
+    <div className="bg-white text-slate-800">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+
       {/* HERO */}
       <section className="bg-slate-900 px-6 py-20 text-white">
         <div className="mx-auto max-w-5xl text-center">
           <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-green-400">
-            COPROSOLUTIONS
+            COPROSOLUTIONS • INTERVENTION SOUS 24 À 48H
           </p>
 
           <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl">
-            Remplacement de gardien d’immeuble en Île-de-France
+            Remplacement de gardien d’immeuble à Paris et en Île-de-France
           </h1>
 
           <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-200">
-            Une solution de remplacement pour assurer la continuité du service
-            dans les copropriétés et résidences en cas d’absence, de congés ou
-            de besoin temporaire ou prolongé.
+            Arrêt maladie imprévu, congés d’été, fêtes de fin d’année ou période
+            de transition : nous assurons la continuité intégrale du service en
+            copropriété avec passation de consignes structurée et zéro sous-traitance.
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <a
+            <Link
               href="/contact"
               className="rounded-xl bg-green-600 px-6 py-3 font-bold text-white hover:bg-green-700"
             >
-              Demander un remplacement
-            </a>
+              Chiffrer un remplacement sous 24h
+            </Link>
 
             <a
               href="tel:+33658876579"
               className="rounded-xl bg-black px-6 py-3 font-bold text-white hover:bg-slate-800"
             >
-              📞 06 58 87 65 79
+              📞 Urgence : 06 58 87 65 79
             </a>
           </div>
         </div>
       </section>
 
-      {/* INTRODUCTION */}
+      {/* INTRODUCTION MÉTIER */}
       <section className="mx-auto max-w-5xl px-6 py-16">
         <h2 className="mb-6 text-3xl font-bold">
-          Assurer la continuité du service dans votre immeuble
+          Une continuité de service immédiate pour soulager les syndics et conseils syndicaux
         </h2>
 
         <div className="space-y-5 text-lg leading-8 text-gray-600">
           <p>
-            L’absence d’un gardien ou d’un employé d’immeuble peut rapidement
-            perturber l’organisation quotidienne d’une copropriété. Sortie des
-            poubelles, entretien des parties communes, présence sur site et
-            respect des consignes habituelles doivent pouvoir continuer dans
-            de bonnes conditions.
+            L’absence soudaine d’un gardien ou d’un employé d’immeuble génère
+            immédiatement des tensions dans une copropriété : bacs à ordures non
+            sortis les jours de collecte, courrier et colis en attente, halls non
+            entretenus et sollicitations répétées auprès du gestionnaire.
           </p>
 
           <p>
-            CoproSolutions accompagne les syndics, conseils syndicaux et
-            gestionnaires immobiliers dans la recherche d’une solution de
-            remplacement adaptée aux besoins de la résidence.
+            Forts de <strong>5 années d’expérience à la direction d’une agence spécialisée
+            dans le remplacement de gardiens en Île-de-France</strong>, nous avons conçu
+            une organisation terrain rodée au départ de Boulogne-Billancourt (92) pour
+            déployer des remplaçants fiables, autonomes et habitués aux exigences des
+            résidences parisiennes et de l’Ouest parisien.
           </p>
 
           <p>
-            Le remplacement peut être envisagé pour une période ponctuelle,
-            pendant des congés ou pour une absence temporaire plus longue,
-            selon les besoins et l’organisation de la copropriété.
+            Que votre immeuble relève d’un poste d’employé d’immeuble ou d’un gardien
+            en loge, chaque intervention fait l’objet d’un démarrage encadré sur site
+            et d’un suivi direct par le dirigeant.
           </p>
+        </div>
+      </section>
+
+      {/* PROTOCOLE EN 3 ÉTAPES */}
+      <section className="bg-blue-950 px-6 py-16 text-white">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-4 text-center text-3xl font-bold">
+            Notre protocole de remplacement en 3 étapes
+          </h2>
+          <p className="mx-auto mb-12 max-w-3xl text-center text-blue-100">
+            Un processus sécurisé pour les gestionnaires de copropriété, de la demande
+            de devis jusqu’au retour du titulaire.
+          </p>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="mb-3 text-3xl font-black text-green-400">01</div>
+              <h3 className="mb-2 text-xl font-bold">Chiffrage & dossier sous 24h</h3>
+              <p className="text-sm leading-7 text-blue-100">
+                Analyse de la fiche de poste (horaires, tâches, spécificités de
+                l’immeuble) et envoi immédiat du devis accompagné de nos attestations
+                (URSSAF, RC Pro, Kbis).
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="mb-3 text-3xl font-black text-green-400">02</div>
+              <h3 className="mb-2 text-xl font-bold">Passation des clés & consignes</h3>
+              <p className="text-sm leading-7 text-blue-100">
+                Accueil sur site avec remise formalisée du trousseau, badges Vigik,
+                codes techniques, plan des locaux poubelles et consignes du conseil
+                syndical.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="mb-3 text-3xl font-black text-green-400">03</div>
+              <h3 className="mb-2 text-xl font-bold">Contrôle qualité & restitution</h3>
+              <p className="text-sm leading-7 text-blue-100">
+                Passage de contrôle du dirigeant en cours de mission, remontée des
+                anomalies éventuelles au gestionnaire et restitution complète des clés
+                en fin de remplacement.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -81,73 +182,75 @@ export default function RemplacementGardien() {
       <section className="bg-slate-50 px-6 py-16">
         <div className="mx-auto max-w-6xl">
           <h2 className="mb-4 text-center text-3xl font-bold">
-            Dans quelles situations prévoir un remplacement ?
+            Dans quelles situations faire appel à CoproSolutions ?
           </h2>
 
           <p className="mx-auto mb-12 max-w-3xl text-center leading-7 text-gray-600">
-            Une solution de remplacement peut être étudiée pour différentes
-            situations rencontrées dans la vie d’une copropriété.
+            Nous intervenons aussi bien en urgence qu’en planification annuelle pour
+            l’ensemble de votre portefeuille d’immeubles.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Congés du gardien
+                Arrêt maladie & urgence sous 24–48h
               </h3>
               <p className="leading-7 text-gray-600">
-                Prévoir une présence pendant les périodes de congés afin de
-                maintenir les tâches habituelles de la résidence.
+                Mobilisation rapide en cas d’arrêt de travail imprévu ou d’accident
+                pour éviter toute rupture dans l’entretien et la gestion des bacs.
               </p>
             </article>
 
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Absence temporaire
+                Congés d’été & fêtes de fin d’année
               </h3>
               <p className="leading-7 text-gray-600">
-                Une solution peut être organisée lorsqu’un gardien ou employé
-                d’immeuble est momentanément absent.
+                Planification anticipée des périodes de congés payés (juillet-août,
+                décembre, vacances scolaires) avec un remplaçant dédié.
               </p>
             </article>
 
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Besoin de transition
+                Période de transition & recrutement
               </h3>
               <p className="leading-7 text-gray-600">
-                Un remplacement peut également être envisagé pendant une
-                période de transition ou lors de la recherche d’une solution
-                durable.
+                Continuité assurée entre le départ d’un gardien (retraite, démission)
+                et l’embauche du nouveau titulaire. Voir aussi notre service de{" "}
+                <Link href="/recrutement-gardien" className="font-semibold text-blue-700 underline">
+                  recrutement de gardien
+                </Link>.
               </p>
             </article>
 
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Arrêt ou indisponibilité
+                Congé maternité ou longue maladie
               </h3>
               <p className="leading-7 text-gray-600">
-                En cas d’indisponibilité imprévue, nous pouvons étudier les
-                besoins de la copropriété et les conditions d’un remplacement.
+                Mise en place d’un remplaçant stable sur plusieurs semaines ou mois
+                afin de préserver les repères des copropriétaires.
               </p>
             </article>
 
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Remplacement ponctuel
+                Formation obligatoire du gardien
               </h3>
               <p className="leading-7 text-gray-600">
-                Une intervention limitée dans le temps peut répondre à un
-                besoin précis défini avec le syndic ou le gestionnaire.
+                Couverture ponctuelle de quelques jours pendant les stages de
+                formation professionnelle de votre salarié d’immeuble.
               </p>
             </article>
 
             <article className="rounded-2xl bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-xl font-bold text-blue-700">
-                Remplacement plus long
+                Formule allégée (poubelles + ménage)
               </h3>
               <p className="leading-7 text-gray-600">
-                Lorsque la durée d’absence est plus importante, une
-                organisation spécifique peut être étudiée.
+                Pour maîtriser le budget de la copropriété pendant une courte absence,
+                nous proposons également un remplacement ciblé sur l’essentiel.
               </p>
             </article>
           </div>
@@ -157,234 +260,128 @@ export default function RemplacementGardien() {
       {/* MISSIONS */}
       <section className="mx-auto max-w-5xl px-6 py-16">
         <h2 className="mb-6 text-3xl font-bold">
-          Quelles missions peuvent être assurées ?
+          Missions assurées par nos gardiens remplaçants
         </h2>
 
         <p className="mb-8 text-lg leading-8 text-gray-600">
-          Les missions sont définies en fonction des consignes de la
-          copropriété, du poste à remplacer et de l’organisation habituelle
-          de la résidence.
+          Le cahier des charges est calqué sur les missions habituelles du poste
+          pour que les résidents conservent exactement le même niveau de service.
         </p>
 
         <div className="grid gap-5 md:grid-cols-2">
           <div className="rounded-xl border p-6">
             <h3 className="mb-3 text-xl font-bold">
-              Entretien des parties communes
+              Entretien complet des parties communes
             </h3>
             <p className="leading-7 text-gray-600">
-              Participation à l’entretien courant des espaces communs selon
-              les missions prévues pour le poste.
+              Balayage et lavage des halls d’entrée, escaliers, paliers, cabines
+              d’ascenseur, vitrerie de porte et dépoussiérage des boiseries.
             </p>
           </div>
 
           <div className="rounded-xl border p-6">
             <h3 className="mb-3 text-xl font-bold">
-              Sortie et rentrée des poubelles
+              Sortie, rentrée et nettoyage des poubelles
             </h3>
             <p className="leading-7 text-gray-600">
-              Gestion des conteneurs selon les jours de collecte et les
-              consignes définies par la copropriété.
+              Respect strict des horaires de collecte municipale (ordures ménagères,
+              tri sélectif, verre) et maintien de la propreté du local conteneurs.
             </p>
           </div>
 
           <div className="rounded-xl border p-6">
             <h3 className="mb-3 text-xl font-bold">
-              Présence sur site
+              Tenue de loge, courrier et colis
             </h3>
             <p className="leading-7 text-gray-600">
-              Maintien d’une présence correspondant aux horaires et missions
-              prévus dans l’organisation du poste.
+              Distribution du courrier dans les boîtes aux lettres, réception des
+              colis et recommandés selon les règles définies par la copropriété.
             </p>
           </div>
 
           <div className="rounded-xl border p-6">
             <h3 className="mb-3 text-xl font-bold">
-              Information des résidents
+              Vigilance technique & accueil prestataires
             </h3>
             <p className="leading-7 text-gray-600">
-              Accueil et transmission des informations dans le cadre des
-              missions définies par la copropriété.
-            </p>
-          </div>
-
-          <div className="rounded-xl border p-6">
-            <h3 className="mb-3 text-xl font-bold">
-              Entretien courant des espaces
-            </h3>
-            <p className="leading-7 text-gray-600">
-              Réalisation des tâches d’entretien prévues dans les consignes
-              habituelles du poste.
-            </p>
-          </div>
-
-          <div className="rounded-xl border p-6">
-            <h3 className="mb-3 text-xl font-bold">
-              Respect des consignes de la résidence
-            </h3>
-            <p className="leading-7 text-gray-600">
-              Adaptation de l’intervention au fonctionnement et aux
-              instructions communiquées par le syndic ou le gestionnaire.
+              Ouverture aux entreprises de maintenance (ascensoriste, chauffagiste,
+              plombier) et signalement immédiat de toute anomalie au syndic.
             </p>
           </div>
         </div>
       </section>
 
-      {/* POUR QUI */}
+      {/* FAQ */}
       <section className="bg-slate-50 px-6 py-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="mb-8 text-3xl font-bold">
-            À qui s’adresse ce service ?
+            Questions fréquentes sur le remplacement de gardien
           </h2>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            <article className="rounded-2xl bg-white p-6 shadow-sm">
-              <h3 className="mb-3 text-xl font-bold">
-                Syndics de copropriété
-              </h3>
-              <p className="leading-7 text-gray-600">
-                Une solution pour répondre rapidement à une absence et
-                maintenir l’organisation habituelle de la résidence.
-              </p>
-            </article>
-
-            <article className="rounded-2xl bg-white p-6 shadow-sm">
-              <h3 className="mb-3 text-xl font-bold">
-                Gestionnaires immobiliers
-              </h3>
-              <p className="leading-7 text-gray-600">
-                Un accompagnement pour les besoins de remplacement identifiés
-                sur les immeubles gérés.
-              </p>
-            </article>
-
-            <article className="rounded-2xl bg-white p-6 shadow-sm">
-              <h3 className="mb-3 text-xl font-bold">
-                Conseils syndicaux
-              </h3>
-              <p className="leading-7 text-gray-600">
-                Une possibilité d’étudier une solution de continuité avec le
-                syndic ou le gestionnaire de la résidence.
-              </p>
-            </article>
-
-            <article className="rounded-2xl bg-white p-6 shadow-sm">
-              <h3 className="mb-3 text-xl font-bold">
-                Résidences et immeubles
-              </h3>
-              <p className="leading-7 text-gray-600">
-                Une organisation pouvant être adaptée à différents types de
-                copropriétés et de configurations d’immeubles.
-              </p>
-            </article>
+          <div className="space-y-4">
+            {faqItems.map((item) => (
+              <details
+                key={item.question}
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+              >
+                <summary className="cursor-pointer text-lg font-bold text-blue-900">
+                  {item.question}
+                </summary>
+                <p className="mt-3 leading-7 text-gray-600">{item.answer}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ORGANISATION */}
+      {/* MAILLAGE INTERNE SERVICES & VILLES */}
       <section className="mx-auto max-w-5xl px-6 py-16">
         <h2 className="mb-6 text-3xl font-bold">
-          Une solution adaptée à votre immeuble
-        </h2>
-
-        <div className="space-y-5 text-lg leading-8 text-gray-600">
-          <p>
-            Chaque remplacement est différent. Les missions, les horaires et
-            la durée d’intervention dépendent notamment de la configuration de
-            l’immeuble et des tâches habituellement réalisées par le gardien.
-          </p>
-
-          <p>
-            Nous étudions les informations transmises par le syndic ou le
-            gestionnaire afin de comprendre le besoin et de déterminer les
-            conditions d’intervention les plus adaptées.
-          </p>
-
-          <p>
-            L’objectif est de permettre à la copropriété de maintenir une
-            organisation cohérente pendant toute la période de remplacement.
-          </p>
-        </div>
-      </section>
-
-      {/* LIENS SERVICES */}
-      <section className="bg-slate-50 px-6 py-16">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="mb-8 text-3xl font-bold">
-            Nos autres services pour les copropriétés
-          </h2>
-
-          <div className="grid gap-4 md:grid-cols-2">
-            <a
-              href="/entretien-copropriété-idf"
-              className="rounded-xl border bg-white p-5 font-semibold text-blue-700 hover:shadow-md"
-            >
-              Entretien de copropriété en Île-de-France →
-            </a>
-
-            <a
-              href="/entretien-bureau-immeuble"
-              className="rounded-xl border bg-white p-5 font-semibold text-blue-700 hover:shadow-md"
-            >
-              Entretien de bureaux et immeubles professionnels →
-            </a>
-
-            <a
-              href="/sortie-et-rentrée-poubelle"
-              className="rounded-xl border bg-white p-5 font-semibold text-blue-700 hover:shadow-md"
-            >
-              Sortie et rentrée des poubelles →
-            </a>
-
-            <a
-              href="/travaux-exceptionnels"
-              className="rounded-xl border bg-white p-5 font-semibold text-blue-700 hover:shadow-md"
-            >
-              Travaux et prestations exceptionnels →
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ZONES */}
-      <section className="mx-auto max-w-5xl px-6 py-16">
-        <h2 className="mb-6 text-3xl font-bold">
-          Remplacement de gardien en Île-de-France
+          Secteurs d’intervention en Île-de-France
         </h2>
 
         <p className="mb-8 text-lg leading-8 text-gray-600">
-          CoproSolutions intervient principalement à Paris et en
-          Île-de-France, notamment dans les Hauts-de-Seine, les Yvelines et le
-          Val-de-Marne.
+          Depuis notre agence de Boulogne-Billancourt, nous intervenons rapidement
+          sur Paris et l’ensemble de la petite et grande couronne :
         </p>
 
-        <div className="flex flex-wrap gap-3">
-          <a
-            href="/zones/paris-75"
-            className="rounded-xl border px-5 py-3 font-semibold hover:shadow-md"
-          >
-            Paris
-          </a>
+        <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
+          <Link href="/zones/paris-75" className="rounded-xl border p-4 text-center font-semibold text-blue-700 hover:shadow-md">
+            Paris (75) →
+          </Link>
+          <Link href="/zones/hauts-de-seine" className="rounded-xl border p-4 text-center font-semibold text-blue-700 hover:shadow-md">
+            Hauts-de-Seine (92) →
+          </Link>
+          <Link href="/zones/yvelines" className="rounded-xl border p-4 text-center font-semibold text-blue-700 hover:shadow-md">
+            Yvelines (78) →
+          </Link>
+          <Link href="/zones/val-de-marne" className="rounded-xl border p-4 text-center font-semibold text-blue-700 hover:shadow-md">
+            Val-de-Marne (94) →
+          </Link>
+          <Link href="/zones/boulogne-billancourt" className="rounded-xl border p-4 text-center font-semibold text-slate-700 hover:shadow-md">
+            Boulogne-Billancourt
+          </Link>
+          <Link href="/zones/paris-15" className="rounded-xl border p-4 text-center font-semibold text-slate-700 hover:shadow-md">
+            Paris 15e
+          </Link>
+          <Link href="/zones/paris-16" className="rounded-xl border p-4 text-center font-semibold text-slate-700 hover:shadow-md">
+            Paris 16e
+          </Link>
+          <Link href="/zones/yvelines/versailles" className="rounded-xl border p-4 text-center font-semibold text-slate-700 hover:shadow-md">
+            Versailles
+          </Link>
+        </div>
 
-          <a
-            href="/zones/hauts-de-seine"
-            className="rounded-xl border px-5 py-3 font-semibold hover:shadow-md"
-          >
-            Hauts-de-Seine
-          </a>
-
-          <a
-            href="/zones/yvelines"
-            className="rounded-xl border px-5 py-3 font-semibold hover:shadow-md"
-          >
-            Yvelines
-          </a>
-
-          <a
-            href="/zones/val-de-marne"
-            className="rounded-xl border px-5 py-3 font-semibold hover:shadow-md"
-          >
-            Val-de-Marne
-          </a>
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <Link href="/nettoyage-copropriete-paris" className="rounded-xl bg-slate-50 p-5 font-semibold text-blue-700 hover:shadow-md">
+            Nettoyage de copropriétés à Paris →
+          </Link>
+          <Link href="/recrutement-gardien" className="rounded-xl bg-slate-50 p-5 font-semibold text-blue-700 hover:shadow-md">
+            Recrutement de gardien d’immeuble →
+          </Link>
+          <Link href="/travaux-exceptionnels" className="rounded-xl bg-slate-50 p-5 font-semibold text-blue-700 hover:shadow-md">
+            Débarras & travaux exceptionnels →
+          </Link>
         </div>
       </section>
 
@@ -392,22 +389,22 @@ export default function RemplacementGardien() {
       <section className="bg-blue-950 px-6 py-20 text-center text-white">
         <div className="mx-auto max-w-3xl">
           <h2 className="mb-5 text-3xl font-bold">
-            Besoin d’un remplacement de gardien ?
+            Besoin d’un remplacement de gardien sous 24 à 48h ?
           </h2>
 
           <p className="mb-8 text-lg leading-8 text-blue-100">
-            Communiquez-nous les informations concernant votre immeuble,
-            l’absence prévue et les missions à assurer. Nous pourrons étudier
-            votre besoin et vous proposer une solution adaptée.
+            Indiquez-nous l’adresse de la copropriété, les dates d’absence et les
+            horaires habituels : vous recevez notre devis et notre dossier
+            administratif sous 24h.
           </p>
 
           <div className="flex flex-col justify-center gap-3 sm:flex-row">
-            <a
+            <Link
               href="/contact"
               className="rounded-xl bg-green-600 px-6 py-3 font-bold text-white hover:bg-green-700"
             >
-              Demander un remplacement
-            </a>
+              Demander un devis de remplacement
+            </Link>
 
             <a
               href="tel:+33658876579"
@@ -427,6 +424,6 @@ export default function RemplacementGardien() {
           </p>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
